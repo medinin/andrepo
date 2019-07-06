@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/drugTabLink"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_gravity="center"
+        android:layout_marginEnd="70dp"
+        android:padding="15dp"
+        android:src="@drawable/ic_medicine_white" />
+
+    <ImageView
+        android:id="@+id/reportTabLink"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_gravity="center"
+        android:layout_marginEnd="70dp"
+        android:padding="15dp"
+        android:src="@drawable/ic_files_white_icon" />
+
+    <ImageView
+        android:id="@+id/vitalTabLink"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_gravity="center"
+        android:padding="15dp"
+        android:src="@drawable/ic_heartbeat" />
+
+</LinearLayout>

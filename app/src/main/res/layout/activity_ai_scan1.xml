@@ -1,0 +1,549 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_all_conditions"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F5F7"
+    android:fitsSystemWindows="true"
+    android:focusableInTouchMode="true"
+    tools:context=".activities.AiScan1">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_home"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/select_ai_hd_sec"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:orientation="vertical">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    android:id="@+id/back_sec"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center_vertical"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:src="@drawable/ic_arrow_left_white" />
+
+                    <TextView
+                        android:id="@+id/back_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginEnd="20dp"
+                        android:fontFamily="@font/sfprotextregular"
+                        android:text="Back"
+                        android:textColor="#ffffff"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/editActiionsWrap"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="20dp"
+                    android:gravity="right|center_vertical"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/editBtnTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginRight="3dp"
+                        android:background="@drawable/ic_three_vertical_dots"
+                        android:gravity="center|right"
+                        android:textColor="#ffffff"
+                        android:textSize="0dp" />
+
+                    <TextView
+                        android:id="@+id/saveBtnTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginRight="3dp"
+                        android:fontFamily="@font/sfprotextsemibold"
+                        android:gravity="center|right"
+                        android:text="Save"
+                        android:textColor="#ffffff"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+
+            </android.support.constraint.ConstraintLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="-2dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/ic_nurse" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sfprotextmedium"
+                android:gravity="center_horizontal"
+                android:text="A.I Scan"
+                android:textColor="@color/color_white"
+                android:textSize="20sp"
+                android:textStyle="normal" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/mainWrap1"
+            style="@style/main_wrap_box"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:orientation="vertical">
+
+                <!-- All content starts here-->
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/scan_wrap"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ScrollView
+                        android:id="@+id/feedScroll"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:paddingBottom="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/search_wrap">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:orientation="vertical"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <LinearLayout
+                                android:id="@+id/gravity"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:gravity="center|end"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/appointDateInput"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_marginTop="0dp"
+                                    android:fontFamily="@font/mulibold"
+                                    android:gravity="center"
+                                    android:text="Select type"
+                                    android:textColor="#333333"
+                                    android:textSize="16sp" />
+
+                                <ImageView
+                                    android:id="@+id/date_arrow"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_marginTop="1dp"
+                                    android:layout_marginEnd="15dp"
+                                    android:rotation="0"
+                                    android:src="@drawable/ic_arrow_drop_down_black" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginEnd="10dp"
+                                android:background="@drawable/box_corner_with_lightgray_color"
+                                android:orientation="vertical"
+                                android:paddingBottom="20dp">
+
+                                <LinearLayout
+                                    android:id="@+id/scanTitle"
+                                    android:layout_width="300dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:orientation="horizontal">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+
+                                        <TextView
+                                            android:id="@+id/textView28"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="8dp"
+                                            android:layout_marginTop="8dp"
+                                            android:layout_marginEnd="8dp"
+                                            android:fontFamily="@font/mulisemibold"
+                                            android:text="Select the type of scan first"
+                                            android:textColor="#88a1ac"
+                                            android:textSize="10sp"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+                                    </android.support.constraint.ConstraintLayout>
+                                </LinearLayout>
+
+
+                                <LinearLayout
+                                    android:id="@+id/aiScanImg"
+                                    android:layout_width="300dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginTop="19dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:orientation="horizontal">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginEnd="10dp">
+
+                                        <ImageView
+                                            android:id="@+id/imageView29"
+                                            android:layout_width="270dp"
+                                            android:layout_height="40dp"
+                                            android:layout_weight="1"
+                                            android:background="@drawable/ic_ai_scan_img"
+                                            app:layout_constraintBottom_toTopOf="@+id/textView47"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/textView47"
+                                            android:layout_width="47dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="7dp"
+                                            android:layout_marginTop="2dp"
+                                            android:layout_marginBottom="1dp"
+                                            android:fontFamily="@font/mulisemibold"
+                                            android:text="Upload"
+                                            android:textColor="#88a1ac"
+                                            android:textSize="10sp"
+                                            android:textStyle="italic"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toBottomOf="@+id/imageView29" />
+
+                                        <TextView
+                                            android:id="@+id/textView48"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="59dp"
+                                            android:layout_marginTop="2dp"
+                                            android:fontFamily="@font/mulisemibold"
+                                            android:text="A.I Analysis"
+                                            android:textColor="#88a1ac"
+                                            android:textSize="10sp"
+                                            android:textStyle="italic"
+                                            app:layout_constraintStart_toEndOf="@+id/textView47"
+                                            app:layout_constraintTop_toBottomOf="@+id/imageView29" />
+
+                                        <TextView
+                                            android:id="@+id/textView55"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="2dp"
+                                            android:layout_marginEnd="-1dp"
+                                            android:fontFamily="@font/mulisemibold"
+                                            android:text="Prediction"
+                                            android:textColor="#88a1ac"
+                                            android:textSize="10sp"
+                                            android:textStyle="italic"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintTop_toBottomOf="@+id/imageView29" />
+
+                                    </android.support.constraint.ConstraintLayout>
+
+                                </LinearLayout>
+
+                                <!--<LinearLayout-->
+                                <!--android:layout_width="300dp"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:layout_marginStart="10dp"-->
+                                <!--android:layout_marginTop="29dp"-->
+                                <!--android:layout_marginEnd="10dp"-->
+                                <!--android:orientation="horizontal">-->
+
+                                <!--<android.support.constraint.ConstraintLayout-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_marginStart="10dp"-->
+                                <!--android:layout_marginEnd="10dp">-->
+
+
+                                <!--<TextView-->
+                                <!--android:id="@+id/rowOne"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_marginStart="5dp"-->
+                                <!--android:text="*"-->
+                                <!--android:textColor="#88a1ac"-->
+                                <!--android:textSize="14sp"-->
+                                <!--app:layout_constraintStart_toStartOf="parent"-->
+                                <!--app:layout_constraintTop_toTopOf="parent" />-->
+
+                                <!--<TextView-->
+                                <!--android:id="@+id/textView60"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_marginStart="7dp"-->
+                                <!--android:fontFamily="@font/sfprotextregular"-->
+                                <!--android:text="3 Free uploads left"-->
+                                <!--android:textColor="#88a1ac"-->
+                                <!--android:textSize="10sp"-->
+                                <!--app:layout_constraintStart_toEndOf="@+id/rowOne"-->
+                                <!--app:layout_constraintTop_toTopOf="parent" />-->
+                                <!--</android.support.constraint.ConstraintLayout>-->
+
+                                <!--</LinearLayout>-->
+
+                                <android.support.constraint.ConstraintLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <LinearLayout
+                                        android:id="@+id/firstRow"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginTop="8dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:orientation="horizontal"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent">
+
+                                        <TextView
+                                            android:layout_width="10dp"
+                                            android:layout_height="13dp"
+                                            android:layout_marginStart="10dp"
+                                            android:layout_marginTop="4dp"
+                                            android:text="*"
+                                            android:textColor="#88a1ac"
+                                            android:textSize="14sp"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="7dp"
+                                            android:fontFamily="@font/sfprotextregular"
+                                            android:text="3 Free uploads left"
+                                            android:textColor="#88a1ac"
+                                            android:textSize="10sp"
+                                            app:layout_constraintBottom_toTopOf="@+id/rowOne"
+                                            app:layout_constraintStart_toEndOf="parent" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/secondRow"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:orientation="horizontal"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/firstRow">
+
+                                        <TextView
+                                            android:layout_width="10dp"
+                                            android:layout_height="13dp"
+                                            android:layout_marginStart="10dp"
+                                            android:layout_marginTop="4dp"
+                                            android:text="*"
+                                            android:textColor="#88a1ac"
+                                            android:textSize="14sp"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="7dp"
+                                            android:fontFamily="@font/sfprotextregular"
+                                            android:text="Supports all image formats"
+                                            android:textColor="#88a1ac"
+                                            android:textSize="10sp"
+                                            app:layout_constraintBottom_toTopOf="@+id/rowOne"
+                                            app:layout_constraintTop_toTopOf="parent" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/thirdRow"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:orientation="horizontal"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/secondRow">
+
+                                        <TextView
+                                            android:layout_width="10dp"
+                                            android:layout_height="13dp"
+                                            android:layout_marginStart="10dp"
+                                            android:layout_marginTop="4dp"
+                                            android:text="*"
+                                            android:textColor="#88a1ac"
+                                            android:textSize="14sp"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="7dp"
+                                            android:fontFamily="@font/sfprotextregular"
+                                            android:text="We do NOT make any medical diagnosis."
+                                            android:textColor="#88a1ac"
+                                            android:textSize="10sp"
+                                            app:layout_constraintBottom_toTopOf="@+id/rowOne"
+                                            app:layout_constraintTop_toTopOf="parent" />
+                                    </LinearLayout>
+                                </android.support.constraint.ConstraintLayout>
+
+                            </LinearLayout>
+
+                            <android.support.constraint.ConstraintLayout
+                                android:id="@+id/sendOtpBtnWrap"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="60dp"
+                                android:layout_marginEnd="0dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/otp_wrap">
+
+                                <LinearLayout
+                                    android:layout_width="290dp"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:orientation="horizontal"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                    <TextView
+                                        android:id="@+id/getOtpBtn"
+                                        android:layout_width="131dp"
+                                        android:layout_height="45dp"
+                                        android:layout_marginEnd="0dp"
+                                        android:background="@drawable/rounded_btn_purple"
+                                        android:gravity="center_horizontal|center_vertical"
+                                        android:tag="true"
+                                        android:text="Upload"
+                                        android:textColor="#ffffff"
+                                        android:textSize="14sp"
+                                        android:visibility="gone"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                                    <!--<TextView-->
+                                    <!--android:id="@+id/resendOTP"-->
+                                    <!--android:layout_width="131dp"-->
+                                    <!--android:layout_height="45dp"-->
+                                    <!--android:layout_marginEnd="0dp"-->
+                                    <!--android:background="@drawable/rounded_rectangle_purple"-->
+                                    <!--android:gravity="center_horizontal|center_vertical"-->
+                                    <!--android:tag="true"-->
+                                    <!--android:text="Resend"-->
+                                    <!--android:textColor="#ffffff"-->
+                                    <!--android:textSize="16sp"-->
+                                    <!--android:visibility="visible"-->
+                                    <!--app:layout_constraintEnd_toEndOf="parent"-->
+                                    <!--app:layout_constraintTop_toTopOf="parent" />-->
+
+                                    <TextView
+                                        android:id="@+id/otpDisabledBtn"
+                                        style="@style/get_otp_disable_btn"
+                                        android:layout_width="131dp"
+                                        android:layout_height="45dp"
+                                        android:fontFamily="@font/mulisemibold"
+                                        android:gravity="center|clip_vertical"
+                                        android:tag="true"
+                                        android:text="Upload"
+                                        android:textColor="#AFBFC6"
+                                        android:textSize="14sp"
+                                        android:visibility="visible"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+                                </LinearLayout>
+
+                            </android.support.constraint.ConstraintLayout>
+                        </LinearLayout>
+                    </ScrollView>
+
+                </android.support.constraint.ConstraintLayout>
+
+                <!-- All content ends here-->
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <include layout="@layout/menu_bottom" />
+
+        <include layout="@layout/comingsoon_dialog" />
+
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

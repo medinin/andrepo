@@ -1,0 +1,473 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:navigationBarColor">@color/colorBlueDark</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/color_gray</item>
+    </style>
+
+    <style name="BottomDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+    <style name="BaseBottomSheetDialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@color/colorBlueDark</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionModeOverlay">true</item>
+    </style>
+
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/color_gray</item>
+        <item name="colorControlActivated">@color/color_blue</item>
+    </style>
+
+    <style name="spinner_style">
+        <item name="android:background">@drawable/background_spinner</item>
+    </style>
+
+    <style name="customRatingBar" parent="android:style/Widget.Material.RatingBar.Small">
+
+    </style>
+
+    <style name="CustomTextStyle" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="android:textSize">11sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="foodRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/ratingstars</item>
+        <item name="android:minHeight">22dip</item>
+        <item name="android:maxHeight">22dip</item>
+    </style>
+
+    <style name="spinnerItemStyle" parent="android:Widget.TextView.SpinnerItem">
+        <item name="android:textColor">#282f3f</item>
+        <item name="android:textColorHint">#CACACA</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/mulisemibold</item>
+    </style>
+
+    <style name="spinnerDropDownItemStyle" parent="android:TextAppearance.Widget.TextView.SpinnerItem">
+        <item name="android:textColor">#282f3f</item>
+        <item name="android:textColorHint">#CACACA</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/mulisemibold</item>
+    </style>
+
+
+    <!--Common Tablinks-->
+    <style name="tab_active_link">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingBottom">15dp</item>
+        <item name="android:paddingTop">40dp</item>
+        <item name="android:state_selected">true</item>
+        <item name="android:textColor">#8e63e6</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="tab_links">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">50dp</item>
+        <item name="android:paddingBottom">15dp</item>
+        <item name="android:paddingTop">40dp</item>
+        <item name="android:radius">40dp</item>
+        <item name="android:state_selected">true</item>
+        <item name="android:textColor">#afbfc6</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="new_tab_active_link">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingBottom">15dp</item>
+        <item name="android:state_selected">true</item>
+        <item name="android:textColor">#8e63e6</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="new_tab_links">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">50dp</item>
+        <item name="android:paddingBottom">15dp</item>
+        <item name="android:radius">40dp</item>
+        <item name="android:state_selected">true</item>
+        <item name="android:textColor">#afbfc6</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!--Premium page-->
+    <style name="premium_tab_link">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#afbfc6</item>
+        <item name="android:textSize">19sp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="premium_tab_link_active">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#34353e</item>
+        <item name="android:textSize">19sp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="premium_option">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#667480</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_marginStart">2dp</item>
+    </style>
+
+    <style name="premium_option_symbol">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#667480</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_marginTop">3dp</item>
+        <item name="android:layout_marginEnd">7dp</item>
+    </style>
+
+    <style name="premium_options_row">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingBottom">15dp</item>
+    </style>
+
+    <!--Popup styles-->
+    <style name="otp_input_style">
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/input_otp_style</item>
+        <item name="android:gravity">center</item>
+        <item name="android:inputType">numberPassword</item>
+        <item name="android:textColor">#282f3f</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:maxLength">1</item>
+    </style>
+
+    <!--Switch styles-->
+    <style name="switch_grey_style">
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">25dp</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:thumbTintMode">src_in</item>
+        <item name="android:colorAccent">#38d648</item>
+        <item name="android:background">@drawable/switch_grey_border</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingEnd">2dp</item>
+        <item name="android:thumbTint">#c1cdd2</item>
+        <item name="android:trackTint">#ffffff</item>
+    </style>
+
+
+    <style name="SCBSwitch" parent="Theme.AppCompat.Light">
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:thumbTintMode">src_in</item>
+        <item name="android:colorAccent">#38d648</item>
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">25dp</item>
+        <item name="colorControlActivated">#38d648</item>
+        <item name="colorSwitchThumbNormal">#c1cdd2</item>
+        <item name="android:colorForeground">#afbfc6</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingEnd">2dp</item>
+        <item name="android:thumbTint">#afbfc6</item>
+        <item name="android:trackTint">#afbfc6</item>
+    </style>
+
+    <!--Week days styles-->
+    <style name="week_day_style">
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:background">@drawable/week_day_circle</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#88a1ac</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/mulisemibold</item>
+
+    </style>
+
+    <style name="week_day_active_style">
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:background">@drawable/week_day_active_circle</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#282f3f</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <!--Edit text style-->
+    <style name="input_bottom_border_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">33dp</item>
+        <item name="android:background">@drawable/border_bottom</item>
+        <item name="android:inputType">text</item>
+        <!--<item name="android:textCursorDrawable">@drawable/cursor_black</item>-->
+        <item name="android:textColor">#282f3f</item>
+        <item name="android:textSize">20sp</item>
+
+    </style>
+
+    <!--Doctor Account style-->
+    <style name="doc_account_tbl_row">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">140dp</item>
+        <item name="android:layout_weight">0.5</item>
+        <item name="android:background">@drawable/cell_shape</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="doc_account_option_name">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#667480</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!--chat-->
+    <style name="btn_round_purple" parent="@style/Widget.AppCompat.Button.Borderless">
+        <item name="android:background">@drawable/rounded_btn_purple</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+
+    <!--Register input style-->
+    <style name="new_label_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#88a1ac</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/sfprotextregular</item>
+    </style>
+
+    <style name="new_input_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:textColor">#282f3f</item>
+        <item name="android:textColorHint">#CACACA</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:fontFamily">@font/mulisemibold</item>
+    </style>
+
+    <style name="new_err_txt_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#ff4040</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:background">@color/transparent</item>
+    </style>
+
+    <!--Search dropdown list style-->
+    <style name="search_dropdown_items_txt">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:textColor">#e6282f3f</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+
+    <!--welcome screen-->
+    <style name="welcome_txt">
+        <item name="android:textColor">#4A368D</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/mulibold</item>
+
+    </style>
+
+    <style name="tagline_txt">
+        <item name="android:textColor">#75273951</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/sfprotextregular</item>
+    </style>
+
+
+    <style name="condition_txt">
+        <item name="android:textColor">#88a1ac</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/sfprotextregular</item>
+    </style>
+
+    <style name="terms_privacy_txt">
+        <item name="android:textColor">#667480</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/sfprotextregular</item>
+    </style>
+
+    <style name="agree_txt">
+        <item name="android:textColor">#8e63e6</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!--welcome2 screen-->
+    <style name="instruction_txt">
+        <item name="android:textColor">#88a1ac</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:fontFamily">@font/sfprotextsemibold</item>
+    </style>
+
+
+    <style name="facescan_txt">
+        <item name="android:textColor">#667480</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:fontFamily">@font/sfprotextheavy</item>
+    </style>
+
+    <style name="skip_txt">
+        <item name="android:textColor">#88a1ac</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:fontFamily">@font/mulibold</item>
+    </style>
+
+
+    <style name="next_txt">
+        <item name="android:textColor">#8e63e6</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:fontFamily">@font/mulibold</item>
+    </style>
+
+    <!--time_slot_style-->
+    <style name="time_Slot_style">
+        <item name="android:background">@drawable/time_selected_puple</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
+
+    <style name="SheetDialog" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowCloseOnTouchOutside">false</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:colorBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.3</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+    <!--Beta Doctor Account style-->
+    <style name="beta_doc_account_tbl_row_one">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">107dp</item>
+        <item name="android:layout_weight">0.5</item>
+        <item name="android:background">@drawable/cell_shape</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="beta_doc_account_tbl_row">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">93dp</item>
+        <item name="android:layout_weight">0.5</item>
+        <item name="android:background">@drawable/cell_shape</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="beta_doc_account_tbl_name">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#667480</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/sfprotextmedium</item>
+    </style>
+
+    <style name="main_wrap_box">
+        <item name="android:layout_marginTop">154dp</item>
+        <item name="android:layout_marginBottom">60dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:focusableInTouchMode">true</item>
+        <item name="android:background">@drawable/shape_linear</item>
+    </style>
+
+    <style name="main_wrap_box_small">
+        <item name="android:layout_marginTop">150dp</item>
+        <item name="android:layout_marginBottom">60dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:focusableInTouchMode">true</item>
+        <item name="android:background">@drawable/shape_linear</item>
+    </style>
+
+    <!--get otp display-->
+    <style name="get_otp_disable_btn">
+        <item name="android:layout_width">131dp</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:background">@drawable/border_corner_gray</item>
+        <item name="android:fontFamily">@font/mulisemibold</item>
+        <item name="android:gravity">center_horizontal|center_vertical</item>
+    </style>
+
+
+    <!--get otp Purple btn-->
+    <style name="get_otp_btn">
+        <item name="android:layout_width">131dp</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:background">@drawable/round_purple_get_otp</item>
+        <item name="android:fontFamily">@font/mulisemibold</item>
+        <item name="android:gravity">center_horizontal|center_vertical</item>
+    </style>
+
+
+    <!--switch green color-->
+    <style name="switch_green" parent="Theme.AppCompat.Light">
+        <!-- active thumb & track color (30% transparency) -->
+        <item name="colorControlActivated">#46bdbf</item>
+
+        <!-- inactive thumb color -->
+        <item name="colorSwitchThumbNormal">#f1f1f1
+        </item>
+
+        <!-- inactive track color (30% transparency) -->
+        <item name="android:colorForeground">#42221f1f
+        </item>
+    </style>
+
+</resources>

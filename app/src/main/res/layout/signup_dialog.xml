@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/coordinator"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:background="#000000"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/hide_popup"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="0dp"
+                android:src="@drawable/arrow_down_white" />
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="38dp"
+                android:orientation="vertical"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+
+
+                <LinearLayout
+                    android:id="@+id/user_sec_wrap"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/popup_corner_radius"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <!-- All content starts here-->
+                    <LinearLayout
+                        android:id="@+id/sign_up_wrap"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <LinearLayout
+                            android:id="@+id/user_icon_wrap"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="32dp"
+                            android:layout_marginEnd="20dp"
+                            android:background="@drawable/border_bottom"
+                            android:orientation="horizontal"
+                            android:paddingBottom="2dp"
+                            android:weightSum="2"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/user_sec_wrap">
+
+
+                            <android.support.constraint.ConstraintLayout
+                                android:id="@+id/doc_select"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="0dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/border_right"
+                                android:onClick="onSignUpOptionSelect">
+
+                                <LinearLayout
+                                    android:layout_width="130dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:gravity="center_horizontal"
+                                    android:orientation="vertical"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                    <ImageView
+                                        android:id="@+id/doctor_img"
+                                        android:layout_width="60dp"
+                                        android:layout_height="60dp"
+                                        android:layout_marginStart="0dp"
+                                        android:layout_marginTop="19dp"
+                                        app:srcCompat="@drawable/ic_doctor" />
+
+                                    <TextView
+                                        android:id="@+id/doctor_txt"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="0dp"
+                                        android:layout_marginTop="16dp"
+                                        android:layout_marginBottom="0dp"
+                                        android:text="I’m a Doctor"
+                                        android:textColor="#CD282F3F"
+                                        android:textSize="16sp" />
+                                </LinearLayout>
+
+                                <RadioButton
+                                    android:id="@+id/docRadioBtn"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:checked="true"
+                                    android:tag="RadioButton"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                            </android.support.constraint.ConstraintLayout>
+
+                            <android.support.constraint.ConstraintLayout
+                                android:id="@+id/patient_select"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginEnd="0dp"
+                                android:layout_weight="1"
+                                android:alpha="0.4"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <LinearLayout
+                                    android:layout_width="130dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:gravity="center_horizontal"
+                                    android:orientation="vertical"
+                                    android:paddingBottom="10dp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                    <ImageView
+                                        android:id="@+id/patient_img"
+                                        android:layout_width="60dp"
+                                        android:layout_height="60dp"
+                                        android:layout_marginTop="19dp"
+                                        android:layout_marginEnd="0dp"
+                                        app:srcCompat="@drawable/ic_patient" />
+
+                                    <TextView
+                                        android:id="@+id/patient_txt"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="0dp"
+                                        android:layout_marginTop="16dp"
+                                        android:layout_marginBottom="0dp"
+                                        android:text="I’m a Patient"
+                                        android:textColor="#CD282F3F"
+                                        android:textSize="16sp" />
+                                </LinearLayout>
+
+                                <RadioButton
+                                    android:id="@+id/patientRadioBtn"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:checked="false"
+                                    android:tag="RadioButton"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+                            </android.support.constraint.ConstraintLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/hospital_icon_wrap"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginEnd="20dp"
+                            android:background="@drawable/border_bottom"
+                            android:orientation="horizontal"
+                            android:paddingBottom="2dp"
+                            android:weightSum="2"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/user_sec_wrap">
+
+
+                            <android.support.constraint.ConstraintLayout
+                                android:id="@+id/hospital_select"
+                                android:layout_width="150dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:alpha="0.4"
+                                android:background="@drawable/border_right"
+                                app:layout_constraintStart_toStartOf="parent">
+
+                                <LinearLayout
+                                    android:layout_width="130dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:gravity="center_horizontal"
+                                    android:orientation="vertical"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                    <ImageView
+                                        android:id="@+id/hospital_img"
+                                        android:layout_width="60dp"
+                                        android:layout_height="60dp"
+                                        android:layout_marginStart="0dp"
+                                        android:layout_marginTop="19dp"
+                                        app:srcCompat="@drawable/ic_hospital" />
+
+                                    <TextView
+                                        android:id="@+id/hospital_txt"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="0dp"
+                                        android:layout_marginTop="16dp"
+                                        android:layout_marginBottom="0dp"
+                                        android:text="I’m a Hospital"
+                                        android:textColor="#CD282F3F"
+                                        android:textSize="16sp" />
+
+                                </LinearLayout>
+
+                                <RadioButton
+                                    android:id="@+id/hospitalRadioBtn"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:checked="false"
+                                    android:tag="RadioButton"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                            </android.support.constraint.ConstraintLayout>
+
+                            <android.support.constraint.ConstraintLayout
+                                android:id="@+id/clinic_select"
+                                android:layout_width="150dp"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="end"
+                                android:layout_marginEnd="0dp"
+                                android:layout_weight="1"
+                                android:alpha="0.4"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <LinearLayout
+                                    android:layout_width="130dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:gravity="center_horizontal"
+                                    android:orientation="vertical"
+                                    android:paddingBottom="10dp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                    <ImageView
+                                        android:id="@+id/clinic_img"
+                                        android:layout_width="60dp"
+                                        android:layout_height="60dp"
+                                        android:layout_marginTop="19dp"
+                                        android:layout_marginEnd="0dp"
+                                        app:layout_constraintEnd_toStartOf="@+id/clinicRadioBtn"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:srcCompat="@drawable/ic_clinic" />
+
+                                    <TextView
+                                        android:id="@+id/clinic_txt"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="0dp"
+                                        android:layout_marginTop="16dp"
+                                        android:layout_marginBottom="0dp"
+                                        android:text="I’m a Clinic"
+                                        android:textColor="#CD282F3F"
+                                        android:textSize="16sp" />
+                                </LinearLayout>
+
+                                <RadioButton
+                                    android:id="@+id/clinicRadioBtn"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginEnd="16dp"
+                                    android:tag="RadioButton"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                            </android.support.constraint.ConstraintLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/pharmacy_icon_wrap"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginEnd="20dp"
+                            android:orientation="horizontal"
+                            android:paddingBottom="2dp"
+                            android:weightSum="2"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/hospital_icon_wrap">
+
+
+                            <android.support.constraint.ConstraintLayout
+                                android:id="@+id/lab_select"
+                                android:layout_width="150dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="0dp"
+                                android:layout_weight="1"
+                                android:alpha="0.4"
+                                android:background="@drawable/border_right"
+                                app:layout_constraintStart_toStartOf="parent">
+
+                                <LinearLayout
+                                    android:layout_width="130dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:gravity="center_horizontal"
+                                    android:orientation="vertical"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                    <ImageView
+                                        android:id="@+id/lab_img"
+                                        android:layout_width="60dp"
+                                        android:layout_height="60dp"
+                                        android:layout_marginStart="0dp"
+                                        android:layout_marginTop="19dp"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:srcCompat="@drawable/ic_lab" />
+
+                                    <TextView
+                                        android:id="@+id/lab_txt"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="0dp"
+                                        android:layout_marginTop="16dp"
+                                        android:layout_marginBottom="0dp"
+                                        android:text="I’m a Laboratory"
+                                        android:textColor="#CD282F3F"
+                                        android:textSize="16sp" />
+                                </LinearLayout>
+
+                                <RadioButton
+                                    android:id="@+id/labRadioBtn"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:checked="false"
+                                    android:tag="RadioButton"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                            </android.support.constraint.ConstraintLayout>
+
+                            <android.support.constraint.ConstraintLayout
+                                android:id="@+id/pharmacy_select"
+                                android:layout_width="150dp"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="end"
+                                android:layout_marginEnd="0dp"
+                                android:layout_weight="1"
+                                android:alpha="0.4"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <LinearLayout
+                                    android:layout_width="130dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:gravity="center_horizontal"
+                                    android:orientation="vertical"
+                                    android:paddingBottom="10dp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                    <ImageView
+                                        android:id="@+id/pharmacy_img"
+                                        android:layout_width="60dp"
+                                        android:layout_height="60dp"
+                                        android:layout_marginTop="19dp"
+                                        android:layout_marginEnd="0dp"
+                                        app:layout_constraintEnd_toStartOf="@+id/pharmacyRadioBtn"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:srcCompat="@drawable/ic_medicine" />
+
+                                    <TextView
+                                        android:id="@+id/pharmacy_txt"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="0dp"
+                                        android:layout_marginTop="16dp"
+                                        android:layout_marginBottom="0dp"
+                                        android:text="I’m a Pharmacy"
+                                        android:textColor="#CD282F3F"
+                                        android:textSize="16sp" />
+                                </LinearLayout>
+
+                                <RadioButton
+                                    android:id="@+id/pharmacyRadioBtn"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:checked="false"
+                                    android:tag="RadioButton"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+                            </android.support.constraint.ConstraintLayout>
+                        </LinearLayout>
+
+                        <!-- All content ends here-->
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/btn_wrap"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:layout_gravity="bottom"
+            android:paddingBottom="0dp"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/nextBtntxt"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#8e63e6"
+                android:gravity="center_horizontal|center_vertical"
+                android:tag="true"
+                android:text="NEXT"
+                android:textColor="#ffffff"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </FrameLayout>
+    </android.support.design.widget.CoordinatorLayout>
+</FrameLayout>

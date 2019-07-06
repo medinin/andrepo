@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Medinin</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="map_access_token">pk.eyJ1Ijoic3VyZXNocGF0dHUiLCJhIjoiY2pmcnVvb3k4MmQ5aDJxbWRkMGRiM2NseiJ9.pySEDAShKaQQzVdbQaXVwg</string>
+    <string name="delete_account_txt">
+        <u>Delete Account</u>
+    </string>
+    <string name="Cconsultation_fee_txt">
+        <u>Enter Consultation Fee</u>
+    </string>
+    <string name="todo">TODO</string>
+    <string name="ok">OK</string>
+    <string name="permission_camera_rationale">Access to the camera is needed for detection</string>
+    <string name="no_camera_permission">This application cannot run because it does not have the camera permission.  The application will now exit.</string>
+    <string name="low_storage_error">Face detector dependencies cannot be downloaded due to low device storage</string>
+    <string name="useFaceScanTxt">Note: Use global face scan to get the access of patient’s profile</string>
+    <string name="sendSMSWarning">Note: Verify with OTP to send follow-up SMS reminders</string>
+</resources>

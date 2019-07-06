@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/betaVersionPopUp"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/white_bg_radius"
+    android:elevation="1dp"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingStart="20dp"
+    android:paddingTop="10dp"
+    android:paddingEnd="20dp"
+    android:paddingBottom="20dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_gravity="center_horizontal">
+
+    <ImageView
+        android:id="@+id/closeDialogImg"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="right"
+        android:padding="8dp"
+        android:src="@drawable/ic_close_shape"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/feedback_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@color/transparent"
+        android:text="We’re still in our Beta phase so we only have a selection of features for you to try but we have more planned for the coming months. During this phase, we'll be continuing to evolve the app structure and features based on your feedback, so please be aware that more modules will be added in the near future."
+        android:textAlignment="center"
+        android:textColor="#667480"
+        android:textSize="16sp"
+        android:textStyle="normal" />
+
+</LinearLayout>

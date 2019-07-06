@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_doc_education"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_home"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    tools:context=".activities.DocEducation">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:orientation="vertical">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp">
+
+            <LinearLayout
+                android:id="@+id/back_sec"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:src="@drawable/ic_arrow_left_white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginEnd="20dp"
+                    android:fontFamily="@font/sfprotextregular"
+                    android:text="Back"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/editActiionsWrap"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="20dp"
+                android:gravity="right|center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/editBtnTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginRight="3dp"
+                    android:fontFamily="@font/sfprotextsemibold"
+                    android:gravity="center|right"
+                    android:text="Edit"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/saveBtnTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginRight="3dp"
+                    android:fontFamily="@font/sfprotextsemibold"
+                    android:gravity="center|right"
+                    android:text="Save"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+        </android.support.constraint.ConstraintLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/sfprotextmedium"
+            android:gravity="center_horizontal"
+            android:text="Education"
+            android:textColor="@color/color_white"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/mainWrap1"
+        style="@style/main_wrap_box"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <android.support.design.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="0dp"
+                android:paddingLeft="0dp"
+                android:paddingRight="0dp"
+                android:paddingBottom="10dp"
+                android:scrollbarThumbVertical="@drawable/scrollbar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <!--All content starts here-->
+                <LinearLayout
+                    android:id="@+id/edu_cont_wrap"
+                    android:layout_width="290dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="0dp"
+                    android:background="#fff"
+                    android:focusableInTouchMode="true"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <android.support.design.widget.CoordinatorLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <android.support.constraint.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="24dp"
+                                android:layout_marginEnd="12dp">
+
+                                <ImageView
+                                    android:id="@+id/imageView16"
+                                    android:layout_width="27dp"
+                                    android:layout_height="27dp"
+                                    android:background="@drawable/ic_university_brown"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+                            </android.support.constraint.ConstraintLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:orientation="vertical"
+                                android:weightSum="2"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:srcCompat="@drawable/input_border_bottom">
+
+                                <TextView
+                                    style="@style/new_label_style"
+                                    android:text="Qualification"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <android.support.constraint.ConstraintLayout
+                                    android:id="@+id/qualificationInputWrap"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/input_border_bottom"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/name_txt">
+
+                                    <EditText
+                                        android:id="@+id/qualificationInput"
+                                        style="@style/new_input_style"
+                                        android:hint="Ex. MBBS, GS"
+                                        android:paddingStart="0dp"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                </android.support.constraint.ConstraintLayout>
+
+                            </LinearLayout>
+
+                            <android.support.constraint.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="30dp">
+
+                                <LinearLayout
+                                    android:id="@+id/linearLayout13"
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:weightSum="2"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:srcCompat="@drawable/input_border_bottom">
+
+                                    <TextView
+                                        style="@style/new_label_style"
+                                        android:text="Experience"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:id="@+id/expSpinnerWrap"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@drawable/input_border_bottom"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/name_txt">
+
+                                        <Spinner
+                                            android:id="@+id/expSpinner"
+                                            style="@style/new_input_style"
+                                            android:paddingStart="0dp"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <ImageView
+                                            android:id="@+id/imageView"
+                                            android:layout_width="13dp"
+                                            android:layout_height="7dp"
+                                            android:layout_marginTop="20dp"
+                                            android:layout_marginEnd="12dp"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            app:srcCompat="@drawable/ic_small_arrow_down" />
+
+                                    </android.support.constraint.ConstraintLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:weightSum="2"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:srcCompat="@drawable/input_border_bottom">
+
+                                    <TextView
+                                        style="@style/new_label_style"
+                                        android:text="Registration No."
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:id="@+id/registrationNumInputWrap"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@drawable/input_border_bottom">
+
+                                        <EditText
+                                            android:id="@+id/registrationNumInput"
+                                            style="@style/new_input_style"
+                                            android:hint="MCI-12394512"
+                                            android:paddingStart="0dp"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                    </android.support.constraint.ConstraintLayout>
+
+                                </LinearLayout>
+
+                            </android.support.constraint.ConstraintLayout>
+
+                            <android.support.constraint.ConstraintLayout
+                                android:id="@+id/speciaityWrap"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="30dp"
+                                android:orientation="horizontal"
+                                android:weightSum="2">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:srcCompat="@drawable/input_border_bottom">
+
+                                    <TextView
+                                        style="@style/new_label_style"
+                                        android:text="Your Specialty"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:id="@+id/departmentSpinnerWrap"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@drawable/input_border_bottom">
+
+                                        <Spinner
+                                            android:id="@+id/departmentSpinner"
+                                            style="@style/new_input_style"
+                                            android:paddingStart="0dp"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                    </android.support.constraint.ConstraintLayout>
+
+                                </LinearLayout>
+
+                                <ImageView
+                                    android:id="@+id/imageView"
+                                    android:layout_width="13dp"
+                                    android:layout_height="7dp"
+                                    android:layout_marginTop="32dp"
+                                    android:layout_marginEnd="12dp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:srcCompat="@drawable/ic_small_arrow_down" />
+
+                            </android.support.constraint.ConstraintLayout>
+
+                            <FrameLayout
+                                android:id="@+id/errorMsgWrap"
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp"
+                                android:layout_marginBottom="-20dp"
+                                android:background="#00FFFFFF"
+                                android:elevation="1dp"
+                                android:visibility="gone"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/speciaityWrap"
+                                tools:elevation="10dp">
+
+                                <TextView
+                                    style="@style/new_err_txt_style"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="bottom|center_horizontal"
+                                    android:paddingTop="2dp"
+                                    android:text="All fields are mandatory!" />
+                            </FrameLayout>
+
+                            <LinearLayout
+                                android:id="@+id/add_photo_sec"
+                                android:layout_width="match_parent"
+                                android:layout_height="90dp"
+                                android:layout_marginStart="-10dp"
+                                android:layout_marginTop="30dp"
+                                android:layout_marginEnd="-10dp"
+                                android:background="@drawable/add_photo_img">
+
+                                <ImageView
+                                    android:id="@+id/imageView6"
+                                    android:layout_width="45dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginStart="50dp"
+                                    android:layout_marginTop="25dp"
+                                    android:background="@drawable/ic_certificate" />
+
+                                <TextView
+                                    android:id="@+id/add_photo_txt"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="12dp"
+                                    android:layout_marginTop="32dp"
+                                    android:layout_weight="3"
+                                    android:fontFamily="@font/sfprotextregular"
+                                    android:text="Attach Certificate"
+                                    android:textColor="#594d77"
+                                    android:textSize="14sp"
+                                    tools:layout_editor_absoluteY="8dp" />
+
+                            </LinearLayout>
+
+                            <android.support.constraint.ConstraintLayout
+                                android:id="@+id/verified_sec"
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginEnd="0dp"
+                                android:paddingBottom="10dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <TextView
+                                    android:id="@+id/notes_txt2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/mulisemibold"
+                                    android:text="Note: Attach qualification certificate to verify yourself"
+                                    android:textAlignment="center"
+                                    android:textColor="#708190"
+                                    android:textSize="10sp"
+                                    android:textStyle="italic"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                            </android.support.constraint.ConstraintLayout>
+                        </LinearLayout>
+
+                        <FrameLayout
+                            android:id="@+id/blockInputViews"
+                            android:layout_width="match_parent"
+                            android:layout_height="320dp"
+                            android:background="#00FFFFFF"
+                            android:elevation="10dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                    </android.support.design.widget.CoordinatorLayout>
+                </LinearLayout>
+            </ScrollView>
+
+        </android.support.design.widget.CoordinatorLayout>
+    </LinearLayout>
+
+    <include layout="@layout/menu_bottom" />
+
+</RelativeLayout>

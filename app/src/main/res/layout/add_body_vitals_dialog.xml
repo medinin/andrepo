@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/coordinator"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:background="#000000"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/hide_popup"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="0dp"
+                android:src="@drawable/arrow_down_white" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="38dp"
+                android:orientation="vertical"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+
+
+                <LinearLayout
+                    android:id="@+id/user_sec_wrap"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/popup_corner_radius"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <!-- All content starts here-->
+                    <LinearLayout
+                        android:id="@+id/content_wrap"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="0dp"
+                        android:orientation="vertical">
+
+
+                        <!-- All content starts here-->
+                        <LinearLayout
+                            android:id="@+id/contWrap"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="30dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:id="@+id/SILinkWrap"
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="30dp"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/SITxt"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/sfprotextsemibold"
+                                        android:gravity="center"
+                                        android:text="S.I"
+                                        android:textColor="#8e63e6"
+                                        android:textSize="24sp"
+                                        android:textStyle="bold" />
+
+                                    <View
+                                        android:id="@+id/SIBarView"
+                                        android:layout_width="15dp"
+                                        android:layout_height="4dp"
+                                        android:background="@drawable/rounded_purple_bar" />
+
+                                </LinearLayout>
+
+
+                                <LinearLayout
+                                    android:id="@+id/CGSLinkWrap"
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/CGStxt"
+                                        android:layout_width="100dp"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/sfprotextsemibold"
+                                        android:gravity="center"
+                                        android:text="CGS"
+                                        android:textColor="#afbfc6"
+                                        android:textSize="24sp"
+                                        android:textStyle="bold" />
+
+                                    <View
+                                        android:id="@+id/CGSBarView"
+                                        android:layout_width="15dp"
+                                        android:layout_height="4dp"
+                                        android:background="@drawable/rounded_purple_bar"
+                                        android:visibility="gone" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="40dp"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentStart="true"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:background="@drawable/ic_body_weight" />
+
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="15dp"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/mulibold"
+                                            android:text="Body Weight"
+                                            android:textColor="#282f3f"
+                                            android:textSize="15sp"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:id="@+id/kg_txt"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/sfprotextregular"
+                                            android:text="Kg"
+                                            android:textColor="#88a1ac" />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:orientation="vertical">
+
+                                    <Spinner
+                                        android:id="@+id/weightInputSpinner"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="30dp"
+                                        android:background="#ffffff"
+                                        android:gravity="center" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="right"
+                                        android:layout_marginTop="-28dp" />
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="right"
+                                        android:layout_marginTop="-18dp"
+                                        android:src="@drawable/ic_arrow_drop_down_black" />
+                                </LinearLayout>
+
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="40dp"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentStart="true"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:background="@drawable/ic_heart_rate" />
+
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="15dp"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/mulibold"
+                                            android:text="Blood Pressure "
+                                            android:textColor="#282f3f"
+                                            android:textSize="15sp"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/sfprotextregular"
+                                            android:text="mmHg"
+                                            android:textColor="#88a1ac" />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="120dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:orientation="vertical">
+
+                                    <LinearLayout
+                                        android:layout_width="100dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentEnd="true"
+                                        android:orientation="horizontal">
+
+                                        <Spinner
+                                            android:id="@+id/bpHighSpinner"
+                                            android:layout_width="50dp"
+                                            android:layout_height="30dp"
+                                            android:background="#ffffff"
+                                            android:gravity="end" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="/"
+                                            android:textColor="#e6282f3f"
+                                            android:textSize="18sp" />
+
+                                        <Spinner
+                                            android:id="@+id/bpLowSpinner"
+                                            android:layout_width="50dp"
+                                            android:layout_height="30dp"
+                                            android:background="#ffffff" />
+
+                                    </LinearLayout>
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="right"
+                                        android:layout_marginTop="-28dp"
+                                        android:src="@drawable/ic_arrow_drop_down_black" />
+                                </LinearLayout>
+
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="40dp"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentStart="true"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="33dp"
+                                        android:layout_height="33dp"
+                                        android:background="@drawable/ic_body_temp" />
+
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="15dp"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/mulibold"
+                                            android:text="Temperature"
+                                            android:textColor="#282f3f"
+                                            android:textSize="15sp"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:id="@+id/degree_txt"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/sfprotextregular"
+                                            android:text="C º"
+                                            android:textColor="#88a1ac" />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:orientation="vertical">
+
+                                    <Spinner
+                                        android:id="@+id/tempInputSpinner"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="30dp"
+                                        android:background="#ffffff" />
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="right"
+                                        android:layout_marginTop="-28dp"
+                                        android:src="@drawable/ic_arrow_drop_down_black" />
+                                </LinearLayout>
+
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="40dp"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_marginStart="0dp"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:background="@drawable/ic_blood_pressure" />
+
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="15dp"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/mulibold"
+                                            android:text="Heart Rate"
+                                            android:textColor="#282f3f"
+                                            android:textSize="15sp"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/sfprotextregular"
+                                            android:text="bpm"
+                                            android:textColor="#88a1ac" />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:orientation="vertical">
+
+                                    <Spinner
+                                        android:id="@+id/pulseInputSpinner"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="30dp"
+                                        android:background="#ffffff" />
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="right"
+                                        android:layout_marginTop="-28dp"
+                                        android:src="@drawable/ic_arrow_drop_down_black" />
+                                </LinearLayout>
+
+
+                            </RelativeLayout>
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    <!-- All content ends here-->
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|start"
+            android:paddingBottom="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="#8e63e6"
+                    android:fontFamily="@font/sfprotextsemibold"
+                    android:gravity="center"
+                    android:onClick="postBodyVitals"
+                    android:text="SAVE"
+                    android:textColor="#ffffff"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+            </LinearLayout>
+        </FrameLayout>
+    </android.support.design.widget.CoordinatorLayout>
+</FrameLayout>

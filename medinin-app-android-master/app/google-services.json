@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1014575333077",
+    "firebase_url": "https://medinin-app-android.firebaseio.com",
+    "project_id": "medinin-app-android",
+    "storage_bucket": "medinin-app-android.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1014575333077:android:ac9a61a4a784ec70",
+        "android_client_info": {
+          "package_name": "com.medinin.medininapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1014575333077-aofmhpipkui2i8of9mcieidv81btie2d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.medinin.medininapp",
+            "certificate_hash": "f9d6b0062423cd195c07a78819fdc523b1ab3e48"
+          }
+        },
+        {
+          "client_id": "1014575333077-78ris73333bidhkueght4tgcf877gfbr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPulehYUolki7C8ffZOwmX2yvEyPs9NdE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1014575333077-78ris73333bidhkueght4tgcf877gfbr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

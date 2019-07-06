@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="290dp"
+    android:layout_height="wrap_content"
+    android:paddingStart="30dp"
+    android:paddingEnd="30dp"
+    android:background="@drawable/popup_border_radius">
+
+    <TextView
+        android:id="@+id/countDownTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/sfprotextmedium"
+        android:text="2:36"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.46"
+                android:fontFamily="@font/muliregular"
+                android:text=" Verification Needed :"
+                android:textColor="#273951"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/country_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/muliregular"
+                android:text=" +91"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/textView4"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/dialogMobileNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/country_code"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+        <EditText
+            android:id="@+id/otp_input_one"
+            style="@style/otp_input_style" />
+
+        <EditText
+            android:id="@+id/otp_input_two"
+            style="@style/otp_input_style" />
+
+        <EditText
+            android:id="@+id/otp_input_three"
+            style="@style/otp_input_style" />
+
+        <EditText
+            android:id="@+id/otp_input_four"
+            style="@style/otp_input_style"
+            android:layout_marginEnd="0dp" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/dialogSendOtp"
+        android:layout_width="75dp"
+        android:layout_height="30dp"
+        android:layout_margin="0dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:paddingTop="1dp"
+        android:text="SEND OTP"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="11sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dialogClose"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/blue_border_button"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/mulisemibold"
+        android:gravity="center"
+        android:paddingTop="1dp"
+        android:text="CLOSE"
+        android:textAlignment="center"
+        android:textColor="#8e63e6"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
+
+</android.support.constraint.ConstraintLayout>

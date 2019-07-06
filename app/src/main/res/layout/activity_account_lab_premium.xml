@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@drawable/bg_home"
+android:orientation="vertical"
+tools:context=".activities.AccountLabPremium">
+
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="130dp"
+    android:elevation="99dp">
+
+    <Button
+        android:id="@+id/BetaVersionBtn"
+        android:layout_width="199dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/beta_box"
+        android:fontFamily="@font/sfprotextsemibold"
+        android:paddingTop="14dp"
+        android:paddingBottom="16dp"
+        android:scaleType="fitCenter"
+        android:text="Beta Version"
+        android:textColor="#ffffff"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/MyPremiumBtn"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/btn_blue_gradient"
+        android:text="My Premium"
+        android:textColor="#ffffff"
+        android:visibility="gone" />
+
+</FrameLayout>
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="44dp"
+    android:layout_marginBottom="4dp"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/sfprotextmedium"
+        android:gravity="center_horizontal"
+        android:text="My Account"
+        android:textColor="@color/color_white"
+        android:textSize="20sp"
+        android:textStyle="normal" />
+
+</LinearLayout>
+
+<LinearLayout
+    android:id="@+id/mainWrap1"
+    style="@style/main_wrap_box"
+    android:orientation="vertical"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <!-- All content starts here-->
+
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cont_wrap"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ScrollView
+            android:id="@+id/feedScroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:elevation="0dp"
+            android:scrollbarThumbVertical="@drawable/scrollbar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/search_wrap">
+
+
+            <TableLayout
+                android:id="@+id/tableHead"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="0dp"
+                    android:background="@drawable/row_shape"
+                    android:paddingBottom="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/profile_card"
+                        style="@style/beta_doc_account_tbl_row_one">
+
+                        <ImageView
+                            android:layout_width="17.3dp"
+                            android:layout_height="18.9dp"
+                            android:layout_marginTop="30dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/ic_hospital" />
+
+                        <TextView
+                            style="@style/beta_doc_account_tbl_name"
+                            android:text="PROFILE" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/education_card"
+                        style="@style/beta_doc_account_tbl_row_one">
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_marginTop="30dp"
+                            android:layout_marginBottom="7dp"
+                            android:background="@drawable/ic_university_brown" />
+
+                        <TextView
+                            style="@style/beta_doc_account_tbl_name"
+                            android:text="EDUCATION" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/clinic_card"
+                        style="@style/beta_doc_account_tbl_row_one"
+                        android:background="#ffffff">
+
+                        <ImageView
+                            android:layout_width="15dp"
+                            android:layout_height="16.8dp"
+                            android:layout_marginTop="30dp"
+                            android:layout_marginBottom="7dp"
+                            android:background="@drawable/ic_lab" />
+
+                        <TextView
+                            style="@style/beta_doc_account_tbl_name"
+                            android:text="MY TESTS" />
+
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/row_shape"
+                    android:paddingBottom="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/conditions_card"
+                        style="@style/beta_doc_account_tbl_row">
+
+                        <ImageView
+                            android:layout_width="15.56dp"
+                            android:layout_height="17.79dp"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginBottom="7dp"
+                            android:background="@drawable/ic_condition_gray_img" />
+
+                        <TextView
+                            style="@style/beta_doc_account_tbl_name"
+                            android:text="CONDITIONS" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/forms_card"
+                        style="@style/beta_doc_account_tbl_row">
+
+                        <ImageView
+                            android:layout_width="15.5dp"
+                            android:layout_height="17.81dp"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginBottom="7dp"
+                            android:background="@drawable/ic_forms" />
+
+                        <TextView
+                            style="@style/beta_doc_account_tbl_name"
+                            android:text="FORMS" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/models_card"
+                        style="@style/beta_doc_account_tbl_row"
+                        android:background="#ffffff">
+
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginBottom="6dp"
+                            android:background="@drawable/ic_3d_icon" />
+
+                        <TextView
+                            style="@style/beta_doc_account_tbl_name"
+                            android:text="3D MODELS" />
+
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/row_shape"
+                    android:paddingBottom="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/scan_card"
+                        style="@style/beta_doc_account_tbl_row">
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="23dp"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/ic_nurse_brown" />
+
+                        <TextView
+                            style="@style/beta_doc_account_tbl_name"
+                            android:text="A.I SCAN" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/campaign_card"
+                        style="@style/beta_doc_account_tbl_row">
+
+                        <ImageView
+                            android:layout_width="19.05dp"
+                            android:layout_height="18.16dp"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginBottom="7dp"
+                            android:background="@drawable/ic_bullhorn" />
+
+                        <TextView
+                            style="@style/beta_doc_account_tbl_name"
+                            android:text="CAMPAIGN"
+                            android:textAllCaps="false" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/chat_card"
+                        style="@style/beta_doc_account_tbl_row"
+                        android:background="#ffffff">
+
+                        <ImageView
+                            android:layout_width="19dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginBottom="6dp"
+                            android:background="@drawable/ic_chat_icon" />
+
+                        <TextView
+                            style="@style/beta_doc_account_tbl_name"
+                            android:text="CHAT" />
+
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/row_shape"
+                    android:paddingBottom="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/analytics_card"
+                        style="@style/beta_doc_account_tbl_row">
+
+                        <ImageView
+                            android:layout_width="20.41dp"
+                            android:layout_height="15.31dp"
+                            android:layout_marginBottom="7dp"
+                            android:background="@drawable/ic_analytics" />
+
+                        <TextView
+                            style="@style/beta_doc_account_tbl_name"
+                            android:layout_marginTop="3dp"
+                            android:text="ANALYTICS" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/settings_card"
+                        style="@style/beta_doc_account_tbl_row">
+
+                        <ImageView
+                            android:layout_width="18.5dp"
+                            android:layout_height="18.5dp"
+                            android:layout_marginBottom="8dp"
+                            android:background="@drawable/ic_settings_icon" />
+
+                        <TextView
+                            style="@style/beta_doc_account_tbl_name"
+                            android:text="SETTINGS" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/feedback_card"
+                        style="@style/beta_doc_account_tbl_row"
+                        android:background="#ffffff"
+                        android:onClick="openFeedbackDialog">
+
+                        <Switch
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:theme="@style/switch_green" />
+
+                        <TextView
+                            style="@style/beta_doc_account_tbl_name"
+                            android:text="GO ONLINE"
+                            android:textColor="#88a1ac" />
+
+                    </LinearLayout>
+
+                </TableRow>
+
+                <LinearLayout
+                    android:id="@+id/list_wrap"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/patient_row"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="5dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:id="@+id/patient_img"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_marginTop="15dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/ic_lock_rounded" />
+
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginEnd="8dp"
+                            android:fontFamily="@font/sfprotextregular"
+                            android:text="256 bit Encryption"
+                            android:textColor="#b388a1ac"
+                            android:textSize="11sp"
+                            app:layout_constraintBottom_toTopOf="@+id/textView2"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/patient_img"
+                            app:layout_constraintVertical_chainStyle="spread_inside" />
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:fontFamily="@font/sfprotextregular"
+                            android:text="2.5 Gb of 5.0 Gb used"
+                            android:textAlignment="center"
+                            android:textColor="#88a1ac"
+                            android:textSize="11sp"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+                    </android.support.constraint.ConstraintLayout>
+
+                </LinearLayout>
+            </TableLayout>
+
+        </ScrollView>
+
+    </android.support.constraint.ConstraintLayout>
+
+
+    <!-- All content ends here-->
+</LinearLayout>
+
+
+<include layout="@layout/menu_bottom" />
+
+</RelativeLayout>

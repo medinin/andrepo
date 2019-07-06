@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.Pdf_viewer">
+
+    <RelativeLayout
+        android:id="@+id/pdfViewerWrap"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:visibility="visible">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/tv_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#80000000">
+
+            <TextView
+                android:id="@+id/pdf_name_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginEnd="8dp"
+                android:gravity="center"
+                android:text="PDF name"
+                android:textColor="#ffffff"
+                android:textSize="18dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/topSettingImgBtn"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_three_vertical_dots" />
+
+            <ImageView
+                android:id="@+id/topSettingImgBtn2"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_arrow_back_white" />
+
+
+        </android.support.constraint.ConstraintLayout>
+
+
+        <WebView
+
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tv_header" />
+
+        <FrameLayout
+            android:id="@+id/topSettingPopup"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/webView"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="top|right"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="16dp"
+            android:tag="0"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_shadow_corners"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingBottom="15dp">
+
+                <TextView
+                    android:id="@+id/printTxtBtn"
+                    android:layout_width="140dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/border_bottom"
+                    android:gravity="center"
+                    android:text="Print"
+                    android:textColor="#000"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/downloadTxtBtn"
+                    android:layout_width="140dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/border_bottom"
+                    android:gravity="center"
+                    android:text="Download"
+                    android:textColor="#000"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/shareTxtBtn"
+                    android:layout_width="140dp"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="@drawable/border_bottom"
+                    android:gravity="center"
+                    android:text="Share"
+                    android:textColor="#000"
+                    android:textSize="10sp" />
+            </LinearLayout>
+        </FrameLayout>
+
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

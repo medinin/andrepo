@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:focusableInTouchMode="true">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/coordinator"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:alpha="1"
+            android:background="#80000000 "
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/hide_popup"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="0dp"
+                android:src="@drawable/arrow_down_white" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="38dp"
+                android:orientation="vertical"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+
+                <LinearLayout
+                    android:id="@+id/user_sec_wrap"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/popup_corner_radius"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <!-- All content starts here-->
+                    <LinearLayout
+                        android:id="@+id/content_wrap"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="0dp"
+                        android:orientation="vertical">
+
+                        <!-- All content starts here-->
+                        <LinearLayout
+                            android:id="@+id/contWrap"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="130dp"
+                            android:orientation="vertical"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <LinearLayout
+                                android:id="@+id/search_wrap"
+                                android:layout_width="290dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:orientation="horizontal"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+
+                                <android.support.constraint.ConstraintLayout
+                                    android:id="@+id/icon_search"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                    <ImageView
+                                        android:id="@+id/map_img"
+                                        android:layout_width="16dp"
+                                        android:layout_height="17dp"
+                                        android:layout_marginStart="2dp"
+                                        android:layout_marginTop="30dp"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:srcCompat="@drawable/ic_search_icon_drug" />
+
+                                    <EditText
+                                        android:id="@+id/search_medicine_box"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="40dp"
+                                        android:layout_marginStart="30dp"
+                                        android:layout_marginTop="18dp"
+                                        android:layout_marginEnd="40dp"
+                                        android:layout_weight="1"
+                                        android:alpha=".5"
+                                        android:background="@null"
+                                        android:ems="10"
+                                        android:hint="​Search Drug"
+                                        android:inputType="text"
+                                        android:textColor="#8fa7b1"
+                                        android:textColorHint="#8FA7B1"
+                                        android:textSize="14sp"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <LinearLayout
+                                        android:id="@+id/medicineCameraBtnWrap"
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:layout_marginTop="17dp"
+                                        android:gravity="right|center_vertical"
+                                        android:visibility="visible"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent">
+
+                                        <ImageView
+                                            android:id="@+id/camera_img"
+                                            android:layout_width="16dp"
+                                            android:layout_height="14dp"
+                                            android:layout_marginTop="2dp"
+                                            android:layout_marginEnd="4dp"
+                                            android:background="@drawable/ic_cam_icon_prescription"
+                                            tools:visibility="visible" />
+                                    </LinearLayout>
+
+                                    <ImageView
+                                        android:id="@+id/closeSearchMedImg"
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:layout_gravity="right"
+                                        android:layout_marginTop="17dp"
+                                        android:elevation="11dp"
+                                        android:paddingStart="10dp"
+                                        android:paddingTop="14dp"
+                                        android:paddingBottom="12dp"
+                                        android:src="@drawable/ic_search_close_shape"
+                                        android:visibility="gone"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                </android.support.constraint.ConstraintLayout>
+
+                            </LinearLayout>
+
+                            <android.support.v4.widget.NestedScrollView
+                                android:id="@+id/medicineScrollView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:elevation="0dp"
+                                android:paddingBottom="10dp"
+                                android:scrollbarThumbVertical="@drawable/scrollbar">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:paddingBottom="20dp">
+
+                                    <LinearLayout
+                                        android:id="@+id/medicineListWrap"
+                                        android:layout_width="310dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_horizontal"
+                                        android:layout_marginTop="12dp"
+                                        android:orientation="vertical">
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/plus_wrap"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="25dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginEnd="25dp"
+                                        android:gravity="center"
+                                        android:orientation="horizontal"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent">
+
+                                        <LinearLayout
+                                            android:id="@+id/addMedicineCardBtn"
+                                            android:layout_width="45dp"
+                                            android:layout_height="45dp"
+                                            android:background="@drawable/ic_round_plus_prescription"
+                                            android:gravity="center"
+                                            android:paddingBottom="2dp"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent">
+
+                                            <TextView
+                                                android:id="@+id/plus3_txt"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:textAlignment="center"
+                                                android:textColor="#fff"
+                                                android:textSize="36sp"
+                                                android:textStyle="bold" />
+
+                                        </LinearLayout>
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+                            </android.support.v4.widget.NestedScrollView>
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    <!-- All content ends here-->
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|start"
+            android:paddingBottom="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/follow_up_wrap"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingStart="24dp"
+                    android:paddingEnd="24dp"
+                    app:layout_constraintBottom_toTopOf="@+id/btn_wrap"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/follow_up_sec"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="1dp"
+                        android:paddingEnd="40dp"
+                        android:paddingBottom="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/smsTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/mulibold"
+                            android:text="Follow Up SMS :"
+                            android:textColor="#000000"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <EditText
+                            android:id="@+id/followUpDateInput"
+                            android:layout_width="116.4dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/input_date_border_prescription"
+                            android:focusable="false"
+                            android:fontFamily="@font/sfprotextregular"
+                            android:hint="Date"
+                            android:inputType="none"
+                            android:text=""
+                            android:textColor="#000000"
+                            android:textColorHint="#000000"
+                            android:textCursorDrawable="@drawable/cursor_black"
+                            android:textSize="14sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/smsTxt" />
+
+                        <ImageView
+                            android:layout_width="7dp"
+                            android:layout_height="12dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="10dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/followUpDateInput"
+                            app:layout_constraintEnd_toEndOf="@+id/followUpDateInput"
+                            app:srcCompat="@drawable/ic_small_arrow_down" />
+
+                    </android.support.constraint.ConstraintLayout>
+
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/notes_sec"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="0dp"
+                        android:background="@drawable/box_cornered_prescription"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <EditText
+                            android:id="@+id/presNoteInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/transparent"
+                            android:fontFamily="@font/mulisemibold"
+                            android:hint="Notes"
+                            android:padding="10dp"
+                            android:paddingStart="18dp"
+                            android:textColor="#708190"
+                            android:textColorHint="#B3708190"
+                            android:textSize="12sp"
+                            android:textStyle="italic"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </android.support.constraint.ConstraintLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/btn_wrap"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="0dp"
+                    android:visibility="visible"
+                    android:weightSum="2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <TextView
+                        android:id="@+id/print_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:background="#f3f5f6"
+                        android:fontFamily="@font/sfprotextsemibold"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:tag="true"
+                        android:text="PRINT"
+                        android:textColor="#C834353E"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/savePresDialogBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:background="#8e63e6"
+                        android:fontFamily="@font/sfprotextsemibold"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:onClick="postPrescription"
+                        android:tag="true"
+                        android:text="SAVE"
+                        android:textColor="#ffffff"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/updatePresDialogTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:background="#8e63e6"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:tag="true"
+                        android:text="UPDATE"
+                        android:textColor="#80FFFFFF"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/updatePresDialogBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:background="#8e63e6"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:onClick="updatePresMedicine"
+                        android:tag="true"
+                        android:text="UPDATE"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/medicine_autocomplete_popup"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#00ffffff"
+            android:elevation="10.0dip"
+            android:focusable="true"
+            android:tag="0"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <View
+                android:id="@+id/closeSearchPopupMedView"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="120dp"
+                android:layout_marginTop="62dp"
+                android:elevation="20.0dip"
+                android:paddingStart="10dp"
+                android:paddingTop="14dp"
+                android:paddingBottom="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <FrameLayout
+                android:layout_width="290dp"
+                android:layout_height="200.0dip"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="110.0dip"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/search_box_dropdown_shadow"
+                android:elevation="20.0dip"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/total_medicine"
+                        style="@style/search_dropdown_items_txt"
+                        android:text="Found 0 results"
+                        android:textColor="#66282f3f"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ListView
+                        android:id="@+id/medicine_list"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:divider="@null" />
+                </LinearLayout>
+            </FrameLayout>
+        </FrameLayout>
+    </android.support.design.widget.CoordinatorLayout>
+</FrameLayout>

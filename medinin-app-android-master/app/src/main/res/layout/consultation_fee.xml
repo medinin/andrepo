@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="290dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/white_bg_radius"
+    android:orientation="horizontal"
+    android:paddingStart="30dp"
+    android:paddingTop="30dp"
+    android:paddingEnd="30dp"
+    android:paddingBottom="30dp">
+
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/consultationFee"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayout5"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_weight="3"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/currancyINput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="3dp"
+                android:fontFamily="@font/muliregular"
+                android:text="Currency"
+                android:textColor="#88a1ac"
+                android:textSize="16sp" />
+
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/expSec"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_bottom"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/clinic_txt1">
+
+                <Spinner
+                    android:id="@+id/currancySpinner"
+                    style="@style/input_bottom_border_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:background="@color/transparent"
+                    android:hint="₹"
+                    android:inputType="text"
+                    android:textAlignment="center"
+                    android:textColor="#282f3f"
+                    android:textColorHint="#282f3f"
+
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </android.support.constraint.ConstraintLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="-28dp"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/ic_arrow_drop_down_black" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="96dp"
+            android:layout_weight="7"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="3dp"
+                android:fontFamily="@font/muliregular"
+                android:text="Consultation Fee"
+                android:textColor="#88a1ac"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/consultationFeeInput"
+                style="@style/input_bottom_border_style"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:inputType="number" />
+
+        </LinearLayout>
+
+
+    </android.support.design.widget.CoordinatorLayout>
+
+
+    <TextView
+        android:id="@+id/doneBtn"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/blue_border_button"
+        android:fontFamily="@font/mulisemibold"
+        android:gravity="center_horizontal|center_vertical"
+        android:tag="true"
+        android:text="Done"
+        android:textColor="#8e63e6"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/consultationFee" />
+
+</android.support.constraint.ConstraintLayout>

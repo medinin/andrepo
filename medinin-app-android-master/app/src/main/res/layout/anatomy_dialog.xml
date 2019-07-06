@@ -1,0 +1,742 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/anatomy_bottom_sheet"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#00000000"
+    android:orientation="vertical"
+    app:behavior_hideable="false"
+    app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/coordinator"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#00000000"
+        android:fitsSystemWindows="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:background="#00000000"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/hide_popup"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="0dp"
+                android:clickable="true"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/arrow_down_white"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="38dp"
+                android:orientation="vertical"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+
+
+                <LinearLayout
+                    android:id="@+id/user_sec_wrap"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/popup_corner_radius"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="UselessParent">
+
+                    <LinearLayout
+                        android:id="@+id/screenWrap"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <LinearLayout
+                            android:id="@+id/snapButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            android:clickable="true"
+                            android:gravity="center_horizontal">
+
+                            <android.support.constraint.ConstraintLayout
+                                android:layout_width="49dp"
+                                android:layout_height="6dp"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="14dp"
+                                android:background="@drawable/ic_top_bar">
+
+                            </android.support.constraint.ConstraintLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/progressbar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:visibility="gone"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <android.support.constraint.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <SeekBar
+                                    android:id="@+id/seek_bar"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="40dp"
+                                    android:layout_marginEnd="40dp"
+                                    android:layout_marginBottom="8dp"
+                                    android:progressDrawable="@drawable/seek_bar"
+                                    android:progressTint="#8e63e6"
+                                    android:thumb="@drawable/seek_thumb"
+                                    android:thumbTint="#e0eaf2"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                            </android.support.constraint.ConstraintLayout>
+
+                        </LinearLayout>
+
+                        <android.support.v4.widget.NestedScrollView
+                            android:id="@+id/feedScroll"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:elevation="0dp"
+                            android:paddingBottom="10dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/search_wrap">
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutList"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginEnd="0dp"
+                                android:orientation="vertical"
+                                android:paddingLeft="25dp"
+                                android:paddingRight="25dp"
+                                android:paddingBottom="130dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="40dp"
+                                    android:baselineAligned="false"
+                                    android:orientation="horizontal"
+                                    android:weightSum="3">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="70dp"
+                                        android:layout_weight="1"
+                                        tools:ignore="TooDeepLayout">
+
+                                        <ImageView
+                                            android:id="@+id/modelHead"
+                                            android:layout_width="38dp"
+                                            android:layout_height="49dp"
+                                            android:contentDescription="@string/todo"
+                                            android:scaleType="fitXY"
+                                            android:src="@drawable/ic_brain_on_head"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+                                    </android.support.constraint.ConstraintLayout>
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="70dp"
+                                        android:layout_weight="1">
+
+                                        <ImageView
+                                            android:id="@+id/modelTorsoUp"
+                                            android:layout_width="45dp"
+                                            android:layout_height="45dp"
+                                            android:contentDescription="@string/todo"
+                                            android:scaleType="fitXY"
+                                            android:src="@drawable/ic_men_torso"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+                                    </android.support.constraint.ConstraintLayout>
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="70dp"
+                                        android:layout_weight="1">
+
+                                        <ImageView
+                                            android:id="@+id/modelTorso"
+                                            android:layout_width="32dp"
+                                            android:layout_height="49dp"
+                                            android:contentDescription="@string/todo"
+                                            android:scaleType="fitXY"
+                                            android:src="@drawable/ic_groin"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+                                    </android.support.constraint.ConstraintLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="25dp"
+                                    android:baselineAligned="false"
+                                    android:orientation="horizontal"
+                                    android:weightSum="3">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="70dp"
+                                        android:layout_weight="1">
+
+                                        <ImageView
+                                            android:id="@+id/modelBrain"
+                                            android:layout_width="42dp"
+                                            android:layout_height="45dp"
+                                            android:contentDescription="@string/todo"
+                                            android:scaleType="fitXY"
+                                            android:src="@drawable/ic_brain_cenit_view"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+                                    </android.support.constraint.ConstraintLayout>
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="70dp"
+                                        android:layout_weight="1">
+
+                                        <ImageView
+                                            android:id="@+id/modelLungs"
+                                            android:layout_width="47dp"
+                                            android:layout_height="45dp"
+                                            android:contentDescription="@string/todo"
+                                            android:scaleType="fitXY"
+                                            android:src="@drawable/ic_lungs_with_bronchi"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+                                    </android.support.constraint.ConstraintLayout>
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="70dp"
+                                        android:layout_weight="1">
+
+                                        <ImageView
+                                            android:id="@+id/modelFemaleUrinary"
+                                            android:layout_width="62dp"
+                                            android:layout_height="43dp"
+                                            android:contentDescription="@string/todo"
+                                            android:scaleType="fitXY"
+                                            android:src="@drawable/ic_female_reproduction_system"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+                                    </android.support.constraint.ConstraintLayout>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="25dp"
+                                    android:baselineAligned="false"
+                                    android:weightSum="3">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="70dp"
+                                        android:layout_weight="1">
+
+                                        <ImageView
+                                            android:id="@+id/modelEye"
+                                            android:layout_width="58dp"
+                                            android:layout_height="42dp"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/todo"
+                                            android:scaleType="fitXY"
+                                            android:src="@drawable/ic_ophthalmology"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+                                    </android.support.constraint.ConstraintLayout>
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="70dp"
+                                        android:layout_weight="1">
+
+                                        <ImageView
+                                            android:id="@+id/modelHeart"
+                                            android:layout_width="36dp"
+                                            android:layout_height="45dp"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/todo"
+                                            android:scaleType="fitXY"
+                                            android:src="@drawable/ic_anatomic_heart"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+                                    </android.support.constraint.ConstraintLayout>
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="70dp"
+                                        android:layout_weight="1">
+
+                                        <ImageView
+                                            android:id="@+id/modelDigestive"
+                                            android:layout_width="47dp"
+                                            android:layout_height="44dp"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/todo"
+                                            android:scaleType="fitXY"
+                                            android:src="@drawable/ic_big_intestines"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+                                    </android.support.constraint.ConstraintLayout>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="25dp"
+                                    android:baselineAligned="false"
+                                    android:orientation="horizontal"
+                                    android:weightSum="3">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="70dp"
+                                        android:layout_weight="1">
+
+                                        <ImageView
+                                            android:id="@+id/modelTeeth"
+                                            android:layout_width="40dp"
+                                            android:layout_height="39dp"
+                                            android:contentDescription="@string/todo"
+                                            android:scaleType="fitXY"
+                                            android:src="@drawable/ic_big_tooth"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+                                    </android.support.constraint.ConstraintLayout>
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="70dp"
+                                        android:layout_weight="1">
+
+                                        <ImageView
+                                            android:id="@+id/modelKidney"
+                                            android:layout_width="63.6dp"
+                                            android:layout_height="38dp"
+                                            android:contentDescription="@string/todo"
+                                            android:scaleType="fitXY"
+                                            android:src="@drawable/ic_shape"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+                                    </android.support.constraint.ConstraintLayout>
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="70dp"
+                                        android:layout_weight="1">
+
+                                        <ImageView
+                                            android:id="@+id/modelBladder"
+                                            android:layout_width="49.8dp"
+                                            android:layout_height="38.3dp"
+                                            android:contentDescription="@string/todo"
+                                            android:scaleType="fitXY"
+                                            android:src="@drawable/ic_urinary_bladder"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+                                    </android.support.constraint.ConstraintLayout>
+                                </LinearLayout>
+
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="25dp"
+                                    android:baselineAligned="false"
+                                    android:orientation="horizontal"
+                                    android:weightSum="3">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="70dp"
+                                        android:layout_weight="1">
+
+                                        <ImageView
+                                            android:id="@+id/modelMouth"
+                                            android:layout_width="45.4dp"
+                                            android:layout_height="44.7dp"
+                                            android:contentDescription="@string/todo"
+                                            android:scaleType="fitXY"
+                                            android:src="@drawable/ic_open_mouth"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+                                    </android.support.constraint.ConstraintLayout>
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="70dp"
+                                        android:layout_weight="1">
+
+                                        <ImageView
+                                            android:id="@+id/imageView36"
+                                            android:layout_width="43dp"
+                                            android:layout_height="49dp"
+                                            android:contentDescription="@string/todo"
+                                            android:scaleType="fitXY"
+                                            android:src="@drawable/ic_full_stomach"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+                                    </android.support.constraint.ConstraintLayout>
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="70dp"
+                                        android:layout_weight="1">
+
+                                        <ImageView
+                                            android:id="@+id/modelUrinary"
+                                            android:layout_width="39.4dp"
+                                            android:layout_height="43.4dp"
+                                            android:contentDescription="@string/todo"
+                                            android:scaleType="fitXY"
+                                            android:src="@drawable/ic_noun_penis_583593"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+                                    </android.support.constraint.ConstraintLayout>
+                                </LinearLayout>
+
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginTop="25dp"
+                                    android:baselineAligned="false"
+                                    android:orientation="horizontal"
+                                    android:weightSum="3">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="70dp"
+                                        android:layout_weight="1">
+
+                                        <ImageView
+                                            android:id="@+id/modelHair"
+                                            android:layout_width="42.2dp"
+                                            android:layout_height="39.9dp"
+                                            android:contentDescription="@string/todo"
+                                            android:scaleType="fitXY"
+                                            android:src="@drawable/ic_men_hair"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+                                    </android.support.constraint.ConstraintLayout>
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="70dp"
+                                        android:layout_weight="1">
+
+                                        <ImageView
+                                            android:id="@+id/modelBreast"
+                                            android:layout_width="27.9dp"
+                                            android:layout_height="44.7dp"
+                                            android:contentDescription="@string/todo"
+                                            android:scaleType="fitXY"
+                                            android:src="@drawable/ic_woman_breast"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+                                    </android.support.constraint.ConstraintLayout>
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="70dp"
+                                        android:layout_weight="1">
+
+                                        <ImageView
+                                            android:layout_width="27.6dp"
+                                            android:layout_height="44.8dp"
+                                            android:contentDescription="@string/todo"
+                                            android:scaleType="fitXY"
+                                            android:src="@drawable/ic_pregnant_woman"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+                                    </android.support.constraint.ConstraintLayout>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginTop="25dp"
+                                    android:baselineAligned="false"
+                                    android:orientation="horizontal"
+                                    android:weightSum="3">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="70dp"
+                                        android:layout_weight="1">
+
+                                        <ImageView
+                                            android:id="@+id/modelNose"
+                                            android:layout_width="30.9dp"
+                                            android:layout_height="44.9dp"
+                                            android:contentDescription="@string/todo"
+                                            android:scaleType="fitXY"
+                                            android:src="@drawable/ic_big_nose"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+                                    </android.support.constraint.ConstraintLayout>
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="70dp"
+                                        android:layout_weight="1">
+
+                                        <ImageView
+                                            android:id="@+id/modelHand"
+                                            android:layout_width="34.6dp"
+                                            android:layout_height="44.9dp"
+                                            android:contentDescription="@string/todo"
+                                            android:scaleType="fitXY"
+                                            android:src="@drawable/ic_biceps"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+                                    </android.support.constraint.ConstraintLayout>
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="70dp"
+                                        android:layout_weight="1">
+
+                                        <ImageView
+                                            android:id="@+id/modelLeg"
+                                            android:layout_width="44.9dp"
+                                            android:layout_height="41.9dp"
+                                            android:contentDescription="@string/todo"
+                                            android:scaleType="fitXY"
+                                            android:src="@drawable/ic_vended_knee"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+                                    </android.support.constraint.ConstraintLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginTop="25dp"
+                                    android:baselineAligned="false"
+                                    android:orientation="horizontal"
+                                    android:weightSum="3">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="70dp"
+                                        android:layout_weight="1">
+
+                                        <ImageView
+                                            android:id="@+id/modelSkull"
+                                            android:layout_width="38.2dp"
+                                            android:layout_height="49dp"
+                                            android:contentDescription="@string/todo"
+                                            android:scaleType="fitXY"
+                                            android:src="@drawable/ic_big_skull"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+                                    </android.support.constraint.ConstraintLayout>
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="70dp"
+                                        android:layout_weight="1">
+
+                                        <ImageView
+                                            android:id="@+id/modelSpinal"
+                                            android:layout_width="26.4dp"
+                                            android:layout_height="48.5dp"
+                                            android:contentDescription="@string/todo"
+                                            android:scaleType="fitXY"
+                                            android:src="@drawable/ic_spinal_bones"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+                                    </android.support.constraint.ConstraintLayout>
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="70dp"
+                                        android:layout_weight="1">
+
+                                        <ImageView
+                                            android:layout_width="34.7dp"
+                                            android:layout_height="46.9dp"
+                                            android:contentDescription="@string/todo"
+                                            android:scaleType="fitXY"
+                                            android:src="@drawable/ic_knee_bones"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+                                    </android.support.constraint.ConstraintLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginTop="25dp"
+                                    android:baselineAligned="false"
+                                    android:orientation="horizontal"
+                                    android:weightSum="3">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="70dp"
+                                        android:layout_weight="1">
+
+                                        <ImageView
+                                            android:id="@+id/modelPelvis"
+                                            android:layout_width="49.1dp"
+                                            android:layout_height="44.8dp"
+                                            android:contentDescription="@string/todo"
+                                            android:scaleType="fitXY"
+                                            android:src="@drawable/ic_hip_bone"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+                                    </android.support.constraint.ConstraintLayout>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginTop="40dp"
+                                    android:baselineAligned="false"
+                                    android:orientation="horizontal">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="70dp"
+                                        android:background="@drawable/box_cornered">
+
+
+                                        <EditText
+                                            android:id="@+id/feedback_txt"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="51dp"
+                                            android:layout_marginStart="24dp"
+                                            android:layout_marginTop="8dp"
+                                            android:layout_marginEnd="45dp"
+                                            android:background="@color/transparent"
+                                            android:fontFamily="@font/mulisemibold"
+                                            android:hint="​Tell us what model you want, we will try to add them."
+                                            android:textColor="#708190"
+                                            android:textColorHint="#AFBFC6"
+                                            android:textSize="12dp"
+                                            android:textStyle="italic"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            app:layout_constraintVertical_bias="0.0" />
+
+
+                                        <ImageView
+                                            android:id="@+id/sendGray1"
+                                            android:layout_width="25dp"
+                                            android:layout_height="25dp"
+                                            android:layout_marginTop="20dp"
+                                            android:layout_marginEnd="13dp"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            app:srcCompat="@drawable/ic_rocket" />
+
+                                        <ImageView
+                                            android:id="@+id/sendBtn1"
+                                            android:layout_width="25dp"
+                                            android:layout_height="25dp"
+                                            android:layout_marginTop="20dp"
+                                            android:layout_marginEnd="13dp"
+                                            android:background="@drawable/ic_rocket_purple"
+                                            android:visibility="gone"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                    </android.support.constraint.ConstraintLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+                        </android.support.v4.widget.NestedScrollView>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </android.support.design.widget.CoordinatorLayout>
+</LinearLayout>

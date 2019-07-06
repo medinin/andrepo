@@ -1,0 +1,1025 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/coordinator"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:background="#000000"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/hide_popup"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="0dp"
+                android:src="@drawable/arrow_down_white" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="38dp"
+                android:orientation="vertical"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+
+
+                <LinearLayout
+                    android:id="@+id/user_sec_wrap"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/popup_corner_radius"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <!-- All content starts here-->
+                    <LinearLayout
+                        android:id="@+id/content_wrap"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="0dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/faceTmpImageHolder"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:visibility="gone" />
+
+                        <LinearLayout
+                            android:id="@+id/tabNavWrap"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingTop="13dp"
+                            android:paddingBottom="11dp">
+
+                            <LinearLayout
+                                android:layout_width="120dp"
+                                android:layout_height="40dp"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/glFSTabLink"
+                                    style="@style/new_tab_links"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="35dp"
+                                    android:layout_marginStart="0dp"
+                                    android:foregroundGravity="center"
+                                    android:paddingBottom="5dp"
+                                    android:src="@drawable/facial_recognition_purple_tab_link"
+                                    android:textAlignment="center"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/glFSTabLinkBr"
+                                    android:layout_width="20dp"
+                                    android:layout_height="3dp"
+                                    android:layout_gravity="center"
+                                    android:background="@drawable/rounded_purple_bar"
+                                    android:visibility="visible" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="120dp"
+                                android:layout_height="40dp"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/glFSDetailTabLink"
+                                    style="@style/new_tab_links"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="35dp"
+                                    android:layout_marginStart="0dp"
+                                    android:paddingTop="2dp"
+                                    android:paddingBottom="6dp"
+                                    android:src="@drawable/ic_notes_icon"
+                                    android:textAlignment="center" />
+
+                                <TextView
+                                    android:id="@+id/glFSDetailTabLinkBar"
+                                    android:layout_width="20dp"
+                                    android:layout_height="3dp"
+                                    android:layout_gravity="center"
+                                    android:background="@drawable/rounded_purple_bar"
+                                    android:visibility="gone" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/gl_scan_wrap"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#000"
+                            android:orientation="vertical"
+                            android:visibility="visible">
+
+                            <com.medinin.medininapp.camera.CameraSourcePreview
+                                android:id="@+id/preview"
+                                android:layout_width="match_parent"
+                                android:layout_height="320dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <com.medinin.medininapp.camera.GraphicOverlay
+                                    android:id="@+id/faceOverlay"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+
+                            </com.medinin.medininapp.camera.CameraSourcePreview>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/gl_pat_details_wrap"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center|center_horizontal|center_vertical"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <LinearLayout
+                                android:id="@+id/pat_cont_wrap"
+                                android:layout_width="290dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:orientation="vertical"
+                                android:visibility="visible">
+
+                                <android.support.constraint.ConstraintLayout
+                                    android:id="@+id/basicDetailSec"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/pat_row_border_bottom"
+                                    android:elevation="1dp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                    <LinearLayout
+                                        android:id="@+id/dropDownBtn"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="50dp"
+                                        android:orientation="horizontal"
+                                        android:paddingBottom="10dp"
+                                        android:tag="0"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent">
+
+                                        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                                            android:id="@+id/glFSPatientImg"
+                                            android:layout_width="40dp"
+                                            android:layout_height="40dp"
+                                            android:layout_marginStart="8dp"
+                                            android:layout_marginTop="20dp"
+                                            android:src="@drawable/male_user"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/glFS_patient_name_txt"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="14dp"
+                                            android:layout_marginTop="29dp"
+                                            android:fontFamily="@font/mulisemibold"
+                                            android:text=""
+                                            android:textColor="#282f3f"
+                                            android:textSize="16sp"
+                                            app:layout_constraintStart_toEndOf="@+id/patientImg"
+                                            app:layout_constraintTop_toTopOf="parent" />
+                                    </LinearLayout>
+
+                                    <ImageView
+                                        android:id="@+id/glFSViewPatDetailsImgBtn"
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:layout_marginTop="21dp"
+                                        android:padding="8dp"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:srcCompat="@drawable/ic_arrow_right_thin" />
+                                </android.support.constraint.ConstraintLayout>
+
+
+                                <android.support.constraint.ConstraintLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/border_radius"
+                                    android:elevation="0dp"
+                                    android:gravity="center"
+                                    android:orientation="horizontal"
+                                    android:paddingTop="10dp"
+                                    android:paddingBottom="10dp"
+                                    android:visibility="visible"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/basicDetailSec">
+
+                                    <LinearLayout
+                                        android:id="@+id/linearLayout8"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent">
+
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:paddingTop="5dp">
+
+                                            <TextView
+                                                android:id="@+id/type_details_txt"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginStart="16dp"
+                                                android:text="DOB"
+                                                android:textColor="#74273951"
+                                                android:textSize="13sp" />
+
+                                            <TextView
+                                                android:id="@+id/glFSPatDOBTxt"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginStart="17dp"
+                                                android:layout_marginEnd="2dp"
+                                                android:fontFamily="@font/mulisemibold"
+                                                android:textAllCaps="true"
+                                                android:textColor="#000"
+                                                android:textSize="13sp" />
+
+                                            <TextView
+                                                android:id="@+id/glFSPatAgeSmallTxt"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:fontFamily="@font/mulisemibold"
+                                                android:text="1234"
+                                                android:textColor="#000"
+                                                android:textSize="13sp"
+                                                android:visibility="gone" />
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:id="@+id/ageWrap"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:paddingTop="5dp">
+
+                                            <TextView
+                                                android:id="@+id/pack_detail_txt2"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginStart="16dp"
+                                                android:text="AGE"
+                                                android:textColor="#74273951"
+                                                android:textSize="13sp" />
+
+                                            <TextView
+                                                android:id="@+id/glFSPatAgeTxt"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginStart="20dp"
+                                                android:fontFamily="@font/mulisemibold"
+                                                android:text=""
+                                                android:textColor="#000"
+                                                android:textSize="13sp" />
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:id="@+id/rbcWrap"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:paddingTop="5dp"
+                                            android:visibility="gone">
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginStart="16dp"
+                                                android:text="RBC"
+                                                android:textColor="#74273951"
+                                                android:textSize="13sp" />
+
+                                            <TextView
+                                                android:id="@+id/glFSPatRBCTxt"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginStart="18dp"
+                                                android:fontFamily="@font/mulisemibold"
+                                                android:text=""
+                                                android:textColor="#000"
+                                                android:textSize="13sp" />
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:paddingTop="5dp">
+
+                                            <TextView
+                                                android:id="@+id/pack_detail_txt3"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginStart="16dp"
+                                                android:text="GEN"
+                                                android:textColor="#74273951"
+                                                android:textSize="13sp" />
+
+                                            <TextView
+                                                android:id="@+id/glFSPatGenderTxt"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginStart="18dp"
+                                                android:fontFamily="@font/mulisemibold"
+                                                android:text="MALE"
+                                                android:textAllCaps="true"
+                                                android:textColor="#000"
+                                                android:textSize="13sp" />
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:paddingTop="5dp">
+
+                                            <TextView
+                                                android:id="@+id/pack_detail_txt10"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginStart="16dp"
+                                                android:text="PHN"
+                                                android:textColor="#74273951"
+                                                android:textSize="13sp" />
+
+                                            <TextView
+                                                android:id="@+id/countryCode"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginStart="18dp"
+                                                android:background="@drawable/mobile_border_bottom"
+                                                android:text="+91"
+                                                android:textColor="#000"
+                                                android:textSize="13sp" />
+
+                                            <TextView
+                                                android:id="@+id/glFSPatMobileTxt"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginBottom="-2dp"
+                                                android:background="@drawable/mobile_border_bottom"
+                                                android:fontFamily="@font/mulisemibold"
+                                                android:onClick="openCallDialog"
+                                                android:paddingStart="2dp"
+                                                android:textColor="#000"
+                                                android:textSize="13sp" />
+                                        </LinearLayout>
+
+                                    </LinearLayout>
+
+
+                                    <TextView
+                                        android:id="@+id/glFSLastVisitDateTxt"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="16dp"
+                                        android:layout_marginTop="36dp"
+                                        android:layout_marginBottom="5dp"
+                                        android:text="​Last Visit"
+                                        android:textColor="#65273951"
+                                        android:textSize="11sp"
+                                        android:textStyle="italic"
+                                        android:visibility="gone"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/linearLayout8" />
+
+
+                                    <TextView
+                                        android:id="@+id/glFSVerifyOtpTxt"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="16dp"
+                                        android:layout_marginTop="35dp"
+                                        android:layout_marginBottom="5dp"
+                                        android:text="​Verify with OTP to accept patien’s profile"
+                                        android:textColor="#65273951"
+                                        android:textSize="11sp"
+                                        android:textStyle="italic"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/linearLayout8" />
+
+                                    <ImageView
+                                        android:id="@+id/glFSDeleteImgBtn"
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:layout_marginEnd="16dp"
+                                        android:padding="6dp"
+                                        android:visibility="gone"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:srcCompat="@drawable/ic_trash_icon" />
+
+                                    <ImageView
+                                        android:id="@+id/glFSEditProfileImgBtn"
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:layout_marginEnd="18dp"
+                                        android:layout_marginBottom="1dp"
+                                        android:padding="5dp"
+                                        android:visibility="gone"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:srcCompat="@drawable/ic_edit_dark_gray_icon" />
+                                </android.support.constraint.ConstraintLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/otpInputWrap"
+                                android:layout_width="290dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:gravity="center|center_horizontal|center_vertical"
+                                android:orientation="horizontal"
+                                android:paddingBottom="30dp"
+                                android:visibility="gone"
+                                android:weightSum="2"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/user_sec_wrap"
+                                app:srcCompat="@drawable/border_bottom">
+
+                                <LinearLayout
+                                    android:layout_width="290dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="0dp"
+                                    android:orientation="vertical"
+                                    android:weightSum="2"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:id="@+id/get_otp_txt"
+                                            style="@style/new_label_style"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="0dp"
+                                            android:layout_marginTop="8dp"
+                                            android:layout_marginEnd="0dp"
+                                            android:fontFamily="@font/sfprotextregular"
+                                            android:text="4-Digit OTP"
+                                            android:textColor="#88a1ac"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                                        <TextView
+                                            android:id="@+id/countDownTxt"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="8dp"
+                                            android:layout_marginEnd="0dp"
+                                            android:layout_marginRight="16dp"
+                                            android:fontFamily="@font/sfprotextmedium"
+                                            android:text="2:36"
+                                            android:textAlignment="textEnd"
+                                            android:textColor="#282f3f"
+                                            android:textSize="12sp"
+                                            app:layout_constraintEnd_toEndOf="parent" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/otp_inputSec"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="0dp"
+                                        android:layout_marginTop="8dp"
+                                        android:layout_marginEnd="0dp"
+                                        android:orientation="horizontal"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/get_otp_txt">
+
+                                        <LinearLayout
+                                            android:layout_width="65dp"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="vertical">
+
+                                            <EditText
+                                                android:id="@+id/otpInputOne"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="40dp"
+                                                android:layout_marginTop="2dp"
+                                                android:background="@color/transparent"
+                                                android:inputType="number"
+                                                android:maxLength="1"
+                                                android:textAlignment="center"
+                                                android:textColor="#282f3f"
+                                                android:textSize="22sp"
+                                                app:layout_constraintStart_toStartOf="parent"
+                                                app:layout_constraintTop_toTopOf="parent" />
+
+                                            <View
+                                                android:layout_width="match_parent"
+                                                android:layout_height="4dp"
+                                                android:layout_marginTop="2dp"
+                                                android:background="@drawable/input_otp_bottom_color" />
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="65dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:orientation="vertical">
+
+                                            <EditText
+                                                android:id="@+id/otpInputTwo"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="40dp"
+                                                android:layout_marginTop="2dp"
+                                                android:background="@color/transparent"
+                                                android:inputType="number"
+                                                android:maxLength="1"
+                                                android:textAlignment="center"
+                                                android:textColor="#282f3f"
+                                                android:textSize="22sp"
+                                                app:layout_constraintStart_toEndOf="@+id/otpNumberInputOne"
+                                                app:layout_constraintTop_toTopOf="parent" />
+
+                                            <View
+                                                android:layout_width="match_parent"
+                                                android:layout_height="4dp"
+                                                android:layout_marginTop="2dp"
+                                                android:background="@drawable/input_otp_bottom_color" />
+
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="65dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:orientation="vertical">
+
+                                            <EditText
+                                                android:id="@+id/otpInputThree"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="40dp"
+                                                android:layout_marginTop="2dp"
+                                                android:background="@color/transparent"
+                                                android:inputType="number"
+                                                android:maxLength="1"
+                                                android:textAlignment="center"
+                                                android:textColor="#282f3f"
+                                                android:textSize="22sp"
+                                                app:layout_constraintStart_toEndOf="@+id/otpNumberInputTwo"
+                                                app:layout_constraintTop_toTopOf="parent" />
+
+                                            <View
+                                                android:layout_width="match_parent"
+                                                android:layout_height="4dp"
+                                                android:layout_marginTop="2dp"
+                                                android:background="@drawable/input_otp_bottom_color" />
+
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="65dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:orientation="vertical">
+
+                                            <EditText
+                                                android:id="@+id/otpInputFour"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="40dp"
+                                                android:layout_marginTop="2dp"
+                                                android:background="@color/transparent"
+                                                android:inputType="number"
+                                                android:maxLength="1"
+                                                android:textAlignment="center"
+                                                android:textColor="#282f3f"
+                                                android:textSize="22sp"
+                                                app:layout_constraintStart_toEndOf="@+id/otpNumberInputThree"
+                                                app:layout_constraintTop_toTopOf="parent" />
+
+                                            <View
+                                                android:layout_width="match_parent"
+                                                android:layout_height="4dp"
+                                                android:layout_marginTop="2dp"
+                                                android:background="@drawable/input_otp_bottom_color" />
+
+                                        </LinearLayout>
+                                    </LinearLayout>
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:id="@+id/voice_otp_txt"
+                                            style="@style/new_label_style"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="11dp"
+                                            android:layout_marginEnd="12dp"
+                                            android:fontFamily="@font/muliregular"
+                                            android:text="Voice OTP"
+                                            android:textColor="#8fa7b1"
+                                            android:textSize="12sp"
+                                            app:layout_constraintEnd_toStartOf="@+id/resendOtpBtn"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                                        <TextView
+                                            android:id="@+id/resendOtpBtn"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="8dp"
+                                            android:layout_marginEnd="2dp"
+                                            android:background="@drawable/border_bottom_purple"
+                                            android:fontFamily="@font/mulisemibold"
+                                            android:text="Resend"
+                                            android:textAlignment="textEnd"
+                                            android:textColor="#9D77e9"
+                                            android:textSize="14sp"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                    </android.support.constraint.ConstraintLayout>
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:id="@+id/getOtpBtnWrap"
+                                android:layout_width="290dp"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="24dp"
+                                android:gravity="center|end"
+                                android:orientation="horizontal"
+                                android:visibility="visible"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/MobileNorWrap">
+
+                                <TextView
+                                    android:id="@+id/otpCancelTxtBtn"
+                                    android:layout_width="70dp"
+                                    android:layout_height="50dp"
+                                    android:fontFamily="@font/muliregular"
+                                    android:gravity="center"
+                                    android:text="​CANCEL"
+                                    android:textColor="#8fa7b1"
+                                    android:textSize="10sp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/getOtpBtn"
+                                    android:layout_width="131dp"
+                                    android:layout_height="45dp"
+                                    android:background="@drawable/rounded_btn_purple"
+                                    android:gravity="center_horizontal|center_vertical"
+                                    android:tag="true"
+                                    android:text="Get OTP"
+                                    android:textColor="#ffffff"
+                                    android:textSize="14sp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <!--<TextView-->
+                                <!--android:id="@+id/resendOtpBtn"-->
+                                <!--android:layout_width="150dp"-->
+                                <!--android:layout_height="50dp"-->
+                                <!--android:layout_marginEnd="8dp"-->
+                                <!--android:background="@drawable/border_corner"-->
+                                <!--android:gravity="center_horizontal|center_vertical"-->
+                                <!--android:tag="true"-->
+                                <!--android:text="Resend OTP"-->
+                                <!--android:textColor="#ffffff"-->
+                                <!--android:textSize="16sp"-->
+                                <!--android:visibility="gone"-->
+                                <!--app:layout_constraintEnd_toEndOf="parent"-->
+                                <!--app:layout_constraintTop_toTopOf="parent" />-->
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:id="@+id/glFSPatAppointDetailWrap"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="30dp"
+                                android:orientation="vertical"
+                                android:visibility="gone">
+
+                                <LinearLayout
+                                    android:layout_width="290dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:orientation="horizontal">
+
+
+                                    <TextView
+                                        android:id="@+id/type_txt"
+                                        android:layout_width="50dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="Type "
+                                        android:textColor="#000"
+                                        android:textSize="18sp"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <TextView
+                                        android:id="@+id/type_txt3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:text=":"
+                                        android:textColor="#000"
+                                        android:textSize="18sp"
+                                        app:layout_constraintStart_toEndOf="@+id/type_txt"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <TextView
+                                        android:id="@+id/type_txt2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:text="Consultation "
+                                        android:textColor="#74273951"
+                                        android:textSize="18sp"
+                                        app:layout_constraintStart_toEndOf="@+id/type_txt3"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="290dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="15dp"
+                                    android:orientation="horizontal">
+
+
+                                    <TextView
+                                        android:id="@+id/date_txt"
+                                        android:layout_width="50dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="Date  "
+                                        android:textColor="#000"
+                                        android:textSize="18sp"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <TextView
+                                        android:id="@+id/date_txt2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:text=":"
+                                        android:textColor="#000"
+                                        android:textSize="18sp"
+                                        app:layout_constraintStart_toEndOf="@+id/date_txt"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <TextView
+                                        android:id="@+id/date_txt3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:text="18th Aug 2019 "
+                                        android:textColor="#74273951"
+                                        android:textSize="18sp"
+                                        app:layout_constraintStart_toEndOf="@+id/date_txt2"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="290dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="15dp"
+                                    android:orientation="horizontal">
+
+
+                                    <TextView
+                                        android:id="@+id/time_txt"
+                                        android:layout_width="50dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="Time "
+                                        android:textColor="#000"
+                                        android:textSize="18sp"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <TextView
+                                        android:id="@+id/time_txt2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:text=":"
+                                        android:textColor="#000"
+                                        android:textSize="18sp"
+                                        app:layout_constraintStart_toEndOf="@+id/time_txt"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <TextView
+                                        android:id="@+id/time_txt3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:text="10:30 - 11:00 "
+                                        android:textColor="#74273951"
+                                        android:textSize="18sp"
+                                        app:layout_constraintStart_toEndOf="@+id/time_txt2"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="290dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="15dp"
+                                    android:orientation="horizontal">
+
+
+                                    <TextView
+                                        android:id="@+id/paid_txt"
+                                        android:layout_width="50dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="Paid "
+                                        android:textColor="#000"
+                                        android:textSize="18sp"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <TextView
+                                        android:id="@+id/paid_txt2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:text=":"
+                                        android:textColor="#000"
+                                        android:textSize="18sp"
+                                        app:layout_constraintStart_toEndOf="@+id/paid_txt"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <TextView
+                                        android:id="@+id/paid_txt3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:text=" $2.5 "
+                                        android:textColor="#74273951"
+                                        android:textSize="18sp"
+                                        app:layout_constraintStart_toEndOf="@+id/paid_txt2"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    <!-- All content ends here-->
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/bookAppointBtnWrap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|start"
+            android:paddingBottom="0dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/bookAppointBtn"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#8e63e6"
+                android:fontFamily="@font/sfprotextsemibold"
+                android:gravity="center_horizontal|center_vertical"
+                android:tag="true"
+                android:text="BOOK APPOINTMENT"
+                android:textColor="#ffffff"
+                android:textSize="16sp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/faceScanCameraSecWrap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|start"
+            android:background="#fff"
+            android:paddingTop="60dp"
+            android:paddingBottom="60dp"
+            android:visibility="visible">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:paddingTop="17dp">
+
+                        <ImageView
+                            android:id="@+id/changeCamBtn"
+                            android:layout_width="25dp"
+                            android:layout_height="29dp"
+                            android:src="@drawable/ic_recyle_icon" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/cameraIcon"
+                            android:layout_width="66dp"
+                            android:layout_height="66dp"
+                            android:src="@drawable/ic_camera_rotate_icon" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:paddingTop="15dp">
+
+                        <ImageView
+                            android:id="@+id/closeCamIcon"
+                            android:layout_width="23dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/ic_close_icon_new" />
+                    </RelativeLayout>
+                </TableRow>
+
+            </android.support.constraint.ConstraintLayout>
+        </FrameLayout>
+
+    </android.support.design.widget.CoordinatorLayout>
+</RelativeLayout>

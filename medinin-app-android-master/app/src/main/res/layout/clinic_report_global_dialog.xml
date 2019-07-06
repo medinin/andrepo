@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/coordinator"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:background="#000000"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/hide_popup"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="0dp"
+                android:src="@drawable/arrow_down_white" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="38dp"
+                android:orientation="vertical"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+
+
+                <LinearLayout
+                    android:id="@+id/user_sec_wrap"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/popup_corner_radius"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <!-- All content starts here-->
+                    <LinearLayout
+                        android:id="@+id/content_wrap"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="0dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/tabNavWrap"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingTop="13dp"
+                            android:paddingBottom="11dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/glAppointmentLink"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="0dp"
+                                    android:fontFamily="@font/mulisemibold"
+                                    android:foregroundGravity="center"
+                                    android:paddingBottom="2dp"
+                                    android:text="Appointments"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="#8e63e6"
+                                    android:textSize="22sp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/glPaymentLink"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="0dp"
+                                    android:fontFamily="@font/mulisemibold"
+                                    android:foregroundGravity="center"
+                                    android:paddingBottom="2dp"
+                                    android:text="Payments"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="#8e63e6"
+                                    android:textSize="22sp"
+                                    android:visibility="gone"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/glFSTabLinkBr"
+                                    android:layout_width="20dp"
+                                    android:layout_height="3dp"
+                                    android:layout_gravity="center"
+                                    android:background="@drawable/rounded_purple_bar"
+                                    android:visibility="visible" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/gl_clinic_report_details_wrap"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="70dp"
+                            android:gravity="center|center_horizontal|center_vertical"
+                            android:orientation="vertical"
+                            android:visibility="visible">
+
+                            <LinearLayout
+                                android:id="@+id/pat_cont_wrap"
+                                android:layout_width="290dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:orientation="vertical"
+                                android:visibility="visible">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginBottom="15dp"
+                                        android:gravity="center"
+                                        android:orientation="horizontal"
+                                        android:visibility="gone">
+
+                                        <TextView
+                                            android:layout_width="6dp"
+                                            android:layout_height="6dp"
+                                            android:background="@drawable/tab_dot" />
+
+                                        <TextView
+                                            android:id="@+id/textView6"
+                                            android:layout_width="6dp"
+                                            android:layout_height="6dp"
+                                            android:layout_marginStart="8dp"
+                                            android:background="@drawable/tab_dot_active" />
+                                    </LinearLayout>
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:id="@+id/timeInputsWrap"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <LinearLayout
+                                            android:id="@+id/linearLayout5"
+                                            android:layout_width="100dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentStart="true"
+                                            android:elevation="1dp"
+                                            android:orientation="vertical"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent">
+
+                                            <TextView
+                                                android:id="@+id/label2"
+                                                style="@style/new_label_style"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginBottom="3dp"
+                                                android:text="From"
+                                                android:textColor="#88a1ac" />
+
+
+                                            <android.support.constraint.ConstraintLayout
+                                                android:id="@+id/startTimeInputWrap"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:background="@drawable/input_border_bottom"
+                                                app:layout_constraintStart_toStartOf="parent"
+                                                app:layout_constraintTop_toBottomOf="@+id/label2">
+
+                                                <EditText
+                                                    android:id="@+id/startTimeInput"
+                                                    style="@style/new_input_style"
+                                                    android:focusable="false"
+                                                    android:text="N/a "
+                                                    app:layout_constraintStart_toStartOf="parent"
+                                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                            </android.support.constraint.ConstraintLayout>
+
+                                            <ImageView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="right"
+                                                android:layout_marginTop="-28dp"
+                                                android:src="@drawable/ic_arrow_drop_down_black" />
+
+                                        </LinearLayout>
+
+                                        <TextView
+                                            android:id="@+id/timeDiffTxt"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:elevation="0dp"
+                                            android:fontFamily="@font/mulisemibold"
+                                            android:text="0h"
+                                            android:textColor="#708190"
+                                            android:textSize="10sp"
+                                            android:textStyle="italic"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toStartOf="@+id/linearLayout6"
+                                            app:layout_constraintStart_toEndOf="@+id/linearLayout5"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <LinearLayout
+                                            android:id="@+id/linearLayout6"
+                                            android:layout_width="100dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:elevation="1dp"
+                                            android:orientation="vertical"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent">
+
+                                            <TextView
+                                                android:id="@+id/label"
+                                                style="@style/new_label_style"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginBottom="3dp"
+                                                android:text="To "
+                                                android:textColor="#88a1ac" />
+
+                                            <android.support.constraint.ConstraintLayout
+                                                android:id="@+id/endTimeInputWrap"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:background="@drawable/input_border_bottom"
+                                                app:layout_constraintStart_toStartOf="parent"
+                                                app:layout_constraintTop_toBottomOf="@+id/label2">
+
+                                                <EditText
+                                                    android:id="@+id/endTimeInput"
+                                                    style="@style/new_input_style"
+                                                    android:focusable="false"
+                                                    android:text="N/a "
+                                                    app:layout_constraintStart_toStartOf="parent"
+                                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                            </android.support.constraint.ConstraintLayout>
+
+                                            <ImageView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="right"
+                                                android:layout_marginTop="-28dp"
+                                                android:src="@drawable/ic_arrow_drop_down_black" />
+                                        </LinearLayout>
+
+                                    </android.support.constraint.ConstraintLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="12dp"
+                                        android:orientation="vertical"
+                                        android:weightSum="2"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/user_sec_wrap"
+                                        app:srcCompat="@drawable/input_border_bottom">
+
+                                        <TextView
+                                            android:id="@+id/patTxt"
+                                            style="@style/new_label_style"
+                                            android:text="Select Patient "
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <android.support.constraint.ConstraintLayout
+                                            android:id="@+id/clinicPatNameInputWrap"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:background="@drawable/input_border_bottom"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toBottomOf="@+id/label">
+
+                                            <EditText
+                                                android:id="@+id/clinicPatNameInput"
+                                                style="@style/new_input_style"
+                                                android:text="All Patients "
+                                                app:layout_constraintStart_toStartOf="parent"
+                                                app:layout_constraintTop_toTopOf="parent" />
+
+                                            <EditText
+                                                android:id="@+id/feeClinicInput"
+                                                style="@style/new_input_style"
+                                                android:text=""
+                                                android:visibility="gone"
+                                                app:layout_constraintStart_toStartOf="parent"
+                                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                                        </android.support.constraint.ConstraintLayout>
+
+                                        <ImageView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="right"
+                                            android:layout_marginTop="-28dp"
+                                            android:src="@drawable/ic_arrow_drop_down_black" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="12dp"
+                                        android:orientation="vertical"
+                                        android:weightSum="2"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/user_sec_wrap"
+                                        app:srcCompat="@drawable/input_border_bottom">
+
+                                        <TextView
+                                            android:id="@+id/labelDocTxt"
+                                            style="@style/new_label_style"
+                                            android:text="Select Doctor "
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <android.support.constraint.ConstraintLayout
+                                            android:id="@+id/clinicNameInputWrap"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:background="@drawable/input_border_bottom"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toBottomOf="@+id/label">
+
+                                            <EditText
+                                                android:id="@+id/clinicDocNameInput"
+                                                style="@style/new_input_style"
+                                                android:text="All Doctors  "
+                                                app:layout_constraintStart_toStartOf="parent"
+                                                app:layout_constraintTop_toTopOf="parent" />
+
+                                            <EditText
+                                                android:id="@+id/feeInput"
+                                                style="@style/new_input_style"
+                                                android:text=""
+                                                android:visibility="gone"
+                                                app:layout_constraintStart_toStartOf="parent"
+                                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                                        </android.support.constraint.ConstraintLayout>
+
+                                        <ImageView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="right"
+                                            android:layout_marginTop="-28dp"
+                                            android:src="@drawable/ic_arrow_drop_down_black" />
+
+                                    </LinearLayout>
+
+                                    <FrameLayout
+                                        android:id="@+id/errorMsgWrap"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="22dp"
+                                        android:layout_marginBottom="-22dp"
+                                        android:background="#00FFFFFF"
+                                        android:elevation="1dp"
+                                        android:visibility="gone"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/timeInputsWrap"
+                                        tools:elevation="10dp">
+
+                                        <TextView
+                                            style="@style/new_err_txt_style"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="bottom|center_horizontal"
+                                            android:paddingTop="2dp"
+                                            android:text="All fields are mandatory!" />
+                                    </FrameLayout>
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    <!-- All content ends here-->
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/bookAppointBtnWrap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|start"
+            android:paddingBottom="0dp"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/bookAppointBtn"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#8e63e6"
+                android:fontFamily="@font/sfprotextsemibold"
+                android:gravity="center_horizontal|center_vertical"
+                android:tag="true"
+                android:text="Generate Report"
+                android:textAllCaps="true"
+                android:textColor="#ffffff"
+                android:textSize="16sp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </FrameLayout>
+
+    </android.support.design.widget.CoordinatorLayout>
+</FrameLayout>

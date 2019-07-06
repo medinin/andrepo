@@ -1,0 +1,2748 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:focusableInTouchMode="true">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/coordinator"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:background="#000000"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/hide_popup"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="0dp"
+                android:src="@drawable/arrow_down_white" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="38dp"
+                android:orientation="vertical"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+
+
+                <LinearLayout
+                    android:id="@+id/user_sec_wrap"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/popup_corner_radius"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <!-- All content starts here-->
+                    <LinearLayout
+                        android:id="@+id/content_wrap"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="0dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/tabNavWrap"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingTop="20dp">
+
+                            <LinearLayout
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/loginTabLink"
+                                    style="@style/new_tab_active_link"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/mulibold"
+                                    android:foregroundGravity="center"
+                                    android:paddingBottom="5dp"
+                                    android:text="LOGIN"
+                                    android:textAlignment="center"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/loginTabLinkBr"
+                                    android:layout_width="20dp"
+                                    android:layout_height="3dp"
+                                    android:background="@drawable/rounded_purple_bar"
+                                    android:visibility="visible" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/signUPTabLink"
+                                    style="@style/new_tab_links"
+                                    android:layout_width="match_parent"
+                                    android:layout_marginStart="0dp"
+                                    android:fontFamily="@font/mulibold"
+                                    android:paddingBottom="5dp"
+                                    android:text="SIGN UP"
+                                    android:textAlignment="center" />
+
+                                <TextView
+                                    android:id="@+id/signUPTabLinkBr"
+                                    android:layout_width="20dp"
+                                    android:layout_height="3dp"
+                                    android:background="@drawable/rounded_purple_bar"
+                                    android:visibility="gone" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/login_wrap"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="visible"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <android.support.constraint.ConstraintLayout
+                                android:id="@+id/user_icon_wrap"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="32dp"
+                                android:orientation="horizontal"
+                                android:paddingBottom="20dp"
+                                android:weightSum="2"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/user_sec_wrap"
+                                app:srcCompat="@drawable/border_bottom">
+
+                                <LinearLayout
+                                    android:layout_width="290dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="0dp"
+                                    android:orientation="vertical"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                    <TextView
+                                        android:id="@+id/clinic_txt"
+                                        style="@style/new_label_style"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="0dp"
+                                        android:layout_marginTop="0dp"
+                                        android:layout_marginEnd="0dp"
+                                        android:fontFamily="@font/sfprotextregular"
+                                        android:text="Phone Number" />
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:id="@+id/constraintLayout"
+                                        android:layout_width="290dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="0dp"
+                                        android:layout_marginTop="2dp"
+                                        android:layout_marginEnd="0dp"
+                                        android:background="@drawable/border_bottom"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/clinic_txt">
+
+                                        <TextView
+                                            android:id="@+id/country_code_txt"
+                                            style="@style/new_input_style"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="14dp"
+                                            android:fontFamily="@font/mulisemibold"
+                                            android:text="+91"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <ImageView
+                                            android:id="@+id/countryFlagImg"
+                                            android:layout_width="40dp"
+                                            android:layout_height="40dp"
+                                            android:layout_marginTop="10dp"
+                                            android:elevation="1dp"
+                                            android:paddingStart="20dp"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            app:srcCompat="@drawable/ic_ind_map" />
+
+
+                                        <EditText
+                                            android:id="@+id/mobileNumberInput"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="49dp"
+                                            android:layout_marginStart="4dp"
+                                            android:layout_marginTop="2dp"
+                                            android:background="@color/transparent"
+                                            android:inputType="number"
+                                            android:maxLength="10"
+                                            android:minWidth="180dp"
+                                            app:layout_constraintStart_toEndOf="@+id/country_code_txt"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                    </android.support.constraint.ConstraintLayout>
+                                </LinearLayout>
+                            </android.support.constraint.ConstraintLayout>
+
+                            <android.support.constraint.ConstraintLayout
+                                android:id="@+id/otpWrap"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:paddingBottom="30dp"
+                                android:visibility="gone"
+                                android:weightSum="2"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/user_sec_wrap"
+                                app:srcCompat="@drawable/border_bottom">
+
+                                <LinearLayout
+                                    android:layout_width="290dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="0dp"
+                                    android:orientation="vertical"
+                                    android:weightSum="2"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:id="@+id/get_otp_txt"
+                                            style="@style/new_label_style"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="0dp"
+                                            android:layout_marginTop="8dp"
+                                            android:layout_marginEnd="0dp"
+                                            android:fontFamily="@font/sfprotextregular"
+                                            android:text="4-Digit OTP"
+                                            android:textColor="#88a1ac"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                                        <TextView
+                                            android:id="@+id/loginCountDownTxt"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="10dp"
+                                            android:layout_marginEnd="0dp"
+                                            android:layout_marginRight="16dp"
+                                            android:fontFamily="@font/sfprotextmedium"
+                                            android:text="2:36"
+                                            android:textAlignment="textEnd"
+                                            android:textColor="#282f3f"
+                                            android:textSize="12sp"
+                                            app:layout_constraintEnd_toEndOf="parent" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/otp_inputSec"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="0dp"
+                                        android:layout_marginTop="2dp"
+                                        android:layout_marginEnd="0dp"
+                                        android:orientation="horizontal"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/get_otp_txt">
+
+                                        <LinearLayout
+                                            android:layout_width="65dp"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="vertical">
+
+                                            <EditText
+                                                android:id="@+id/otpInputOne"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="40dp"
+                                                android:layout_marginTop="2dp"
+                                                android:background="@color/transparent"
+                                                android:inputType="number"
+                                                android:maxLength="1"
+                                                android:textAlignment="center"
+                                                android:textColor="#282f3f"
+                                                android:textSize="22sp"
+                                                app:layout_constraintStart_toStartOf="parent"
+                                                app:layout_constraintTop_toTopOf="parent" />
+
+                                            <View
+                                                android:layout_width="match_parent"
+                                                android:layout_height="4dp"
+                                                android:layout_marginTop="2dp"
+                                                android:background="@drawable/input_otp_bottom_color" />
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="65dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:orientation="vertical">
+
+                                            <EditText
+                                                android:id="@+id/otpInputTwo"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="40dp"
+                                                android:layout_marginTop="2dp"
+                                                android:background="@color/transparent"
+                                                android:inputType="number"
+                                                android:maxLength="1"
+                                                android:textAlignment="center"
+                                                android:textColor="#282f3f"
+                                                android:textSize="22sp"
+                                                app:layout_constraintStart_toEndOf="@+id/otpNumberInputOne"
+                                                app:layout_constraintTop_toTopOf="parent" />
+
+                                            <View
+                                                android:layout_width="match_parent"
+                                                android:layout_height="4dp"
+                                                android:layout_marginTop="2dp"
+                                                android:background="@drawable/input_otp_bottom_color" />
+
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="65dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:orientation="vertical">
+
+                                            <EditText
+                                                android:id="@+id/otpInputThree"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="40dp"
+                                                android:layout_marginTop="2dp"
+                                                android:background="@color/transparent"
+                                                android:inputType="number"
+                                                android:maxLength="1"
+                                                android:textAlignment="center"
+                                                android:textColor="#282f3f"
+                                                android:textSize="22sp"
+                                                app:layout_constraintStart_toEndOf="@+id/otpNumberInputTwo"
+                                                app:layout_constraintTop_toTopOf="parent" />
+
+                                            <View
+                                                android:layout_width="match_parent"
+                                                android:layout_height="4dp"
+                                                android:layout_marginTop="2dp"
+                                                android:background="@drawable/input_otp_bottom_color" />
+
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="65dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:orientation="vertical">
+
+                                            <EditText
+                                                android:id="@+id/otpInputFour"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="40dp"
+                                                android:layout_marginTop="2dp"
+                                                android:background="@color/transparent"
+                                                android:inputType="number"
+                                                android:maxLength="1"
+                                                android:textAlignment="center"
+                                                android:textColor="#282f3f"
+                                                android:textSize="22sp"
+                                                app:layout_constraintStart_toEndOf="@+id/otpNumberInputThree"
+                                                app:layout_constraintTop_toTopOf="parent" />
+
+                                            <View
+                                                android:layout_width="match_parent"
+                                                android:layout_height="4dp"
+                                                android:layout_marginTop="2dp"
+                                                android:background="@drawable/input_otp_bottom_color" />
+
+                                        </LinearLayout>
+                                    </LinearLayout>
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            style="@style/new_label_style"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="11dp"
+                                            android:layout_marginEnd="12dp"
+                                            android:fontFamily="@font/muliregular"
+                                            android:text="Voice OTP"
+                                            android:textColor="#8fa7b1"
+                                            android:textSize="12sp"
+                                            app:layout_constraintEnd_toStartOf="@+id/resendOTP"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                                        <TextView
+                                            android:id="@+id/resendOTP"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="8dp"
+                                            android:layout_marginEnd="2dp"
+                                            android:background="@drawable/border_bottom_purple"
+                                            android:fontFamily="@font/mulisemibold"
+                                            android:text="Resend"
+                                            android:textAlignment="textEnd"
+                                            android:textColor="#9D77e9"
+                                            android:textSize="14sp"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                    </android.support.constraint.ConstraintLayout>
+                                </LinearLayout>
+
+                            </android.support.constraint.ConstraintLayout>
+
+
+                            <android.support.constraint.ConstraintLayout
+                                android:id="@+id/sendOtpBtnWrap"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="0dp"
+                                android:layout_marginEnd="0dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/otp_wrap">
+
+                                <LinearLayout
+                                    android:layout_width="290dp"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="right"
+                                    android:orientation="horizontal"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                    <TextView
+                                        android:id="@+id/cancel_txt"
+                                        android:layout_width="70dp"
+                                        android:layout_height="50dp"
+                                        android:layout_marginEnd="0dp"
+                                        android:fontFamily="@font/muliregular"
+                                        android:gravity="center"
+                                        android:text="CANCEL"
+                                        android:textColor="#8fa7b1"
+                                        android:textSize="10sp"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <TextView
+                                        android:id="@+id/getOtpBtn"
+                                        android:layout_width="131dp"
+                                        android:layout_height="45dp"
+                                        android:layout_marginEnd="0dp"
+                                        android:background="@drawable/rounded_btn_purple"
+                                        android:gravity="center_horizontal|center_vertical"
+                                        android:tag="true"
+                                        android:text="Get OTP"
+                                        android:textColor="#ffffff"
+                                        android:textSize="14sp"
+                                        android:visibility="gone"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                                    <!--<TextView-->
+                                    <!--android:id="@+id/resendOTP"-->
+                                    <!--android:layout_width="131dp"-->
+                                    <!--android:layout_height="45dp"-->
+                                    <!--android:layout_marginEnd="0dp"-->
+                                    <!--android:background="@drawable/rounded_rectangle_purple"-->
+                                    <!--android:gravity="center_horizontal|center_vertical"-->
+                                    <!--android:tag="true"-->
+                                    <!--android:text="Resend"-->
+                                    <!--android:textColor="#ffffff"-->
+                                    <!--android:textSize="16sp"-->
+                                    <!--android:visibility="visible"-->
+                                    <!--app:layout_constraintEnd_toEndOf="parent"-->
+                                    <!--app:layout_constraintTop_toTopOf="parent" />-->
+
+                                    <TextView
+                                        android:id="@+id/otpDisabledBtn"
+                                        style="@style/get_otp_disable_btn"
+                                        android:layout_width="131dp"
+                                        android:layout_height="45dp"
+                                        android:layout_marginEnd="0dp"
+                                        android:gravity="center_horizontal|center_vertical"
+                                        android:tag="true"
+                                        android:text="Get OTP"
+                                        android:textColor="#AFBFC6"
+                                        android:textSize="14sp"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+                                </LinearLayout>
+
+                            </android.support.constraint.ConstraintLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/sign_up_user_type_wrap"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="32dp"
+                                android:layout_marginEnd="20dp"
+                                android:background="@drawable/border_bottom_signup"
+                                android:orientation="horizontal"
+                                android:paddingBottom="2dp"
+                                android:weightSum="2"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/user_sec_wrap">
+
+
+                                <android.support.constraint.ConstraintLayout
+                                    android:id="@+id/doc_select"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="0dp"
+                                    android:layout_weight="1"
+                                    android:alpha="0.4"
+                                    android:background="@drawable/border_right_signup"
+                                    android:onClick="onSignUpOptionSelect">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:elevation="1dp"
+                                        android:gravity="center_horizontal"
+                                        android:orientation="vertical"
+                                        android:paddingBottom="10dp"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent">
+
+                                        <ImageView
+                                            android:id="@+id/doctor_img"
+                                            android:layout_width="60dp"
+                                            android:layout_height="50dp"
+                                            android:layout_marginStart="0dp"
+                                            android:layout_marginTop="19dp"
+                                            app:srcCompat="@drawable/ic_doctor" />
+
+                                        <TextView
+                                            android:id="@+id/doctor_txt"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="0dp"
+                                            android:layout_marginTop="16dp"
+                                            android:layout_marginBottom="0dp"
+                                            android:fontFamily="@font/sfprotextmedium"
+                                            android:text="I’m a Doctor"
+                                            android:textColor="#CD282F3F"
+                                            android:textSize="16sp" />
+                                    </LinearLayout>
+
+                                    <RadioButton
+                                        android:id="@+id/docRadioBtn"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="8dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:clickable="false"
+                                        android:elevation="0dp"
+                                        android:tag="RadioButton"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                </android.support.constraint.ConstraintLayout>
+
+                                <android.support.constraint.ConstraintLayout
+                                    android:id="@+id/patient_select"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginEnd="0dp"
+                                    android:layout_weight="1"
+                                    android:alpha="0.4"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:elevation="1dp"
+                                        android:gravity="center_horizontal"
+                                        android:orientation="vertical"
+                                        android:paddingBottom="10dp"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent">
+
+                                        <ImageView
+                                            android:id="@+id/patient_img"
+                                            android:layout_width="60dp"
+                                            android:layout_height="50dp"
+                                            android:layout_marginTop="19dp"
+                                            android:layout_marginEnd="0dp"
+                                            app:srcCompat="@drawable/ic_patient_gray" />
+
+                                        <TextView
+                                            android:id="@+id/patient_txt"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="0dp"
+                                            android:layout_marginTop="16dp"
+                                            android:layout_marginBottom="0dp"
+                                            android:fontFamily="@font/sfprotextmedium"
+                                            android:text="I’m a Patient"
+                                            android:textColor="#CD282F3F"
+                                            android:textSize="16sp" />
+                                    </LinearLayout>
+
+                                    <RadioButton
+                                        android:id="@+id/patientRadioBtn"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="8dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:checked="false"
+                                        android:clickable="false"
+                                        android:elevation="0dp"
+                                        android:tag="RadioButton"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+                                </android.support.constraint.ConstraintLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/hospital_icon_wrap"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="0dp"
+                                android:layout_marginEnd="20dp"
+                                android:background="@drawable/border_bottom_signup"
+                                android:orientation="horizontal"
+                                android:paddingBottom="2dp"
+                                android:weightSum="2"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/user_sec_wrap">
+
+
+                                <android.support.constraint.ConstraintLayout
+                                    android:id="@+id/hospital_select"
+                                    android:layout_width="150dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/border_right_signup"
+                                    app:layout_constraintStart_toStartOf="parent">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_horizontal"
+                                        android:orientation="vertical"
+                                        android:paddingBottom="10dp"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent">
+
+                                        <ImageView
+                                            android:id="@+id/hospital_img"
+                                            android:layout_width="60dp"
+                                            android:layout_height="50dp"
+                                            android:layout_marginStart="0dp"
+                                            android:layout_marginTop="19dp"
+                                            app:srcCompat="@drawable/ic_hospital" />
+
+                                        <TextView
+                                            android:id="@+id/hospital_txt"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="0dp"
+                                            android:layout_marginTop="16dp"
+                                            android:layout_marginBottom="0dp"
+                                            android:fontFamily="@font/sfprotextmedium"
+                                            android:text="I’m a Hospital"
+                                            android:textColor="#CD282F3F"
+                                            android:textSize="16sp" />
+
+                                    </LinearLayout>
+
+                                    <RadioButton
+                                        android:id="@+id/hospitalRadioBtn"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="8dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:checked="false"
+                                        android:clickable="false"
+                                        android:tag="RadioButton"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                </android.support.constraint.ConstraintLayout>
+
+                                <android.support.constraint.ConstraintLayout
+                                    android:id="@+id/clinic_select"
+                                    android:layout_width="150dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="end"
+                                    android:layout_marginEnd="0dp"
+                                    android:layout_weight="1"
+                                    android:alpha="0.4"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_horizontal"
+                                        android:orientation="vertical"
+                                        android:paddingBottom="10dp"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent">
+
+                                        <ImageView
+                                            android:id="@+id/clinic_img"
+                                            android:layout_width="60dp"
+                                            android:layout_height="50dp"
+                                            android:layout_marginTop="19dp"
+                                            android:layout_marginEnd="0dp"
+                                            app:layout_constraintEnd_toStartOf="@+id/clinicRadioBtn"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            app:srcCompat="@drawable/ic_clinic" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="0dp"
+                                            android:layout_marginTop="16dp"
+                                            android:layout_marginBottom="0dp"
+                                            android:fontFamily="@font/sfprotextmedium"
+                                            android:text="I’m a Clinic"
+                                            android:textColor="#CD282F3F"
+                                            android:textSize="16sp" />
+                                    </LinearLayout>
+
+                                    <RadioButton
+                                        android:id="@+id/clinicRadioBtn"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="10dp"
+                                        android:clickable="false"
+                                        android:tag="RadioButton"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                                </android.support.constraint.ConstraintLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/pharmacy_icon_wrap"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="0dp"
+                                android:layout_marginEnd="20dp"
+                                android:orientation="horizontal"
+                                android:paddingBottom="2dp"
+                                android:weightSum="2"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/hospital_icon_wrap">
+
+
+                                <android.support.constraint.ConstraintLayout
+                                    android:id="@+id/lab_select"
+                                    android:layout_width="150dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="0dp"
+                                    android:layout_weight="1"
+                                    android:alpha="0.4"
+                                    android:background="@drawable/border_right_signup"
+                                    app:layout_constraintStart_toStartOf="parent">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_horizontal"
+                                        android:orientation="vertical"
+                                        android:paddingBottom="10dp"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent">
+
+                                        <ImageView
+                                            android:id="@+id/lab_img"
+                                            android:layout_width="60dp"
+                                            android:layout_height="50dp"
+                                            android:layout_marginStart="0dp"
+                                            android:layout_marginTop="19dp"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            app:srcCompat="@drawable/ic_lab" />
+
+                                        <TextView
+                                            android:id="@+id/lab_txt"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="0dp"
+                                            android:layout_marginTop="16dp"
+                                            android:layout_marginBottom="0dp"
+                                            android:fontFamily="@font/sfprotextmedium"
+                                            android:text="I’m a Laboratory"
+                                            android:textColor="#CD282F3F"
+                                            android:textSize="16sp" />
+                                    </LinearLayout>
+
+                                    <RadioButton
+                                        android:id="@+id/labRadioBtn"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="8dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:checked="false"
+                                        android:clickable="false"
+                                        android:tag="RadioButton"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                                </android.support.constraint.ConstraintLayout>
+
+                                <android.support.constraint.ConstraintLayout
+                                    android:id="@+id/pharmacy_select"
+                                    android:layout_width="150dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="end"
+                                    android:layout_marginEnd="0dp"
+                                    android:layout_weight="1"
+                                    android:alpha="0.4"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_horizontal"
+                                        android:orientation="vertical"
+                                        android:paddingBottom="10dp"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent">
+
+                                        <ImageView
+                                            android:id="@+id/pharmacy_img"
+                                            android:layout_width="60dp"
+                                            android:layout_height="50dp"
+                                            android:layout_marginTop="19dp"
+                                            android:layout_marginEnd="0dp"
+                                            app:layout_constraintEnd_toStartOf="@+id/pharmacyRadioBtn"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            app:srcCompat="@drawable/ic_medicine" />
+
+                                        <TextView
+                                            android:id="@+id/pharmacy_txt"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="0dp"
+                                            android:layout_marginTop="16dp"
+                                            android:layout_marginBottom="0dp"
+                                            android:fontFamily="@font/sfprotextmedium"
+                                            android:text="I’m a Pharmacy"
+                                            android:textColor="#CD282F3F"
+                                            android:textSize="16sp" />
+                                    </LinearLayout>
+
+                                    <RadioButton
+                                        android:id="@+id/pharmacyRadioBtn"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="8dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:checked="false"
+                                        android:clickable="false"
+                                        android:tag="RadioButton"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+                                </android.support.constraint.ConstraintLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/sign_up_mobile_wrap"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <android.support.constraint.ConstraintLayout
+                                android:id="@+id/user_icon_wrap_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="32dp"
+                                android:orientation="horizontal"
+                                android:paddingBottom="20dp"
+                                android:weightSum="2"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/user_sec_wrap"
+                                app:srcCompat="@drawable/border_bottom">
+
+                                <LinearLayout
+                                    android:id="@+id/linearLayout17"
+                                    android:layout_width="290dp"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                    <TextView
+                                        android:id="@+id/clinic_txt_2"
+                                        style="@style/new_label_style"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="0dp"
+                                        android:layout_marginTop="0dp"
+                                        android:layout_marginEnd="0dp"
+                                        android:fontFamily="@font/sfprotextregular"
+                                        android:text="Phone Number" />
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:id="@+id/constraintLayout_2"
+                                        android:layout_width="290dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="0dp"
+                                        android:layout_marginTop="8dp"
+                                        android:layout_marginEnd="0dp"
+                                        android:background="@drawable/border_bottom"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/clinic_txt_2">
+
+                                        <TextView
+                                            android:id="@+id/signUp_country_code_txt"
+                                            style="@style/new_input_style"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="14dp"
+                                            android:fontFamily="@font/mulisemibold"
+                                            android:text="+91"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <ImageView
+                                            android:id="@+id/signUpCountryFlagImg"
+                                            android:layout_width="40dp"
+                                            android:layout_height="40dp"
+                                            android:layout_marginTop="10dp"
+                                            android:elevation="1dp"
+                                            android:paddingStart="20dp"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            app:srcCompat="@drawable/ic_ind_map" />
+
+
+                                        <EditText
+                                            android:id="@+id/signUpMobileNumberInput"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="49dp"
+                                            android:layout_marginStart="4dp"
+                                            android:layout_marginTop="2dp"
+                                            android:background="@color/transparent"
+                                            android:inputType="number"
+                                            android:maxLength="10"
+                                            android:minWidth="180dp"
+                                            app:layout_constraintStart_toEndOf="@+id/signUp_country_code_txt"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                                    </android.support.constraint.ConstraintLayout>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/MobileNoErrorWrap"
+                                    android:layout_width="290dp"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:visibility="gone"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/linearLayout17">
+
+                                    <TextView
+                                        android:id="@+id/mobileErrorTxt"
+                                        style="@style/new_err_txt_style"
+                                        android:text="Account already exist"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+                                </LinearLayout>
+
+                            </android.support.constraint.ConstraintLayout>
+
+                            <!--<android.support.constraint.ConstraintLayout-->
+                            <!--android:id="@+id/signUpOtpWrap"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_marginTop="8dp"-->
+                            <!--android:orientation="horizontal"-->
+                            <!--android:paddingBottom="30dp"-->
+                            <!--android:visibility="gone"-->
+                            <!--android:weightSum="2"-->
+                            <!--app:layout_constraintStart_toStartOf="parent"-->
+                            <!--app:layout_constraintTop_toBottomOf="@+id/user_sec_wrap"-->
+                            <!--app:srcCompat="@drawable/border_bottom">-->
+
+                            <!--<LinearLayout-->
+                            <!--android:layout_width="290dp"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_marginEnd="0dp"-->
+                            <!--android:orientation="vertical"-->
+                            <!--app:layout_constraintEnd_toEndOf="parent"-->
+                            <!--app:layout_constraintStart_toStartOf="parent"-->
+                            <!--app:layout_constraintTop_toTopOf="parent">-->
+
+                            <!--<TextView-->
+                            <!--android:id="@+id/get_otp_txt_2"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_marginStart="0dp"-->
+                            <!--android:layout_marginTop="8dp"-->
+                            <!--android:layout_marginEnd="0dp"-->
+                            <!--android:text="4-Digit OTP"-->
+                            <!--android:textColor="#88a1ac"-->
+                            <!--android:textSize="14sp"-->
+                            <!--app:layout_constraintEnd_toEndOf="parent"-->
+                            <!--app:layout_constraintStart_toStartOf="parent"-->
+                            <!--app:layout_constraintTop_toTopOf="parent" />-->
+
+                            <!--<android.support.constraint.ConstraintLayout-->
+                            <!--android:id="@+id/otp_inputSec_2"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_marginStart="0dp"-->
+                            <!--android:layout_marginTop="8dp"-->
+                            <!--android:layout_marginEnd="0dp"-->
+                            <!--android:background="@drawable/border_bottom"-->
+                            <!--app:layout_constraintEnd_toEndOf="parent"-->
+                            <!--app:layout_constraintStart_toStartOf="parent"-->
+                            <!--app:layout_constraintTop_toBottomOf="@+id/get_otp_txt">-->
+
+                            <!--<TextView-->
+                            <!--android:id="@+id/signUpCountDownTxt"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_marginTop="14dp"-->
+                            <!--android:text="2:36"-->
+                            <!--android:textColor="#282f3f"-->
+                            <!--android:textSize="18sp"-->
+                            <!--app:layout_constraintEnd_toEndOf="parent"-->
+                            <!--app:layout_constraintTop_toTopOf="parent" />-->
+
+                            <!--<EditText-->
+                            <!--android:id="@+id/signUpOtpNumberInput"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="49dp"-->
+                            <!--android:layout_marginTop="2dp"-->
+                            <!--android:background="@color/transparent"-->
+                            <!--android:inputType="number"-->
+                            <!--android:maxLength="4"-->
+                            <!--app:layout_constraintStart_toStartOf="parent"-->
+                            <!--app:layout_constraintTop_toTopOf="parent" />-->
+
+                            <!--</android.support.constraint.ConstraintLayout>-->
+                            <!--</LinearLayout>-->
+
+                            <!--</android.support.constraint.ConstraintLayout>-->
+
+                            <android.support.constraint.ConstraintLayout
+                                android:id="@+id/signUpOtpWrap"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:orientation="horizontal"
+                                android:paddingBottom="30dp"
+                                android:visibility="gone"
+                                android:weightSum="2"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/user_sec_wrap"
+                                app:srcCompat="@drawable/border_bottom">
+
+                                <LinearLayout
+                                    android:layout_width="290dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="0dp"
+                                    android:orientation="vertical"
+                                    android:weightSum="2"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:id="@+id/get_otp_txt_2"
+                                            style="@style/new_label_style"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="0dp"
+                                            android:layout_marginTop="8dp"
+                                            android:layout_marginEnd="0dp"
+                                            android:fontFamily="@font/sfprotextregular"
+                                            android:text="4-Digit OTP"
+                                            android:textColor="#88a1ac"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                                        <TextView
+                                            android:id="@+id/signUpCountDownTxt"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="10dp"
+                                            android:layout_marginEnd="0dp"
+                                            android:layout_marginRight="16dp"
+                                            android:fontFamily="@font/sfprotextmedium"
+                                            android:text="2:36"
+                                            android:textAlignment="textEnd"
+                                            android:textColor="#282f3f"
+                                            android:textSize="12sp"
+                                            app:layout_constraintEnd_toEndOf="parent" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/otp_inputSec_2"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="0dp"
+                                        android:layout_marginTop="8dp"
+                                        android:layout_marginEnd="0dp"
+                                        android:orientation="horizontal"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/get_otp_txt">
+
+                                        <LinearLayout
+                                            android:layout_width="65dp"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="vertical">
+
+                                            <EditText
+                                                android:id="@+id/otpNumberInputOne"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="40dp"
+                                                android:layout_marginTop="2dp"
+                                                android:background="@color/transparent"
+                                                android:inputType="number"
+                                                android:maxLength="1"
+                                                android:textAlignment="center"
+                                                android:textColor="#282f3f"
+                                                android:textSize="22sp"
+                                                app:layout_constraintStart_toStartOf="parent"
+                                                app:layout_constraintTop_toTopOf="parent" />
+
+                                            <View
+                                                android:layout_width="match_parent"
+                                                android:layout_height="4dp"
+                                                android:layout_marginTop="2dp"
+                                                android:background="@drawable/input_otp_bottom_color" />
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="65dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:orientation="vertical">
+
+                                            <EditText
+                                                android:id="@+id/otpNumberInputTwo"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="40dp"
+                                                android:layout_marginTop="2dp"
+                                                android:background="@color/transparent"
+                                                android:inputType="number"
+                                                android:maxLength="1"
+                                                android:textAlignment="center"
+                                                android:textColor="#282f3f"
+                                                android:textSize="22sp"
+                                                app:layout_constraintStart_toEndOf="@+id/otpNumberInputOne"
+                                                app:layout_constraintTop_toTopOf="parent" />
+
+                                            <View
+                                                android:layout_width="match_parent"
+                                                android:layout_height="4dp"
+                                                android:layout_marginTop="2dp"
+                                                android:background="@drawable/input_otp_bottom_color" />
+
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="65dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:orientation="vertical">
+
+                                            <EditText
+                                                android:id="@+id/otpNumberInputThree"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="40dp"
+                                                android:layout_marginTop="2dp"
+                                                android:background="@color/transparent"
+                                                android:inputType="number"
+                                                android:maxLength="1"
+                                                android:textAlignment="center"
+                                                android:textColor="#282f3f"
+                                                android:textSize="22sp"
+                                                app:layout_constraintStart_toEndOf="@+id/otpNumberInputTwo"
+                                                app:layout_constraintTop_toTopOf="parent" />
+
+                                            <View
+                                                android:layout_width="match_parent"
+                                                android:layout_height="4dp"
+                                                android:layout_marginTop="2dp"
+                                                android:background="@drawable/input_otp_bottom_color" />
+
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="65dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:orientation="vertical">
+
+                                            <EditText
+                                                android:id="@+id/otpNumberInputFour"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="40dp"
+                                                android:layout_marginTop="2dp"
+                                                android:background="@color/transparent"
+                                                android:inputType="number"
+                                                android:maxLength="1"
+                                                android:textAlignment="center"
+                                                android:textColor="#282f3f"
+                                                android:textSize="22sp"
+                                                app:layout_constraintStart_toEndOf="@+id/otpNumberInputThree"
+                                                app:layout_constraintTop_toTopOf="parent" />
+
+                                            <View
+                                                android:layout_width="match_parent"
+                                                android:layout_height="4dp"
+                                                android:layout_marginTop="2dp"
+                                                android:background="@drawable/input_otp_bottom_color" />
+
+                                        </LinearLayout>
+                                    </LinearLayout>
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:id="@+id/voice_otp_txt"
+                                            style="@style/new_label_style"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="12dp"
+                                            android:layout_marginEnd="12dp"
+                                            android:fontFamily="@font/muliregular"
+                                            android:text="Voice OTP"
+                                            android:textColor="#8fa7b1"
+                                            android:textSize="12sp"
+                                            app:layout_constraintEnd_toStartOf="@+id/signUpResendOTP"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                                        <TextView
+                                            android:id="@+id/signUpResendOTP"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="8dp"
+                                            android:layout_marginEnd="2dp"
+                                            android:background="@drawable/border_bottom_purple"
+                                            android:fontFamily="@font/mulisemibold"
+                                            android:text="Resend"
+                                            android:textAlignment="textEnd"
+                                            android:textColor="#9D77e9"
+                                            android:textSize="14sp"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                    </android.support.constraint.ConstraintLayout>
+                                </LinearLayout>
+
+                            </android.support.constraint.ConstraintLayout>
+
+                            <android.support.constraint.ConstraintLayout
+                                android:id="@+id/sendOtpBtnWrap_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="0dp"
+                                android:layout_marginEnd="0dp"
+                                app:layout_constraintEnd_toEndOf="parent">
+
+                                <LinearLayout
+                                    android:layout_width="290dp"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="right"
+                                    android:orientation="horizontal"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                    <TextView
+                                        android:id="@+id/signUpCancelOtpTxt"
+                                        android:layout_width="70dp"
+                                        android:layout_height="50dp"
+                                        android:layout_marginEnd="0dp"
+                                        android:fontFamily="@font/muliregular"
+                                        android:gravity="center"
+                                        android:text="CANCEL"
+                                        android:textColor="#8fa7b1"
+                                        android:textSize="10sp"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <TextView
+                                        android:id="@+id/signUpGetOtpBtn"
+                                        android:layout_width="131dp"
+                                        android:layout_height="45dp"
+                                        android:layout_marginEnd="0dp"
+                                        android:background="@drawable/rounded_btn_purple"
+                                        android:gravity="center_horizontal|center_vertical"
+                                        android:tag="true"
+                                        android:text="Get OTP"
+                                        android:textColor="#ffffff"
+                                        android:textSize="14sp"
+                                        android:visibility="gone"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                                    <TextView
+                                        android:id="@+id/signUpResendOTP2"
+                                        android:layout_width="170dp"
+                                        android:layout_height="50dp"
+                                        android:layout_marginEnd="0dp"
+                                        android:background="@drawable/border_corner"
+                                        android:gravity="center_horizontal|center_vertical"
+                                        android:tag="true"
+                                        android:text="Resend"
+                                        android:textColor="#ffffff"
+                                        android:textSize="16sp"
+                                        android:visibility="gone"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <TextView
+                                        android:id="@+id/signUpOtpDisabledBtn"
+                                        style="@style/get_otp_disable_btn"
+                                        android:layout_width="131dp"
+                                        android:layout_height="45dp"
+                                        android:layout_marginEnd="0dp"
+                                        android:gravity="center_horizontal|center_vertical"
+                                        android:tag="true"
+                                        android:text="Get OTP"
+                                        android:textColor="#AFBFC6"
+                                        android:textSize="14sp"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+                                </LinearLayout>
+
+                            </android.support.constraint.ConstraintLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/sign_up_basic_wrap"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <android.support.design.widget.CoordinatorLayout
+                                android:id="@+id/myclinicCoordinator"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:fitsSystemWindows="true">
+
+                                <ScrollView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:paddingBottom="20dp"
+                                    android:scrollbarThumbVertical="@drawable/scrollbar">
+
+                                    <LinearLayout
+                                        android:layout_width="290dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_horizontal"
+                                        android:clickable="true"
+                                        android:focusableInTouchMode="true"
+                                        android:orientation="vertical"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent">
+
+                                        <android.support.design.widget.CoordinatorLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content">
+
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:orientation="vertical">
+
+                                                <LinearLayout
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="10dp"
+                                                    android:layout_marginBottom="15dp"
+                                                    android:gravity="center"
+                                                    android:orientation="horizontal"
+                                                    android:visibility="gone">
+
+                                                    <TextView
+                                                        android:layout_width="6dp"
+                                                        android:layout_height="6dp"
+                                                        android:background="@drawable/tab_dot" />
+
+                                                    <TextView
+                                                        android:id="@+id/textView6"
+                                                        android:layout_width="6dp"
+                                                        android:layout_height="6dp"
+                                                        android:layout_marginStart="8dp"
+                                                        android:background="@drawable/tab_dot_active" />
+                                                </LinearLayout>
+
+                                                <ImageView
+                                                    android:id="@+id/imageView5"
+                                                    android:layout_width="30dp"
+                                                    android:layout_height="28dp"
+                                                    android:layout_gravity="right"
+                                                    android:layout_marginTop="5dp"
+                                                    android:layout_marginEnd="12dp"
+                                                    app:srcCompat="@drawable/ic_clinic" />
+
+
+                                                <LinearLayout
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="12dp"
+                                                    android:orientation="vertical"
+                                                    android:weightSum="2"
+                                                    app:layout_constraintStart_toStartOf="parent"
+                                                    app:layout_constraintTop_toBottomOf="@+id/user_sec_wrap"
+                                                    app:srcCompat="@drawable/input_border_bottom">
+
+                                                    <TextView
+                                                        android:id="@+id/labelTxt"
+                                                        style="@style/new_label_style"
+                                                        android:text="Hospital Name"
+                                                        app:layout_constraintStart_toStartOf="parent"
+                                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                                    <android.support.constraint.ConstraintLayout
+                                                        android:id="@+id/clinicNameInputWrap"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:background="@drawable/input_border_bottom"
+                                                        app:layout_constraintStart_toStartOf="parent"
+                                                        app:layout_constraintTop_toBottomOf="@+id/label">
+
+                                                        <EditText
+                                                            android:id="@+id/clinicNameInput"
+                                                            style="@style/new_input_style"
+                                                            app:layout_constraintStart_toStartOf="parent"
+                                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                                        <EditText
+                                                            android:id="@+id/feeInput"
+                                                            style="@style/new_input_style"
+                                                            android:text=""
+                                                            android:visibility="gone"
+                                                            app:layout_constraintStart_toStartOf="parent"
+                                                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                                                    </android.support.constraint.ConstraintLayout>
+
+                                                </LinearLayout>
+
+                                                <LinearLayout
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="12dp"
+                                                    android:orientation="vertical"
+                                                    android:weightSum="2"
+                                                    app:layout_constraintTop_toBottomOf="@+id/user_sec_wrap">
+
+
+                                                    <android.support.design.widget.CoordinatorLayout
+                                                        android:id="@+id/consultationFee"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:orientation="horizontal"
+                                                        app:layout_constraintStart_toStartOf="parent"
+                                                        app:layout_constraintTop_toTopOf="parent">
+
+                                                        <LinearLayout
+                                                            android:id="@+id/CurrencyLayout"
+                                                            android:layout_width="80dp"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_alignParentStart="true"
+                                                            android:layout_weight="3"
+                                                            android:orientation="vertical"
+                                                            app:layout_constraintStart_toStartOf="parent"
+                                                            app:layout_constraintTop_toTopOf="parent">
+
+                                                            <TextView
+                                                                android:id="@+id/currancyINput"
+                                                                style="@style/new_label_style"
+                                                                android:layout_width="match_parent"
+                                                                android:layout_height="wrap_content"
+                                                                android:layout_marginBottom="3dp"
+                                                                android:text="Currency" />
+
+
+                                                            <android.support.constraint.ConstraintLayout
+                                                                android:id="@+id/expSec"
+                                                                android:layout_width="wrap_content"
+                                                                android:layout_height="wrap_content"
+                                                                android:background="@drawable/border_bottom"
+                                                                app:layout_constraintStart_toStartOf="parent"
+                                                                app:layout_constraintTop_toBottomOf="@+id/clinic_txt1">
+
+                                                                <Spinner
+                                                                    android:id="@+id/currancySpinner"
+                                                                    style="@style/input_bottom_border_style"
+                                                                    android:layout_width="match_parent"
+                                                                    android:layout_height="35dp"
+                                                                    android:background="@color/transparent"
+                                                                    android:hint="₹"
+                                                                    android:inputType="text"
+                                                                    android:textAlignment="center"
+                                                                    android:textColor="#282f3f"
+                                                                    android:textColorHint="#282f3f"
+
+                                                                    android:textSize="18sp"
+                                                                    app:layout_constraintStart_toStartOf="parent"
+                                                                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                                                            </android.support.constraint.ConstraintLayout>
+
+                                                            <ImageView
+                                                                android:layout_width="wrap_content"
+                                                                android:layout_height="wrap_content"
+                                                                android:layout_gravity="right"
+                                                                android:layout_marginTop="-28dp"
+                                                                android:layout_marginEnd="8dp"
+                                                                android:src="@drawable/ic_arrow_drop_down_black" />
+
+                                                        </LinearLayout>
+
+                                                        <LinearLayout
+                                                            android:id="@+id/consultationSec"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_alignParentEnd="true"
+                                                            android:layout_marginStart="96dp"
+                                                            android:layout_weight="7"
+                                                            android:orientation="vertical">
+
+                                                            <TextView
+                                                                style="@style/new_label_style"
+                                                                android:layout_width="match_parent"
+                                                                android:layout_height="wrap_content"
+                                                                android:layout_marginBottom="3dp"
+                                                                android:text="Consultation Fee" />
+
+                                                            <EditText
+                                                                android:id="@+id/consultationFeeInput"
+                                                                style="@style/input_bottom_border_style"
+                                                                android:layout_width="match_parent"
+                                                                android:layout_height="35dp"
+                                                                android:inputType="number" />
+
+                                                        </LinearLayout>
+
+
+                                                    </android.support.design.widget.CoordinatorLayout>
+
+
+                                                </LinearLayout>
+
+                                                <LinearLayout
+                                                    android:id="@+id/weekDaysWrap"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="20dp"
+                                                    android:layout_marginBottom="20dp"
+                                                    android:orientation="horizontal">
+
+                                                    <LinearLayout
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_weight="1"
+                                                        android:gravity="center"
+                                                        android:orientation="horizontal"
+                                                        android:tag="Sunday">
+
+                                                        <TextView
+                                                            android:id="@+id/sunBtn"
+                                                            style="@style/week_day_style"
+                                                            android:tag="0"
+                                                            android:text="S" />
+                                                    </LinearLayout>
+
+                                                    <LinearLayout
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_weight="1"
+                                                        android:gravity="center"
+                                                        android:orientation="horizontal"
+                                                        android:tag="Monday">
+
+                                                        <TextView
+                                                            android:id="@+id/monBtn"
+                                                            style="@style/week_day_style"
+                                                            android:tag="0"
+                                                            android:text="M" />
+
+                                                    </LinearLayout>
+
+                                                    <LinearLayout
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_weight="1"
+                                                        android:gravity="center"
+                                                        android:orientation="horizontal"
+                                                        android:tag="Tuesday">
+
+                                                        <TextView
+                                                            android:id="@+id/tueBtn"
+                                                            style="@style/week_day_style"
+                                                            android:tag="0"
+                                                            android:text="T" />
+                                                    </LinearLayout>
+
+                                                    <LinearLayout
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_weight="1"
+                                                        android:gravity="center"
+                                                        android:orientation="horizontal"
+                                                        android:tag="Wednesday">
+
+                                                        <TextView
+                                                            android:id="@+id/wedBtn"
+                                                            style="@style/week_day_style"
+                                                            android:tag="0"
+                                                            android:text="W" />
+                                                    </LinearLayout>
+
+                                                    <LinearLayout
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_weight="1"
+                                                        android:gravity="center"
+                                                        android:orientation="horizontal"
+                                                        android:tag="Thursday">
+
+                                                        <TextView
+                                                            android:id="@+id/thuBtn"
+                                                            style="@style/week_day_style"
+                                                            android:tag="0"
+                                                            android:text="Th" />
+                                                    </LinearLayout>
+
+                                                    <LinearLayout
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_weight="1"
+                                                        android:gravity="center"
+                                                        android:orientation="horizontal"
+                                                        android:tag="Friday">
+
+                                                        <TextView
+                                                            android:id="@+id/friBtn"
+                                                            style="@style/week_day_style"
+                                                            android:tag="0"
+                                                            android:text="F" />
+                                                    </LinearLayout>
+
+                                                    <LinearLayout
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_weight="1"
+                                                        android:gravity="center"
+                                                        android:orientation="horizontal"
+                                                        android:tag="Saturday">
+
+                                                        <TextView
+                                                            android:id="@+id/satBtn"
+                                                            style="@style/week_day_style"
+                                                            android:tag="0"
+                                                            android:text="S" />
+
+                                                    </LinearLayout>
+
+                                                </LinearLayout>
+
+                                                <android.support.constraint.ConstraintLayout
+                                                    android:id="@+id/timeInputsWrap"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="horizontal">
+
+                                                    <LinearLayout
+                                                        android:id="@+id/currentLayout"
+                                                        android:layout_width="100dp"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_alignParentStart="true"
+                                                        android:elevation="1dp"
+                                                        android:orientation="vertical"
+                                                        app:layout_constraintStart_toStartOf="parent"
+                                                        app:layout_constraintTop_toTopOf="parent">
+
+                                                        <TextView
+                                                            android:id="@+id/label2"
+                                                            style="@style/new_label_style"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_marginBottom="3dp"
+                                                            android:text="Start Time"
+                                                            android:textColor="#88a1ac" />
+
+
+                                                        <android.support.constraint.ConstraintLayout
+                                                            android:id="@+id/startTimeInputWrap"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:background="@drawable/input_border_bottom"
+                                                            app:layout_constraintStart_toStartOf="parent"
+                                                            app:layout_constraintTop_toBottomOf="@+id/label2">
+
+                                                            <EditText
+                                                                android:id="@+id/startTimeInput"
+                                                                style="@style/new_input_style"
+                                                                android:focusable="false"
+                                                                android:text="00:00"
+                                                                app:layout_constraintStart_toStartOf="parent"
+                                                                app:layout_constraintTop_toTopOf="parent" />
+
+                                                        </android.support.constraint.ConstraintLayout>
+
+                                                        <ImageView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_gravity="right"
+                                                            android:layout_marginTop="-28dp"
+                                                            android:src="@drawable/ic_arrow_drop_down_black" />
+
+                                                    </LinearLayout>
+
+                                                    <TextView
+                                                        android:id="@+id/timeDiffTxt"
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:elevation="0dp"
+                                                        android:fontFamily="@font/mulisemibold"
+                                                        android:text="0h"
+                                                        android:textColor="#708190"
+                                                        android:textSize="10sp"
+                                                        android:textStyle="italic"
+                                                        app:layout_constraintBottom_toBottomOf="parent"
+                                                        app:layout_constraintEnd_toStartOf="@+id/linearLayout6"
+                                                        app:layout_constraintStart_toEndOf="@+id/linearLayout5"
+                                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                                    <LinearLayout
+                                                        android:id="@+id/linearLayout6"
+                                                        android:layout_width="100dp"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_alignParentEnd="true"
+                                                        android:elevation="1dp"
+                                                        android:orientation="vertical"
+                                                        app:layout_constraintEnd_toEndOf="parent"
+                                                        app:layout_constraintTop_toTopOf="parent">
+
+                                                        <TextView
+                                                            android:id="@+id/label"
+                                                            style="@style/new_label_style"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_marginBottom="3dp"
+                                                            android:text="End Time"
+                                                            android:textColor="#88a1ac" />
+
+                                                        <android.support.constraint.ConstraintLayout
+                                                            android:id="@+id/endTimeInputWrap"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:background="@drawable/input_border_bottom"
+                                                            app:layout_constraintStart_toStartOf="parent"
+                                                            app:layout_constraintTop_toBottomOf="@+id/label2">
+
+                                                            <EditText
+                                                                android:id="@+id/endTimeInput"
+                                                                style="@style/new_input_style"
+                                                                android:focusable="false"
+                                                                android:text="00:00"
+                                                                app:layout_constraintStart_toStartOf="parent"
+                                                                app:layout_constraintTop_toTopOf="parent" />
+
+                                                        </android.support.constraint.ConstraintLayout>
+
+                                                        <ImageView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_gravity="right"
+                                                            android:layout_marginTop="-28dp"
+                                                            android:src="@drawable/ic_arrow_drop_down_black" />
+                                                    </LinearLayout>
+
+                                                </android.support.constraint.ConstraintLayout>
+
+                                                <FrameLayout
+                                                    android:id="@+id/errorMsgWrap"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="22dp"
+                                                    android:layout_marginBottom="-22dp"
+                                                    android:background="#00FFFFFF"
+                                                    android:elevation="1dp"
+                                                    android:visibility="gone"
+                                                    app:layout_constraintStart_toStartOf="parent"
+                                                    app:layout_constraintTop_toBottomOf="@+id/timeInputsWrap"
+                                                    tools:elevation="10dp">
+
+                                                    <TextView
+                                                        style="@style/new_err_txt_style"
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_gravity="bottom|center_horizontal"
+                                                        android:paddingTop="2dp"
+                                                        android:text="All fields are mandatory!" />
+                                                </FrameLayout>
+
+                                                <LinearLayout
+                                                    android:id="@+id/add_photo_sec"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="90dp"
+                                                    android:layout_marginStart="-10dp"
+                                                    android:layout_marginTop="30dp"
+                                                    android:layout_marginEnd="-10dp"
+                                                    android:background="@drawable/add_photo_img">
+
+                                                    <ImageView
+                                                        android:id="@+id/imageView6"
+                                                        android:layout_width="50dp"
+                                                        android:layout_height="45dp"
+                                                        android:layout_marginStart="50dp"
+                                                        android:layout_marginTop="22dp"
+                                                        android:background="@drawable/ic_add_photos" />
+
+                                                    <TextView
+                                                        android:id="@+id/add_photo_txt"
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginStart="12dp"
+                                                        android:layout_marginTop="32dp"
+                                                        android:layout_weight="3"
+                                                        android:fontFamily="@font/sfprotextregular"
+                                                        android:text="Add Photos"
+                                                        android:textColor="#594d77"
+                                                        android:textSize="14sp" />
+                                                </LinearLayout>
+
+                                                <RelativeLayout
+                                                    android:id="@+id/add_more_photo_sec"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="60dp"
+                                                    android:layout_marginTop="30dp"
+                                                    android:background="@drawable/img_wrapper_style"
+                                                    android:gravity="center"
+                                                    android:visibility="gone">
+
+                                                    <LinearLayout
+                                                        android:id="@+id/galleryPhotoListWrap"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_alignParentStart="true"
+                                                        android:layout_marginStart="8dp"
+                                                        android:layout_marginEnd="60dp"
+                                                        android:orientation="horizontal" />
+
+                                                    <ImageView
+                                                        android:id="@+id/addMorePhotoImgBtn"
+                                                        android:layout_width="45dp"
+                                                        android:layout_height="45dp"
+                                                        android:layout_alignParentEnd="true"
+                                                        android:layout_marginEnd="8dp"
+                                                        android:background="@drawable/grey_circle_border"
+                                                        android:padding="8dp"
+                                                        android:src="@drawable/ic_add_dark_purple" />
+                                                </RelativeLayout>
+
+                                                <LinearLayout
+                                                    android:id="@+id/location_wrap"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="90dp"
+                                                    android:layout_marginStart="-10dp"
+                                                    android:layout_marginTop="5dp"
+                                                    android:layout_marginEnd="-10dp"
+                                                    android:background="@drawable/clinic_location_img"
+                                                    android:paddingBottom="10dp">
+
+
+                                                    <LinearLayout
+                                                        android:id="@+id/linearLayout8"
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginStart="48dp"
+                                                        android:layout_marginTop="20dp"
+                                                        app:layout_constraintStart_toStartOf="parent"
+                                                        app:layout_constraintTop_toTopOf="parent">
+
+                                                        <TextView
+                                                            android:layout_width="50dp"
+                                                            android:layout_height="50dp"
+                                                            android:background="@drawable/ic_location_dot"
+                                                            android:filterTouchesWhenObscured="true" />
+
+                                                    </LinearLayout>
+
+
+                                                    <TextView
+                                                        android:id="@+id/textView8"
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginStart="10dp"
+                                                        android:layout_marginTop="30dp"
+                                                        android:layout_weight="3"
+                                                        android:fontFamily="@font/sfprotextregular"
+                                                        android:text="Clinic Location"
+                                                        android:textColor="#594d77"
+                                                        android:textSize="14sp"
+                                                        app:layout_constraintStart_toEndOf="@+id/linearLayout8"
+                                                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                                                </LinearLayout>
+                                            </LinearLayout>
+                                        </android.support.design.widget.CoordinatorLayout>
+
+                                    </LinearLayout>
+                                </ScrollView>
+
+                                <!--<LinearLayout-->
+                                <!--android:id="@+id/consultationSec"-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="30dp"-->
+                                <!--android:layout_marginTop="10dp"-->
+                                <!--android:gravity="center"-->
+                                <!--android:onClick="openConsultationFeeDialog">-->
+
+                                <!--<TextView-->
+                                <!--android:id="@+id/consultationTxtView"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_gravity="bottom"-->
+                                <!--android:background="@drawable/border_bottom"-->
+                                <!--android:gravity="center"-->
+                                <!--android:text="Enter Consultation Fee"-->
+                                <!--android:textSize="8sp"-->
+                                <!--android:textStyle="italic" />-->
+                                <!--</LinearLayout>-->
+
+                                <FrameLayout
+                                    android:id="@+id/consultationSecWrap"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="bottom|start"
+                                    android:background="@drawable/rounded_white_view"
+                                    android:gravity="center"
+                                    android:paddingBottom="0dp"
+                                    android:visibility="visible">
+
+                                    <TextView
+                                        android:id="@+id/consultationTxtView"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginTop="0dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:layout_marginBottom="8dp"
+                                        android:background="@drawable/border_bottom"
+                                        android:fontFamily="@font/mulisemibold"
+                                        android:text="Enter Consultation Fee"
+                                        android:textColor="#667480"
+                                        android:textSize="12sp"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+                                </FrameLayout>
+
+                            </android.support.design.widget.CoordinatorLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/sign_up_passcode_wrap"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <LinearLayout
+                                android:id="@+id/passcode_wrap"
+                                android:layout_width="290dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="32dp"
+                                android:orientation="vertical"
+                                android:paddingBottom="10dp"
+                                android:weightSum="2"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/user_sec_wrap"
+                                app:srcCompat="@drawable/border_bottom">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:text="Create Login Passcode"
+                                    android:textColor="#88a1ac"
+                                    android:textSize="14sp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <android.support.constraint.ConstraintLayout
+                                    android:id="@+id/passcode_sec"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.24"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/name_txt">
+
+                                    <EditText
+                                        android:id="@+id/passCode1"
+                                        android:layout_width="55dp"
+                                        android:layout_height="55dp"
+                                        android:background="@drawable/input_rounded"
+                                        android:inputType="numberPassword"
+                                        android:maxLength="1"
+                                        android:textAlignment="center"
+                                        android:textSize="32.5sp"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <EditText
+                                        android:id="@+id/passCode2"
+                                        android:layout_width="55dp"
+                                        android:layout_height="55dp"
+                                        android:layout_marginStart="16dp"
+                                        android:background="@drawable/input_rounded"
+                                        android:inputType="numberPassword"
+                                        android:maxLength="1"
+                                        android:textAlignment="center"
+                                        android:textSize="32.5sp"
+                                        app:layout_constraintStart_toEndOf="@+id/passCode1"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <EditText
+                                        android:id="@+id/passCode3"
+                                        android:layout_width="55dp"
+                                        android:layout_height="55dp"
+                                        android:layout_marginStart="16dp"
+                                        android:background="@drawable/input_rounded"
+                                        android:inputType="numberPassword"
+                                        android:maxLength="1"
+                                        android:textAlignment="center"
+                                        android:textSize="32.5sp"
+                                        app:layout_constraintStart_toEndOf="@+id/passCode2"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <EditText
+                                        android:id="@+id/passCode4"
+                                        android:layout_width="55dp"
+                                        android:layout_height="55dp"
+                                        android:layout_marginStart="16dp"
+                                        android:background="@drawable/input_rounded"
+                                        android:inputType="numberPassword"
+                                        android:maxLength="1"
+                                        android:textAlignment="center"
+                                        android:textSize="32.5sp"
+                                        app:layout_constraintStart_toEndOf="@+id/passCode3"
+                                        app:layout_constraintTop_toTopOf="parent" />
+                                </android.support.constraint.ConstraintLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/confirm_passcode_wrap"
+                                android:layout_width="290dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="32dp"
+                                android:orientation="vertical"
+                                android:paddingBottom="10dp"
+                                android:weightSum="2"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/user_sec_wrap"
+                                app:srcCompat="@drawable/border_bottom">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:text="Confirm Passcode"
+                                    android:textColor="#88a1ac"
+                                    android:textSize="14sp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <android.support.constraint.ConstraintLayout
+                                    android:id="@+id/confirm_passcode_sec"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.24"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/passcode_txt">
+
+                                    <EditText
+                                        android:id="@+id/confirmPassCode1"
+                                        android:layout_width="55dp"
+                                        android:layout_height="55dp"
+                                        android:background="@drawable/input_rounded"
+                                        android:inputType="numberPassword"
+                                        android:maxLength="1"
+                                        android:textAlignment="center"
+                                        android:textSize="32.5sp"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <EditText
+                                        android:id="@+id/confirmPassCode2"
+                                        android:layout_width="55dp"
+                                        android:layout_height="55dp"
+                                        android:layout_marginStart="16dp"
+                                        android:background="@drawable/input_rounded"
+                                        android:inputType="numberPassword"
+                                        android:maxLength="1"
+                                        android:textAlignment="center"
+                                        android:textSize="32.5sp"
+                                        app:layout_constraintStart_toEndOf="@+id/confirmPassCode1"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <EditText
+                                        android:id="@+id/confirmPassCode3"
+                                        android:layout_width="55dp"
+                                        android:layout_height="55dp"
+                                        android:layout_marginStart="16dp"
+                                        android:background="@drawable/input_rounded"
+                                        android:inputType="numberPassword"
+                                        android:maxLength="1"
+                                        android:textAlignment="center"
+                                        android:textSize="32.5sp"
+                                        app:layout_constraintStart_toEndOf="@+id/confirmPassCode2"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <EditText
+                                        android:id="@+id/confirmPassCode4"
+                                        android:layout_width="55dp"
+                                        android:layout_height="55dp"
+                                        android:layout_marginStart="16dp"
+                                        android:background="@drawable/input_rounded"
+                                        android:inputType="numberPassword"
+                                        android:maxLength="1"
+                                        android:textAlignment="center"
+                                        android:textSize="32.5sp"
+                                        app:layout_constraintStart_toEndOf="@+id/confirmPassCode3"
+                                        app:layout_constraintTop_toTopOf="parent" />
+                                </android.support.constraint.ConstraintLayout>
+
+                            </LinearLayout>
+
+                            <android.support.constraint.ConstraintLayout
+                                android:id="@+id/skip_txt_wrap"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="32dp"
+                                android:orientation="horizontal"
+                                android:weightSum="2"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/confirm_passcode_wrap">
+
+                                <TextView
+                                    android:id="@+id/skipPasscodeTxtBtn"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp"
+                                    android:gravity="center_horizontal|center_vertical"
+                                    android:tag="0"
+                                    android:text="SKIP"
+                                    android:textColor="#8e63e6"
+                                    android:textSize="12sp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                            </android.support.constraint.ConstraintLayout>
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/invite_doc_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <LinearLayout
+                                android:id="@+id/search_wrap"
+                                android:layout_width="290dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="30dp"
+                                android:layout_marginEnd="30dp"
+                                android:layout_marginBottom="10dp"
+                                android:orientation="horizontal"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <android.support.constraint.ConstraintLayout
+                                    android:id="@+id/icon_search"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                    <ImageView
+                                        android:id="@+id/map_img"
+                                        android:layout_width="16dp"
+                                        android:layout_height="17dp"
+                                        android:layout_marginTop="18dp"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:srcCompat="@drawable/ic_search_icon_new" />
+
+                                    <EditText
+                                        android:id="@+id/searchBox"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="40dp"
+                                        android:layout_marginStart="30dp"
+                                        android:layout_marginTop="6dp"
+                                        android:layout_weight="1"
+                                        android:alpha=".5"
+                                        android:background="@null"
+                                        android:ems="10"
+                                        android:hint="​Search"
+                                        android:inputType="text"
+                                        android:textColor="#282f3f"
+                                        android:textColorHint="#8FA7B1"
+                                        android:textSize="14sp"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <ImageView
+                                        android:id="@+id/closeSearchImg"
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:layout_gravity="right"
+                                        android:layout_marginTop="12dp"
+                                        android:padding="9dp"
+                                        android:src="@drawable/ic_search_close_shape"
+                                        android:visibility="gone"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                </android.support.constraint.ConstraintLayout>
+
+                            </LinearLayout>
+
+                            <android.support.design.widget.CoordinatorLayout
+                                android:id="@+id/prescriptionContWrap"
+                                android:layout_width="290dp"
+                                android:layout_height="match_parent"
+                                android:focusableInTouchMode="true"
+                                android:orientation="vertical"
+                                android:visibility="visible"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/mulisemibold"
+                                        android:text="Invite Doctor" />
+
+
+                                    <ScrollView
+                                        android:id="@+id/presScrollView"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="0dp"
+                                        android:paddingBottom="0dp"
+                                        android:scrollbarThumbVertical="@drawable/scrollbar"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent">
+
+
+                                        <LinearLayout
+                                            android:id="@+id/presListWrap"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:focusableInTouchMode="true"
+                                            android:gravity="center"
+                                            android:orientation="vertical"
+                                            android:paddingTop="10dp">
+
+                                            <android.support.design.widget.CoordinatorLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginBottom="10dp">
+
+                                                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                    android:id="@+id/patient_img"
+                                                    android:layout_width="40dp"
+                                                    android:layout_height="40dp"
+                                                    android:layout_marginStart="8dp"
+                                                    android:src="@drawable/male_user"
+                                                    app:layout_constraintStart_toStartOf="parent"
+                                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                                <android.support.constraint.ConstraintLayout
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginStart="55dp"
+                                                    android:layout_marginEnd="90dp"
+                                                    app:layout_constraintEnd_toEndOf="parent"
+                                                    app:layout_constraintStart_toStartOf="parent"
+                                                    app:layout_constraintTop_toTopOf="parent">
+
+                                                    <TextView
+                                                        android:id="@+id/patient_name_txt"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:ellipsize="end"
+                                                        android:fontFamily="@font/mulisemibold"
+                                                        android:maxLines="1"
+                                                        android:paddingEnd="10dp"
+                                                        android:text="Baskar Rao"
+                                                        android:textColor="#282f3f"
+                                                        android:textSize="16sp"
+                                                        app:layout_constraintStart_toStartOf="parent"
+                                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                                    <TextView
+                                                        android:id="@+id/patient_mobile"
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:fontFamily="@font/mulisemibold"
+                                                        android:text="+91 9866021399"
+                                                        android:textColor="#787993"
+                                                        android:textSize="12sp"
+                                                        app:layout_constraintStart_toStartOf="parent"
+                                                        app:layout_constraintTop_toBottomOf="@+id/patient_name_txt" />
+
+                                                </android.support.constraint.ConstraintLayout>
+
+                                                <LinearLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="end"
+                                                    android:orientation="vertical">
+
+                                                    <android.support.constraint.ConstraintLayout
+                                                        android:id="@+id/add_wrap"
+                                                        android:layout_width="60dp"
+                                                        android:layout_height="28dp"
+                                                        android:background="@drawable/pill_select"
+                                                        android:visibility="gone"
+                                                        app:layout_constraintEnd_toEndOf="parent"
+                                                        app:layout_constraintTop_toTopOf="parent">
+
+                                                        <TextView
+                                                            android:id="@+id/add_wrap_sec"
+                                                            android:layout_width="10dp"
+                                                            android:layout_height="10dp"
+                                                            android:layout_marginStart="16dp"
+                                                            android:layout_marginTop="8dp"
+                                                            android:layout_marginEnd="4dp"
+                                                            android:layout_marginBottom="8dp"
+                                                            android:background="@drawable/ic_combined_shape"
+                                                            android:paddingStart="8dp"
+                                                            android:paddingTop="6dp"
+                                                            android:paddingEnd="8dp"
+                                                            android:paddingBottom="6dp"
+                                                            android:textSize="12sp"
+                                                            app:layout_constraintBottom_toBottomOf="parent"
+                                                            app:layout_constraintEnd_toStartOf="@+id/first_add"
+                                                            app:layout_constraintStart_toStartOf="parent"
+                                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                                        <TextView
+                                                            android:id="@+id/first_add"
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_marginStart="4dp"
+                                                            android:layout_marginTop="8dp"
+                                                            android:layout_marginEnd="16dp"
+                                                            android:layout_marginBottom="8dp"
+                                                            android:clickable="true"
+                                                            android:text="Add"
+                                                            android:textColor="#7540ee"
+                                                            android:textSize="12sp"
+                                                            app:layout_constraintBottom_toBottomOf="parent"
+                                                            app:layout_constraintEnd_toEndOf="parent"
+                                                            app:layout_constraintStart_toEndOf="@+id/add_wrap_sec"
+                                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                                    </android.support.constraint.ConstraintLayout>
+
+                                                    <android.support.constraint.ConstraintLayout
+                                                        android:id="@+id/check_wrap"
+                                                        android:layout_width="60dp"
+                                                        android:layout_height="28dp"
+                                                        android:background="@drawable/pill_selected"
+                                                        app:layout_constraintEnd_toEndOf="parent"
+                                                        app:layout_constraintTop_toTopOf="parent">
+
+                                                        <TextView
+                                                            android:id="@+id/textView21"
+                                                            android:layout_width="18dp"
+                                                            android:layout_height="21dp"
+                                                            android:layout_marginStart="8dp"
+                                                            android:layout_marginTop="8dp"
+                                                            android:layout_marginEnd="8dp"
+                                                            android:layout_marginBottom="8dp"
+                                                            android:background="@drawable/ic_check_green"
+                                                            android:paddingStart="8dp"
+                                                            android:paddingTop="6dp"
+                                                            android:paddingEnd="8dp"
+                                                            android:paddingBottom="6dp"
+                                                            app:layout_constraintBottom_toBottomOf="parent"
+                                                            app:layout_constraintEnd_toEndOf="parent"
+                                                            app:layout_constraintStart_toStartOf="parent"
+                                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                                    </android.support.constraint.ConstraintLayout>
+                                                </LinearLayout>
+                                            </android.support.design.widget.CoordinatorLayout>
+                                        </LinearLayout>
+                                    </ScrollView>
+                                </LinearLayout>
+                            </android.support.design.widget.CoordinatorLayout>
+
+
+                            <android.support.design.widget.CoordinatorLayout
+                                android:id="@+id/contactWrap"
+                                android:layout_width="290dp"
+                                android:layout_height="match_parent"
+                                android:focusableInTouchMode="true"
+                                android:orientation="vertical"
+                                android:visibility="visible"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/mulisemibold"
+                                        android:text="​All contacts" />
+
+
+                                    <ScrollView
+                                        android:id="@+id/contactScrollView1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="0dp"
+                                        android:paddingBottom="0dp"
+                                        android:scrollbarThumbVertical="@drawable/scrollbar"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent">
+
+
+                                        <LinearLayout
+                                            android:id="@+id/contactListWrap1"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:focusableInTouchMode="true"
+                                            android:gravity="center"
+                                            android:orientation="vertical"
+                                            android:paddingTop="10dp">
+
+                                            <android.support.design.widget.CoordinatorLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content">
+
+                                                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                    android:id="@+id/patient_img1"
+                                                    android:layout_width="40dp"
+                                                    android:layout_height="40dp"
+                                                    android:layout_marginStart="8dp"
+                                                    android:src="@drawable/male_user"
+                                                    app:layout_constraintStart_toStartOf="parent"
+                                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                                <android.support.constraint.ConstraintLayout
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginStart="55dp"
+                                                    android:layout_marginEnd="90dp"
+                                                    app:layout_constraintEnd_toEndOf="parent"
+                                                    app:layout_constraintStart_toStartOf="parent"
+                                                    app:layout_constraintTop_toTopOf="parent">
+
+                                                    <TextView
+                                                        android:id="@+id/contactTxt"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:ellipsize="end"
+                                                        android:fontFamily="@font/mulisemibold"
+                                                        android:maxLines="1"
+                                                        android:paddingEnd="10dp"
+                                                        android:text="Subash Chakri"
+                                                        android:textColor="#282f3f"
+                                                        android:textSize="16sp"
+                                                        app:layout_constraintStart_toStartOf="parent"
+                                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                                    <TextView
+                                                        android:id="@+id/contactPhone"
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:fontFamily="@font/mulisemibold"
+                                                        android:text="+91 9866011399"
+                                                        android:textColor="#787993"
+                                                        android:textSize="12sp"
+                                                        app:layout_constraintStart_toStartOf="parent"
+                                                        app:layout_constraintTop_toBottomOf="@+id/contactTxt" />
+
+                                                </android.support.constraint.ConstraintLayout>
+
+                                                <LinearLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="end"
+                                                    android:orientation="vertical">
+
+                                                    <android.support.constraint.ConstraintLayout
+                                                        android:id="@+id/contactaddwrap"
+                                                        android:layout_width="60dp"
+                                                        android:layout_height="28dp"
+                                                        android:background="@drawable/pill_select"
+                                                        android:visibility="visible"
+                                                        app:layout_constraintEnd_toEndOf="parent"
+                                                        app:layout_constraintTop_toTopOf="parent">
+
+                                                        <TextView
+                                                            android:id="@+id/contactwrapsec"
+                                                            android:layout_width="10dp"
+                                                            android:layout_height="10dp"
+                                                            android:layout_marginStart="16dp"
+                                                            android:layout_marginTop="8dp"
+                                                            android:layout_marginEnd="4dp"
+                                                            android:layout_marginBottom="8dp"
+                                                            android:background="@drawable/ic_combined_shape"
+                                                            android:paddingStart="8dp"
+                                                            android:paddingTop="6dp"
+                                                            android:paddingEnd="8dp"
+                                                            android:paddingBottom="6dp"
+                                                            android:textSize="12sp"
+                                                            app:layout_constraintBottom_toBottomOf="parent"
+                                                            app:layout_constraintEnd_toStartOf="@+id/addSec"
+                                                            app:layout_constraintStart_toStartOf="parent"
+                                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                                        <TextView
+                                                            android:id="@+id/addSec"
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_marginStart="4dp"
+                                                            android:layout_marginTop="8dp"
+                                                            android:layout_marginEnd="16dp"
+                                                            android:layout_marginBottom="8dp"
+                                                            android:clickable="true"
+                                                            android:text="Add"
+                                                            android:textColor="#7540ee"
+                                                            android:textSize="12sp"
+                                                            app:layout_constraintBottom_toBottomOf="parent"
+                                                            app:layout_constraintEnd_toEndOf="parent"
+                                                            app:layout_constraintStart_toEndOf="@+id/contactwrapsec"
+                                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                                    </android.support.constraint.ConstraintLayout>
+
+                                                    <android.support.constraint.ConstraintLayout
+                                                        android:id="@+id/contactCheckWrap"
+                                                        android:layout_width="60dp"
+                                                        android:layout_height="28dp"
+                                                        android:background="@drawable/pill_selected"
+                                                        android:visibility="gone"
+                                                        app:layout_constraintEnd_toEndOf="parent"
+                                                        app:layout_constraintTop_toTopOf="parent">
+
+                                                        <TextView
+                                                            android:id="@+id/textView21"
+                                                            android:layout_width="18dp"
+                                                            android:layout_height="21dp"
+                                                            android:layout_marginStart="8dp"
+                                                            android:layout_marginTop="8dp"
+                                                            android:layout_marginEnd="8dp"
+                                                            android:layout_marginBottom="8dp"
+                                                            android:background="@drawable/ic_check_green"
+                                                            android:paddingStart="8dp"
+                                                            android:paddingTop="6dp"
+                                                            android:paddingEnd="8dp"
+                                                            android:paddingBottom="6dp"
+                                                            app:layout_constraintBottom_toBottomOf="parent"
+                                                            app:layout_constraintEnd_toEndOf="parent"
+                                                            app:layout_constraintStart_toStartOf="parent"
+                                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                                    </android.support.constraint.ConstraintLayout>
+                                                </LinearLayout>
+                                            </android.support.design.widget.CoordinatorLayout>
+
+                                        </LinearLayout>
+                                    </ScrollView>
+                                </LinearLayout>
+                            </android.support.design.widget.CoordinatorLayout>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                    <!-- All content ends here-->
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/next_btn_wrap"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:layout_gravity="bottom|start"
+            android:paddingBottom="0dp"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/nextBtntxt"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#8e63e6"
+                android:fontFamily="@font/sfprotextsemibold"
+                android:gravity="center_horizontal|center_vertical"
+                android:tag="true"
+                android:text="NEXT"
+                android:textColor="#80ffffff"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/doneBtntxt"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#8e63e6"
+                android:fontFamily="@font/sfprotextsemibold"
+                android:gravity="center_horizontal|center_vertical"
+                android:tag="true"
+                android:text="DONE"
+                android:textColor="#80ffffff"
+                android:textSize="16sp"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </FrameLayout>
+    </android.support.design.widget.CoordinatorLayout>
+</FrameLayout>
