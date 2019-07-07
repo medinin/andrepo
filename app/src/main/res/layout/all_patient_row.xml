@@ -47,8 +47,9 @@
                 android:layout_marginStart="14dp"
                 android:layout_marginTop="26dp"
                 android:fontFamily="@font/mulisemibold"
-                android:text=""
+                android:text="vewlcome"
                 android:textColor="#282f3f"
+
                 android:textSize="16sp"
                 app:layout_constraintStart_toEndOf="@+id/patientImg"
                 app:layout_constraintTop_toTopOf="parent" />

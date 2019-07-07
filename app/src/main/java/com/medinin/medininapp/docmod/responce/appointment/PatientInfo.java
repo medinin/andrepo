@@ -1,9 +1,10 @@
-package com.medinin.medininapp.docmod.responce;
+package com.medinin.medininapp.docmod.responce.appointment;
 
 import java.io.Serializable;
 
-public class PatientList  implements Serializable {
-    public String patient_id;
+public class PatientInfo implements Serializable {
+
+    public String patientId;
     public String name;
     public String photo;
     public String gender;

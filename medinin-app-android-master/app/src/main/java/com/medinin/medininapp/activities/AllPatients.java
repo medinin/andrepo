@@ -609,6 +609,9 @@ public class AllPatients extends AppCompatActivity {
             final Animation slide_up = AnimationUtils.loadAnimation(getApplicationContext(),
                     R.anim.slide_up);
 
+
+            //------------------------ check this out ------------------------ //
+
             dropDownBtn.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View arg0) {
                     String _tag = dropDownBtn.getTag().toString();
@@ -637,6 +640,8 @@ public class AllPatients extends AppCompatActivity {
                     dropDownBtn.performClick();
                 }
             });
+
+        // -------------------- work out ------------------//
 
             viewPatDetailsImgBtn.setOnClickListener(new View.OnClickListener() {
                 @Override

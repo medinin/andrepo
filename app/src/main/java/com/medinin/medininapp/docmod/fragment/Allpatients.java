@@ -7,8 +7,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.malinskiy.superrecyclerview.SuperRecyclerView;
 import com.medinin.medininapp.BaseFragment;
 import com.medinin.medininapp.R;
 import com.medinin.medininapp.docmod.adapter.PatientListAdapter;
@@ -28,19 +30,15 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-public class Allpatients extends BaseFragment {
+public class Allpatients extends BaseFragment implements View.OnClickListener {
 
-    @BindView(R.id.listofpatient)
-    RecyclerView recyclerView;
+
+   private   SuperRecyclerView recyclerView;
+   private ImageView addNewPatient;  //add patient ;button
+    private ImageView glPatFaceScanImg ;
 
     Unbinder unbinder;
     private View view;
-
-
-
-
-
-    
 
     private PatientListAdapter patientListAdapter;
 
@@ -66,6 +64,9 @@ public class Allpatients extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.activity_all_patients, container, false);
 
+        recyclerView = view.findViewById(R.id.listofpatient);
+
+
         unbinder = ButterKnife.bind(this, view);
         return view;
     }
@@ -73,6 +74,7 @@ public class Allpatients extends BaseFragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         initializeView();
         //handleLocation();
         makePatientList();
@@ -81,12 +83,15 @@ public class Allpatients extends BaseFragment {
 
 
 
-    private void initializeView() {
-        LinearLayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
-        recyclerView.setLayoutManager(mLayoutManager);
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-       // recyclerView.setEmptyListener(this);
+
+
+    private void initializeView() {
+
+        addNewPatient = view.findViewById(R.id.addNewPatient);
+        glPatFaceScanImg =view.findViewById(R.id.glPatFaceScanImg);
+        glPatFaceScanImg.setOnClickListener(this);
+        addNewPatient.setOnClickListener(this);
 
     }
 
@@ -125,17 +130,17 @@ public class Allpatients extends BaseFragment {
 
                     patientList =  patientData.data;
 
-                    ArrayList<PatientList> orders1 =  patientList.patientList ;
-                    patientListAdapter = new PatientListAdapter(getActivity(), patientList.patientList);
+                    ArrayList<PatientList> orders1 =  patientList.patient_list ;
+                  PatientListAdapter  patientListAdapter = new PatientListAdapter(getActivity(), patientList.patient_list);
 
                     recyclerView.setAdapter(patientListAdapter);
 
 
-                    Toast.makeText(getActivity()," Yes order has been shown ",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity()," Yes your patient data have been updated ",Toast.LENGTH_LONG).show();
 
                 }else if(patientData.statuscode == 0){
 
-                    Toast.makeText(getActivity(), "No order has been found", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Sorry you don't have any patient please add them out", Toast.LENGTH_SHORT).show();
                 }
 
 
@@ -149,6 +154,17 @@ public class Allpatients extends BaseFragment {
     }
 
 
+    @Override
+    public void onClick(View v) {
+     if(v.getId() == R.id.addNewPatient){
+
+         Toast.makeText(getActivity(),"it is working here ",Toast.LENGTH_LONG).show();
+
+     }else if(v.getId() == R.id.glPatFaceScanImg){
+         Toast.makeText(getActivity(),"moving to face activity ",Toast.LENGTH_LONG).show();
+
+     }
 
 
+    }
 }

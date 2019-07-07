@@ -5,6 +5,8 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.medinin.medininapp.BaseFragment;
 import com.medinin.medininapp.R;
@@ -18,6 +20,8 @@ public class AllAppointment extends BaseFragment {
 
     Unbinder unbinder;
     private View view;
+    private TextView total_appointment_count , dateInput;
+    private ImageView addAppointmentSec;
 
 
 

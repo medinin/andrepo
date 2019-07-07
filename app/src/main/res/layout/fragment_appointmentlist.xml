@@ -117,17 +117,17 @@
 
                 </LinearLayout>
 
-                <ScrollView
-                    android:id="@+id/feedScroll"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:elevation="0dp"
-                    android:paddingBottom="10dp"
-                    android:scrollbarThumbVertical="@drawable/scrollbar"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/dateWrap">
+                <!--<ScrollView-->
+                    <!--android:id="@+id/feedScroll"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginTop="8dp"-->
+                    <!--android:elevation="0dp"-->
+                    <!--android:paddingBottom="10dp"-->
+                    <!--android:scrollbarThumbVertical="@drawable/scrollbar"-->
+                    <!--app:layout_constraintEnd_toEndOf="parent"-->
+                    <!--app:layout_constraintStart_toStartOf="parent"-->
+                    <!--app:layout_constraintTop_toBottomOf="@+id/dateWrap">-->
 
                     <LinearLayout
                         android:id="@+id/linearLayoutList"
@@ -138,10 +138,21 @@
                         android:orientation="vertical"
                         android:paddingLeft="25dp"
                         android:paddingRight="25dp"
+                        app:layout_constraintTop_toBottomOf="@+id/dateWrap"
                         android:paddingBottom="130dp">
 
+
+                        <com.malinskiy.superrecyclerview.SuperRecyclerView
+                            android:id="@+id/lsitofappointment"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_below="@id/dateWrap"
+                            app:scrollbarStyle="insideInset">
+
+                        </com.malinskiy.superrecyclerview.SuperRecyclerView>
+
                     </LinearLayout>
-                </ScrollView>
+                <!--</ScrollView>-->
 
                 <FrameLayout
                     android:id="@+id/no_data"

@@ -5,7 +5,7 @@ public class API_URL {
     //Prod
 //    public static String _domain = "http://medapi.medinin.com/api";
 //    private static String _faceDomain = "https://www.medinin.com";
-//    private static String _faceTrainDomain = "http://medface.medinin.com";
+   // private static String _faceTrainDomain = "http://medface.medinin.com";
 //    private static String _anatomyDomain = "http://medanatomy.medinin.com";
 //    private static String _conditionDomain = "http://conditions.medinin.com/api";
 //    private static String _conditionDomainPlain = "http://conditions.medinin.com";
@@ -14,7 +14,7 @@ public class API_URL {
     //QA
     public static String _domain = "http://docapi.medinin.com/api";
     private static String _faceDomain = "https://www.medinin.com";
-    private static String _faceTrainDomain = "http://face.medinin.com";
+   private static String _faceTrainDomain = "http://face.medinin.com";
     private static String _anatomyDomain = "http://anatomymobile.medinin.com";
     private static String _conditionDomain = "http://conditions.medinin.com/api";
     private static String _conditionDomainPlain = "http://conditions.medinin.com";
