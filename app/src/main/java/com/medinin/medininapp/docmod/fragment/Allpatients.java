@@ -37,6 +37,11 @@ public class Allpatients extends BaseFragment {
     private View view;
 
 
+
+
+
+    
+
     private PatientListAdapter patientListAdapter;
 
 
