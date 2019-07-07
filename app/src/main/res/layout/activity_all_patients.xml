@@ -47,7 +47,7 @@
 
         <LinearLayout
             android:id="@+id/mainWrap1"
-            style="@style/main_wrap_box"
+            style="@style/main_wrap_box_sumeeth"
             android:orientation="vertical"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -125,31 +125,45 @@
                 </LinearLayout>
 
 
-                <ScrollView
-                    android:id="@+id/feedScroll"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:elevation="0dp"
-                    android:paddingBottom="15dp"
-                    android:scrollbarThumbVertical="@drawable/scrollbar"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/search_wrap">
+                <!--<ScrollView-->
+                    <!--android:id="@+id/feedScroll"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:elevation="0dp"-->
+                    <!--android:paddingBottom="15dp"-->
+                    <!--android:scrollbarThumbVertical="@drawable/scrollbar"-->
+                    <!--app:layout_constraintEnd_toEndOf="parent"-->
+                    <!--app:layout_constraintStart_toStartOf="parent"-->
+                    <!--app:layout_constraintTop_toBottomOf="@+id/search_wrap">-->
 
-                    <LinearLayout
-                        android:id="@+id/linearLayoutList"
+                    <!--<LinearLayout-->
+                        <!--android:id="@+id/linearLayoutList"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginStart="0dp"-->
+                        <!--android:layout_marginEnd="0dp"-->
+                        <!--android:orientation="vertical"-->
+                        <!--android:paddingLeft="25dp"-->
+                        <!--android:paddingRight="25dp"-->
+                        <!--android:paddingBottom="130dp" />-->
+<!--
+
+this where the recycleview will be loaded out
+
+-->
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/listofpatient"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="0dp"
-                        android:layout_marginEnd="0dp"
-                        android:orientation="vertical"
-                        android:paddingLeft="25dp"
-                        android:paddingRight="25dp"
-                        android:paddingBottom="130dp" />
+                        android:layout_below="@id/search_wrap"
+                        android:layout_height="match_parent">
 
 
 
-                </ScrollView>
+                    </android.support.v7.widget.RecyclerView>
+
+
+                <!--</ScrollView>-->
 
                 <FrameLayout
                     android:id="@+id/no_data"

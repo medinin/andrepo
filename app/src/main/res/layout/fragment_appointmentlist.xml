@@ -67,7 +67,7 @@
 
         <LinearLayout
             android:id="@+id/mainWrap1"
-            style="@style/main_wrap_box"
+            style="@style/main_wrap_box_sumeeth"
             android:orientation="vertical"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -238,6 +238,6 @@
 
         </LinearLayout>
 
-        <include layout="@layout/menu_bottom" />
+
     </RelativeLayout>
 </android.support.design.widget.CoordinatorLayout>

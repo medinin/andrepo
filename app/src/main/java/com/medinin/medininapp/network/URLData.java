@@ -5,7 +5,9 @@ package com.medinin.medininapp.network;
  */
 
 public enum URLData {
-    URL_HOTELS_LIST("https://goohungrry.com/stack/v1/list", false, true, "", 1),
+    URL_PATIENTS_NO_PAGE("https://api.medinin.in/v1/get-doc-patient-list", false, true, "", 1),
+
+
     URL_HOTELS_MENU_LIST("https://goohungrry.com/stack/v1/menu", false, true, "", 2),
     URL_HOTELS_MENU_DETAILS("https://goohungrry.com/stack/v1/menuDetails", false, true, "", 3),
     URL_HOTELS_MENU_LIST_DETAILS("https://goohungrry.com/stack/v1/menuItems", false, true, "", 4),
