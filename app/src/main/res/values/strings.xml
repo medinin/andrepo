@@ -16,4 +16,17 @@
     <string name="low_storage_error">Face detector dependencies cannot be downloaded due to low device storage</string>
     <string name="useFaceScanTxt">Note: Use global face scan to get the access of patient’s profile</string>
     <string name="sendSMSWarning">Note: Verify with OTP to send follow-up SMS reminders</string>
+
+
+    <string name="ask_for_error_log">Something went wrong.\nPlease help us by providing error details.\nThank you for your support.</string>
+    <string name="email_welcome_note">Dear Support Team,\n\nApplication is just crashed, please check following error logs for more details.\n\n\n</string>
+    <string name="TourGuideHelperColor">"#05d4f3"</string>
+    <string name="email_subject">"Dax Prod Mobile Assistance Needed"</string>
+    <string name="Theme">"Light Theme"</string>
+    <string name="phone_no">"3108959550"</string>
+    <string name="help_emailid">"support@oneclear.com"</string>
+
+
+    <string name="show_internet_msg">Please check you internet connection...</string>
+
 </resources>

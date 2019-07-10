@@ -3,6 +3,7 @@ package com.medinin.medininapp.docmod.adapter;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,10 +17,16 @@ import com.medinin.medininapp.R;
 import com.medinin.medininapp.docmod.responce.appointment.AppointmentStatus;
 import com.medinin.medininapp.utils.OnitemClickLIstener;
 import com.medinin.medininapp.utils.RecyclerView_OnClickListener;
+import com.medinin.medininapp.utils.StringUtils;
 
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
+import java.util.Date;
+
+import static com.medinin.medininapp.utils.NumberUtils.dateFormatFun;
+import static com.medinin.medininapp.utils.NumberUtils.dateFormatMonth;
+import static com.medinin.medininapp.utils.Utils.RailToNormal;
 
 public class AppointmentListAdapter  extends RecyclerView.Adapter<AppointmentListAdapter.AppointmentListHolder> implements Filterable  {
 
@@ -56,13 +63,33 @@ public class AppointmentListAdapter  extends RecyclerView.Adapter<AppointmentLis
 
 
      final AppointmentStatus appointmentStatusList = appointmentStatusArrayList.get(position);
-     holder.date_txt.setText(appointmentStatusList.date);
-     holder.month_txt.setText("");
-     holder.appointment_time_txt.setText(appointmentStatusList.time);
-     holder.patient_name_txt.setText(appointmentStatusList.patient_info.name);
+
+       String time =  RailToNormal(appointmentStatusList.time);
+       String endTime = split(appointmentStatusList.time);
+       String splittime = RailToNormal(endTime);
+       System.out.println("this our time "+time);
+       holder.appointment_time_txt.setText(time);
+       holder.appointment_time_txt2.setText(splittime);
+
+      String name =   StringUtils.capitalizeFirstLetter(appointmentStatusList.patient_info.name);//First letter uppercase , Second Letter uppercase
+        holder.patient_name_txt.setText(name);
+
      holder.pat_mobile_txt.setText(appointmentStatusList.patient_info.mobile);
-     holder.pat_gender_txt.setText(appointmentStatusList.patient_info.gender);
-     holder.pat_age_txt.setText(appointmentStatusList.patient_info.age);
+     // captial letter with Uppercase
+     holder.pat_age_txt.setText(appointmentStatusList.patient_info.age);   // zr year  . space format .
+
+       String data =  dateFormatFun(appointmentStatusList.date);
+       String month = dateFormatMonth(appointmentStatusList.date);
+        holder.month_txt.setText(month);
+        holder.date_txt.setText(data);
+
+        if (appointmentStatusList.patient_info.gender.equals("male")){
+            holder.pat_gender_txt.setText("M");
+
+        }else{
+            holder.pat_gender_txt.setText("F");
+        }
+
      holder.arrow.setOnClickListener(new View.OnClickListener() {
          @Override
          public void onClick(View view) {
@@ -75,6 +102,28 @@ public class AppointmentListAdapter  extends RecyclerView.Adapter<AppointmentLis
 
 
 
+    }
+
+
+    private String split(String s ){
+        String[] splited = s.split("\\:");
+        String endTimeStr ="";
+
+        if (!s.equals("null") && !s.isEmpty()) {
+
+            Log.i("hour", splited[0].toString());
+            Log.i("min", splited[1].toString());
+            int hour = Integer.parseInt(splited[0]);
+            int min = Integer.parseInt(splited[1]);
+            min = min + 30;
+            if (min >= 60) {
+                hour = hour + 1;
+                min = 0;
+            }
+             endTimeStr = String.format("%02d:%02d", hour, min);//hour + ":" + min;
+
+        }
+        return  endTimeStr;
     }
 
     @Override

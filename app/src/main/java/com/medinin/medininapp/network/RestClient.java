@@ -6,6 +6,7 @@ import android.os.Looper;
 import android.util.Log;
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -84,6 +85,8 @@ public class RestClient {
                 reqJsonObj = new JSONObject(ParseUtils.tojson(reqObject, urlData.getmUrl()));
             }
             makeCall(Request.Method.POST, ctx, reqJsonObj, classType, urlData, listener, 0);
+
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -125,8 +128,8 @@ public class RestClient {
         }
 
         if (urlData.isShowProgress()) {
-            progressBarUtil = new ProgressBarUtil();
-            progressBarUtil.showProgress(ctx, urlData.getProgressText());
+         //   progressBarUtil = new ProgressBarUtil();
+           // progressBarUtil.showProgress(ctx, urlData.getProgressText());
         }
         String url = urlData.getmUrl();
         StringRequest stringRequest = new StringRequest(type, url, new Response.Listener<String>() {
@@ -151,6 +154,8 @@ public class RestClient {
                     listener.onFailure(error, urlData.getUrlId());
                 }
             }
+
+
         }) {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
@@ -178,7 +183,13 @@ public class RestClient {
             }
 
         };
+
+        stringRequest.setRetryPolicy(new DefaultRetryPolicy(
+                5000,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         requestQueue.add(stringRequest);
+
 
     }
 

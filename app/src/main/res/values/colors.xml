@@ -12,6 +12,10 @@
     <color name="bg_screen3">#c873f4</color>
     <color name="bg_screen4">#c873f4</color>
 
+    <color name="colorBlack">#000000</color>
+    <color name="colorPurple">#8e63e6</color>
+    <color name="colorTab">#afbfc6</color>
+
     <!-- dots inactive colors -->
     <color name="dot_dark_screen1">#38000000</color>
     <color name="dot_dark_screen2">#38000000</color>
@@ -115,4 +119,9 @@
     <color name="black_transparent_50">#7e000000</color>
     <color name="black_transparent_60">#a5000000</color>
     <color name="black_transparent_80">#cc000000</color>
+
+
+
+    <color name="Red">#FF0000</color>
+    <color name="Green">#008000</color>
 </resources>

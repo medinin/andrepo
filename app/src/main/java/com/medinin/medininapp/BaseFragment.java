@@ -1,18 +1,31 @@
 package com.medinin.medininapp;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.PackageManager;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
+import android.view.View;
 
 
 import com.malinskiy.superrecyclerview.OnEmptyClickListener;
 import com.malinskiy.superrecyclerview.OnMoreListener;
+import com.medinin.medininapp.interfaces.TaskCompleteListener;
 import com.medinin.medininapp.listeners.PermissionCallback;
 import com.medinin.medininapp.network.ResponseHandler;
+import com.medinin.medininapp.utils.DLog;
+import com.medinin.medininapp.utils.NetworkConfig;
+import com.medinin.medininapp.utils.PrefManager;
 
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
@@ -24,11 +37,73 @@ public class BaseFragment extends Fragment implements OnMoreListener, OnEmptyCli
     private PermissionCallback callback;
     private int mRequestcode;
 
+
+    protected Context mContext;
+    protected PrefManager mLocalSession = new PrefManager();
+    protected static final String LISTENER = "Listener";
+    protected Serializable mFragmentListener;
+
+    private static final String TAG = "BaseFragment";
+    private TaskCompleteListener mTaskCompleteListener;
+    private BroadcastReceiver mBroadcastReceiver;
+
+
+    public Serializable getFragmentListener() {
+        return mFragmentListener;
+    }
+
+    public void setFragmentListener(Serializable mFragmentListener) {
+        this.mFragmentListener = mFragmentListener;
+    }
+
     @Override
     public void onRefresh() {
 
 
 
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        if (mContext != null && mBroadcastReceiver != null) {
+            LocalBroadcastManager.getInstance(mContext).unregisterReceiver(mBroadcastReceiver);
+            mBroadcastReceiver = null;
+            DLog.d(TAG, "Unregistered receiver for : TASK_COMPLETE and DOWNLOAD_COMPLETE");
+        }
+    }
+
+
+    protected void setTaskCompleteListener(Context context, TaskCompleteListener listener) {
+        mContext = getActivity();
+        if (null != listener) {
+            mBroadcastReceiver = new BroadcastReceiver() {
+                @Override
+                public void onReceive(Context context, Intent intent) {
+                    DLog.d(TAG, "onReceive ");
+                    if (null != mTaskCompleteListener) {
+                        mTaskCompleteListener.onTaskCompleted(context, intent);
+                    }
+                }
+            };
+
+            mTaskCompleteListener = listener;
+            IntentFilter intentFilter = new IntentFilter();
+            intentFilter.addAction(NetworkConfig.TASK_COMPLETE);
+            intentFilter.addAction(NetworkConfig.DOWNLOAD_COMPLETE);
+            LocalBroadcastManager.getInstance(mContext).registerReceiver(mBroadcastReceiver, intentFilter);
+            DLog.d(TAG, "Registered receiver for : TASK_COMPLETE and DOWNLOAD_COMPLETE");
+        }
     }
 
 

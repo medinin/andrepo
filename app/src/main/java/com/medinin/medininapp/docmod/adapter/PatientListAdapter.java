@@ -1,11 +1,16 @@
 package com.medinin.medininapp.docmod.adapter;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
+import android.support.design.widget.BottomSheetDialog;
 import android.support.design.widget.CoordinatorLayout;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +24,7 @@ import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.medinin.medininapp.MainActivity;
 import com.medinin.medininapp.R;
@@ -30,6 +36,8 @@ import com.medinin.medininapp.utils.RecyclerView_OnClickListener;
 import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+
+import static com.medinin.medininapp.utils.NumberUtils.month;
 
 public class PatientListAdapter  extends RecyclerView.Adapter<PatientListAdapter.PatientListHolder> implements Filterable {
 
@@ -67,6 +75,13 @@ public class PatientListAdapter  extends RecyclerView.Adapter<PatientListAdapter
 
         final PatientList patientList =patientLists.get(position);
         holder.patient_name_txt.setText(patientList.name);
+        String date = patientList.dob;
+        String strPattern = "^0+";
+        String value =  date.replaceAll(strPattern, "");
+         System.out.println(value);
+
+     //  String date =  month(patientList.dob);
+      //  holder.patDOBTxt.setText(date);
         holder.patDOBTxt.setText(patientList.dob);
         holder.patAgeTxt.setText(patientList.age);
         holder.patGenderTxt.setText(patientList.gender);
@@ -131,6 +146,15 @@ public class PatientListAdapter  extends RecyclerView.Adapter<PatientListAdapter
             }
         });
 
+        holder.patMobileTxt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+              String mobile =   patientList.mobile;
+                openCallDialog(view , mobile);
+            }
+        });
+
 
     }
 
@@ -149,6 +173,54 @@ public class PatientListAdapter  extends RecyclerView.Adapter<PatientListAdapter
         return null;
     }
 
+
+
+
+    /*  dilog box for click on number */
+
+
+
+
+    public void openCallDialog(final View v, final String mobile ) {
+        BottomSheetDialog dialog = new BottomSheetDialog(mcontext);
+        dialog.setContentView(R.layout.sms_call_popup);
+        View _parent = (View) v.getParent();
+        final TextView _textView = _parent.findViewById(v.getId());
+
+        ImageView phone_img = dialog.findViewById(R.id.phone_img);
+        phone_img.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+
+                Toast.makeText(mcontext,"call ",Toast.LENGTH_LONG).show();
+                Intent callIntent = new Intent(Intent.ACTION_DIAL);
+                callIntent.setData(Uri.parse("tel:" + mobile));
+
+                mcontext.startActivity(callIntent);
+            }
+        });
+
+        ImageView whatsapp_img = dialog.findViewById(R.id.whatsapp_img);
+        whatsapp_img.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                Uri uri = Uri.parse("https://api.whatsapp.com/send?phone=" + "+91" + mobile + "&text=");
+                Intent sendIntent = new Intent(Intent.ACTION_VIEW, uri);
+                mcontext.startActivity(sendIntent);
+            }
+        });
+
+        ImageView comment_img = dialog.findViewById(R.id.comment_img);
+        comment_img.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                Intent intent = new Intent(Intent.ACTION_SENDTO);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.setData(Uri.parse("smsto:" + "+91" + mobile)); // This ensures only SMS apps respond
+                intent.putExtra("sms_body", "");
+                mcontext.startActivity(intent);
+            }
+        });
+
+        dialog.show();
+    }
 
 
 

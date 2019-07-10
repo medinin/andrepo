@@ -2,6 +2,7 @@ package com.medinin.medininapp.utils;
 
 
 public class CustomDateToString {
+
     public static String month(String _date) {
         if (_date != null && !_date.equals("null") && !_date.isEmpty()) {
 
@@ -9,10 +10,10 @@ public class CustomDateToString {
             String monthStr = "";
 
             switch (Integer.parseInt(splitDate[1])) {
-                case 1:
+                case 01:
                     monthStr = "Jan";
                     break;
-                case 2:
+                case 02:
                     monthStr = "Feb";
                     break;
                 case 3:

@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class AppointmentResponse implements Serializable {
 
-    private Integer statuscode;
-    private String statusMessage;
-    private AppointmentData data;
+    public Integer statuscode;
+    public String statusMessage;
+    public AppointmentData data;
 }

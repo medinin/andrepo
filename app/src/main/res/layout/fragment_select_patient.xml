@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_home"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/select_pat_hd_sec"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="4dp"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/back_sec"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:id="@+id/back_txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/sfprotextregular"
+                    android:text="Back"
+                    android:textColor="@color/color_white"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toEndOf="@+id/back_arrow"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/back_arrow"
+                    android:layout_width="18dp"
+                    android:layout_height="15dp"
+                    android:layout_marginStart="11dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/ic_arrow_left_white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/cancle_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="14dp"
+                    android:fontFamily="@font/sfprotextsemibold"
+                    android:text="Cancel    "
+                    android:textColor="@color/color_white"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/sfprotextmedium"
+                android:gravity="center_horizontal"
+                android:text="Select a patient"
+                android:textColor="@color/color_white"
+                android:textSize="20sp"
+                android:textStyle="normal" />
+
+        </LinearLayout>
+
+
+
+
+
+
+        <LinearLayout
+            android:id="@+id/mainWrap1"
+            style="@style/main_wrap_box_sumeeth"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:orientation="vertical">
+
+                <!-- All content starts here-->
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/patients_wrap"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="6dp"
+                            android:layout_height="6dp"
+                            android:background="@drawable/tab_dot" />
+
+                        <TextView
+                            android:id="@+id/textView6"
+                            android:layout_width="6dp"
+                            android:layout_height="6dp"
+                            android:layout_marginStart="8dp"
+                            android:background="@drawable/tab_dot_active" />
+
+                        <TextView
+                            android:id="@+id/textView7"
+                            android:layout_width="6dp"
+                            android:layout_height="6dp"
+                            android:layout_marginStart="8dp"
+                            android:background="@drawable/tab_dot_active" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/search_wrap"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="25dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+
+                        <android.support.constraint.ConstraintLayout
+                            android:id="@+id/icon_search"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:id="@+id/map_img"
+                                android:layout_width="16dp"
+                                android:layout_height="17dp"
+                                android:layout_marginTop="18dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:srcCompat="@drawable/ic_search_icon" />
+
+                            <EditText
+                                android:id="@+id/searchBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="30dp"
+                                android:layout_marginTop="6dp"
+                                android:layout_weight="1"
+                                android:alpha=".5"
+                                android:background="@null"
+                                android:ems="10"
+                                android:hint="​Search"
+                                android:inputType="text"
+                                android:textColor="#282f3f"
+                                android:textColorHint="#8FA7B1"
+                                android:textSize="14sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </android.support.constraint.ConstraintLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutList"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginEnd="0dp"
+                        android:orientation="vertical"
+                        android:paddingLeft="25dp"
+                        android:paddingRight="25dp"
+                        app:layout_constraintTop_toBottomOf="@+id/search_wrap"
+                        android:paddingBottom="40dp" >
+                        <!--
+
+                        this where the recycleview will be loaded out
+
+                        -->
+
+
+                        <com.malinskiy.superrecyclerview.SuperRecyclerView
+                            android:id="@+id/listofpatient"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_below="@id/search_wrap"
+                            android:paddingBottom="@dimen/dp_10"
+                            app:recyclerClipToPadding="false"
+                            app:recyclerPadding="0dp"
+                            app:scrollbarStyle="insideInset">
+
+                        </com.malinskiy.superrecyclerview.SuperRecyclerView>
+
+                    </LinearLayout>
+
+
+
+                </android.support.constraint.ConstraintLayout>
+
+
+
+
+
+
+
+
+                <!-- All content ends here-->
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+
+</android.support.constraint.ConstraintLayout>

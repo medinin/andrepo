@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class PatientInfo implements Serializable {
 
-    public String patientId;
+    public String patient_id;
     public String name;
     public String photo;
     public String gender;

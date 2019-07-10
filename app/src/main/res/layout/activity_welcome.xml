@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#9cedeff3"
     android:fitsSystemWindows="true"
-    tools:context="com.medinin.medininapp.activities.welcome">
+   >
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"

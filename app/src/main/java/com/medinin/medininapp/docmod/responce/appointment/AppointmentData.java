@@ -5,8 +5,8 @@ import java.util.ArrayList;
 
 public class AppointmentData implements Serializable {
 
-    private Integer totalAppointments;
-    private ArrayList<AppointmentStatus> appointmentStatus ;
+    public Integer total_appointments;
+    public ArrayList<AppointmentStatus> appointment_status ;
 
 
 }

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#9cedeff3"
+    android:fitsSystemWindows="true"
+    tools:context=".activities.EULAActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/logo_wrap"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/logo_img"
+                android:layout_width="110dp"
+                android:layout_height="111dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:alpha="1"
+                android:src="@drawable/ic_medinin_logo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/welcome_txt"
+                style="@style/welcome_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="1"
+                android:paddingTop="5dp"
+                android:text="Welcome!" />
+
+
+            <TextView
+                android:id="@+id/tagline_txt"
+                style="@style/tagline_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="1"
+                android:paddingTop="5dp"
+                android:text="Transforming healthcare, together"
+                android:textAllCaps="true" />
+
+
+            <TextView
+                android:id="@+id/conditions_txt"
+                style="@style/condition_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="1"
+                android:layout_marginTop="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="5dp"
+                android:text="Tap “Agree &amp; Continue” to accept Medinin’s" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingStart="50dp"
+                android:paddingEnd="50dp"
+                android:weightSum="3">
+
+                <TextView
+                    android:id="@+id/terms_txt"
+                    style="@style/terms_privacy_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:alpha="1"
+                    android:autoLink="web"
+                    android:background="@drawable/border_bottom_welcome"
+                    android:gravity="center_horizontal"
+                    android:linksClickable="true"
+                    android:paddingTop="5dp"
+                    android:text="Terms of Service"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/and_txt"
+                    style="@style/condition_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:alpha="1"
+                    android:gravity="center_horizontal"
+                    android:paddingTop="5dp"
+                    android:text="and"
+                    app:layout_constraintStart_toEndOf="@+id/terms_txt"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/privacy_txt"
+                    style="@style/terms_privacy_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:alpha="1"
+                    android:autoLink="web"
+                    android:background="@drawable/border_bottom_welcome"
+                    android:gravity="center_horizontal"
+                    android:linksClickable="true"
+                    android:paddingTop="5dp"
+                    android:text="Privacy Policy"
+                    app:layout_constraintStart_toEndOf="@+id/and_txt"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/agree_txt"
+                style="@style/agree_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:alpha="1"
+                android:fontFamily="@font/mulibold"
+                android:gravity="center_horizontal"
+                android:padding="20dp"
+                android:shadowColor="#728E63E6"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="12"
+                android:text=" Agree &amp; Continue"
+                android:textAllCaps="false"
+                android:textSize="22sp" />
+
+
+
+
+        </LinearLayout>
+
+
+
+
+    </RelativeLayout>
+
+    <WebView
+        android:id="@+id/eulaWebView"
+        android:padding="20dp"
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/closeBtn"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/ic_close_black_24dp"
+        android:visibility="gone"
+        />
+
+</RelativeLayout>

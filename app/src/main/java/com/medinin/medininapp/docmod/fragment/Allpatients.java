@@ -102,9 +102,10 @@ public class Allpatients extends BaseFragment implements View.OnClickListener {
             RestClient restClient = RestClient.getInstance();
 
             PatientsRequest req = new PatientsRequest();
-            req.doc_id = "111" ; //TODO i have hardcode the value ;
+            req.doc_id = "ed3202810f1407e97b53fb759d631c29" ; //TODO i have hardcode the value ;
 
             restClient.post(getActivity(), req, PatientListResponce.class, this, URLData.URL_PATIENTS_NO_PAGE);
+
 
 
         } else {
@@ -144,14 +145,14 @@ public class Allpatients extends BaseFragment implements View.OnClickListener {
                 }
 
 
-
-
             }
 
         }else {
 
         }
     }
+
+
 
 
     @Override
